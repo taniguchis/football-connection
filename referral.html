@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0A1628">
+  <meta name="description" content="FOOTBALL Connection 掲載紹介フォーム。アメリカンフットボール・フラッグフットボール・タッチフットボール関係者の店・サービスを紹介してください。掲載確定後に紹介報酬（フリー¥500・プレミアム¥5,000・レジェンド¥10,000）をAmazonギフトカードでお渡しします。">
+  <title>掲載紹介 | FOOTBALL CONNECTION</title>
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="apple-touch-icon" href="images/logo-square.png">
+  <link rel="stylesheet" href="css/style.css?v=20260308">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNJ4ZBMYGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNJ4ZBMYGR');
+  </script>
+  <style>
+    /* ============================
+       REFERRAL PAGE STYLES
+    ============================ */
+    .referral-layout { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ── 紹介料ヒーロー帯 ── */
+    .referral-hero {
+      background: linear-gradient(135deg, rgba(26,107,60,0.25) 0%, rgba(10,22,40,0.9) 60%);
+      border: 2px solid var(--green);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      margin-bottom: 44px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .referral-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 38px,
+        rgba(26,107,60,0.06) 38px,
+        rgba(26,107,60,0.06) 40px
+      );
+      pointer-events: none;
+    }
+    .referral-hero .hero-tag {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      letter-spacing: 0.06em;
+      position: relative; z-index: 1;
+    }
+    .referral-hero h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      position: relative; z-index: 1;
+    }
+    .referral-hero h2 .amount {
+      color: var(--gold);
+      font-size: 1.2em;
+    }
+    .referral-hero p {
+      color: var(--light-gray);
+      font-size: 0.92rem;
+      line-height: 1.8;
+      position: relative; z-index: 1;
+    }
+
+    /* ── 紹介の仕組み ── */
+    .how-it-works { margin-bottom: 48px; }
+    .section-heading {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05rem; font-weight: 700; color: var(--gold);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(212,160,23,0.5), transparent);
+    }
+
+    /* フロー */
+    .referral-flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0;
+      margin-bottom: 28px;
+    }
+    .rf-step {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 20px 16px;
+      text-align: center;
+      position: relative;
+    }
+    .rf-step:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .rf-step:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+    .rf-step::after {
+      content: '▶';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      color: var(--gold); font-size: 0.75rem; z-index: 2;
+    }
+    .rf-step:last-child::after { display: none; }
+    .rf-step-num { font-family:'Oswald',sans-serif; color:var(--gold); font-size:0.75rem; margin-bottom:8px; }
+    .rf-step-icon { font-size:1.6rem; margin-bottom:8px; }
+    .rf-step-label { font-size:0.82rem; color:var(--white); font-weight:700; line-height:1.4; }
+    .rf-step-sub { font-size:0.72rem; color:var(--gray); margin-top:6px; line-height:1.5; }
+
+    /* 紹介料詳細ボックス */
+    .reward-box {
+      background: linear-gradient(135deg, rgba(212,160,23,0.12) 0%, rgba(212,160,23,0.04) 100%);
+      border: 1px solid rgba(212,160,23,0.35);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 28px;
+    }
+    .reward-box .reward-title {
+      font-weight:700; color:var(--white); margin-bottom:14px; font-size:0.95rem;
+      display:flex; align-items:center; gap:8px;
+    }
+    .reward-detail-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px 16px;
+      align-items: start;
+    }
+    .rd-label {
+      font-size:0.8rem; color:var(--gray); white-space:normal; word-break:keep-all; padding-top:2px;
+    }
+    .rd-value {
+      font-size:0.88rem; color:var(--light-gray); line-height:1.65;
+    }
+    .rd-value strong { color:var(--gold); }
+    .rd-value .note { font-size:0.78rem; color:var(--gray); margin-top:3px; display:block; }
+
+    /* 注意事項 */
+    .caution-box {
+      background: rgba(255,255,255,0.03);
+      border-left: 3px solid rgba(255,100,100,0.6);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .caution-box strong { color: #ff9999; }
+
+    /* ── フォーム ── */
+    .form-card {
+      background: var(--navy-light);
+      border-radius: var(--radius);
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 32px;
+    }
+    .form-section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem; font-weight: 600; color: var(--gold);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .form-section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(212,160,23,0.3), transparent);
+      margin: 28px 0;
+    }
+    .form-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .form-grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+
+    /* 紹介者セクション強調 */
+    .referrer-section {
+      background: rgba(212,160,23,0.04);
+      border: 1px solid rgba(212,160,23,0.15);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    /* 振込先フォーム */
+    .bank-section {
+      background: rgba(26,107,60,0.06);
+      border: 1px solid rgba(26,107,60,0.2);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+    }
+    .bank-note {
+      font-size:0.78rem; color:var(--gray); line-height:1.7;
+      margin-top:12px;
+      padding:10px 14px;
+      background:rgba(255,255,255,0.03);
+      border-radius:var(--radius-sm);
+    }
+
+    /* submit */
+    .submit-area { text-align:center; padding-top:28px; border-top:1px solid rgba(255,255,255,0.1); }
+    .submit-note { font-size:0.8rem; color:var(--gray); margin-bottom:20px; line-height:1.65; }
+
+    /* success */
+    .form-success {
+      display:none; text-align:center; padding:60px 20px;
+    }
+    .form-success .success-icon { font-size:4rem; margin-bottom:16px; }
+    .form-success h3 { font-size:1.4rem; font-weight:700; color:var(--white); margin-bottom:12px; }
+    .form-success p { color:var(--gray); line-height:1.75; }
+
+    /* sns cta */
+    .sns-cta {
+      background:var(--navy-light);
+      border-radius:var(--radius);
+      padding:28px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.07);
+    }
+    .x-btn {
+      display:inline-flex; align-items:center; gap:10px;
+      background:#000; color:#fff; padding:12px 24px; border-radius:var(--radius-sm);
+      font-weight:700; font-size:0.9rem; border:1px solid #333; transition:var(--transition);
+      text-decoration:none;
+    }
+    .x-btn:hover { background:#222; transform:translateY(-2px); }
+
+    @media (max-width: 768px) {
+      .form-card { padding:24px 18px; }
+      .form-grid-2 { grid-template-columns:1fr; }
+      .form-grid-3 { grid-template-columns:1fr 1fr; }
+      .referral-flow { grid-template-columns: 1fr 1fr; }
+      .rf-step::after { display:none; }
+      .rf-step:first-child  { border-radius:var(--radius) var(--radius) 0 0; }
+      .rf-step:last-child   { border-radius:0 0 var(--radius) var(--radius); }
+      /* 左揃え上書き */
+      .referral-hero { text-align: left; }
+      .rf-step { text-align: left; }
+    }
+    @media (max-width: 768px) {
+      .reward-detail-grid { grid-template-columns:1fr; }
+      .rd-label { font-weight:700; color:var(--gold); font-size:0.78rem; }
+    }
+    @media (max-width: 480px) {
+      .form-grid-3 { grid-template-columns:1fr; }
+      .referral-hero { padding:24px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="shops.html">店舗・サービスを探す</a>
+      <a href="events.html">イベント</a>
+      <a href="apply.html" class="btn-header-cta">加盟申込</a>
+    </nav>
+    <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 トップ</a>
+    <a href="shops.html">🗺️ 店舗・サービスを探す</a>
+    <a href="events.html">📅 イベント</a>
+    <a href="apply.html">🏈 加盟申込はこちら</a>
+    <a href="referral.html">🤝 掲載紹介</a>
+  </nav>
+</header>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>🤝 掲載紹介フォーム</h1>
+    <p>アメリカンフットボール・フラッグフットボール・タッチフットボール関係者の店・サービスを紹介してください。掲載確定で紹介料をお支払いします。</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+  <div class="referral-layout">
+
+    <!-- ══ 紹介料ヒーロー帯 ══ -->
+    <!-- 紹介促進バナー -->
+    <div class="fade-in" style="background:linear-gradient(135deg,rgba(74,222,128,0.08),rgba(26,107,60,0.06));border:1px solid rgba(74,222,128,0.25);border-radius:10px;padding:16px 20px;margin-bottom:20px;text-align:center;">
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.9);line-height:1.8;">
+        🏈 現在 <strong style="color:#4ade80;">14店舗・サービス</strong> が全国で加盟中。<br>
+        あなたの紹介で、仲間のネットワークがさらに広がります。<strong style="color:var(--gold);">一件紹介するだけで最大¥10,000</strong> のギフトカードが届きます。
+      </p>
+    </div>
+
+    <div class="referral-hero fade-in">
+      <div class="hero-tag">🎁 REFERRAL REWARD</div>
+      <h2>仲間の店を紹介して、<span class="amount">ネットワークを広げよう</span></h2>
+      <p>
+        アメリカンフットボール・フラッグ・タッチフットボール関係者の店・サービスをご存知ですか？<br>
+        紹介するだけで、掲載確定後に<strong style="color:var(--gold);">Amazonギフトカード</strong>をプレゼント。<br>
+        あなたの一言が、仲間の経済圏を一店舗分広げます。
+      </p>
+      <!-- 報酬テーブル -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:20px;position:relative;z-index:1;">
+        <div style="background:rgba(255,153,0,0.08);border:1px solid rgba(255,153,0,0.25);border-radius:10px;padding:14px 10px;text-align:center;">
+          <div style="font-size:0.72rem;color:var(--gray);font-weight:700;margin-bottom:6px;">FREE PLAN</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;color:var(--white);">¥500</div>
+          <div style="font-size:0.72rem;color:var(--gray);margin-top:4px;">Amazonギフトカード</div>
+        </div>
+        <div style="background:rgba(212,160,23,0.12);border:2px solid var(--gold);border-radius:10px;padding:14px 10px;text-align:center;">
+          <div style="font-size:0.72rem;color:var(--gold);font-weight:700;margin-bottom:6px;">⭐ PREMIUM PLAN</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;color:var(--gold);">¥5,000</div>
+          <div style="font-size:0.72rem;color:var(--gray);margin-top:4px;">Amazonギフトカード</div>
+        </div>
+        <div style="background:rgba(255,215,0,0.08);border:2px solid #FFD700;border-radius:10px;padding:14px 10px;text-align:center;box-shadow:0 0 12px rgba(255,215,0,0.15);">
+          <div style="font-size:0.72rem;color:#FFD700;font-weight:700;margin-bottom:6px;">👑 LEGEND PLAN</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;color:#FFD700;">¥10,000</div>
+          <div style="font-size:0.72rem;color:var(--gray);margin-top:4px;">Amazonギフトカード</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ 仕組みの説明 ══ -->
+    <div class="how-it-works fade-in">
+      <div class="section-heading">紹介の仕組み</div>
+
+      <div class="referral-flow">
+        <div class="rf-step">
+          <div class="rf-step-num">STEP 01</div>
+          <div class="rf-step-icon">📝</div>
+          <div class="rf-step-label">このフォームで紹介</div>
+          <div class="rf-step-sub">紹介先と紹介者の情報を入力して送信</div>
+        </div>
+        <div class="rf-step">
+          <div class="rf-step-num">STEP 02</div>
+          <div class="rf-step-icon">📞</div>
+          <div class="rf-step-label">運営からご連絡</div>
+          <div class="rf-step-sub">紹介先の店舗へ運営がアプローチ</div>
+        </div>
+        <div class="rf-step">
+          <div class="rf-step-num">STEP 03</div>
+          <div class="rf-step-icon">✅</div>
+          <div class="rf-step-label">掲載確定</div>
+          <div class="rf-step-sub">申込・審査を経て掲載決定</div>
+        </div>
+        <div class="rf-step">
+          <div class="rf-step-num">STEP 04</div>
+          <div class="rf-step-icon">🎁</div>
+          <div class="rf-step-label">デジタルギフト贈呈</div>
+          <div class="rf-step-sub">掲載確定後にAmazonギフトカードをメール送付</div>
+        </div>
+      </div>
+
+      <!-- 紹介料詳細 -->
+      <div class="reward-box">
+        <div class="reward-title">🎁 報酬の詳細</div>
+        <div class="reward-detail-grid">
+          <div class="rd-label">報酬額</div>
+          <div class="rd-value">
+            紹介先のプランによって異なります：<br>
+            <strong>フリープラン掲載確定</strong> → <strong style="color:var(--white);">¥500</strong> 相当デジタルギフト<br>
+            <strong>⭐ プレミアムプラン初回支払完了</strong> → <strong style="color:var(--gold);">¥5,000</strong> 相当デジタルギフト<br>
+            <strong>👑 LEGENDプラン初回支払完了</strong> → <strong style="color:#FFD700;">¥10,000</strong> 相当デジタルギフト
+          </div>
+
+          <div class="rd-label">贈呈方法</div>
+          <div class="rd-value">
+            <strong style="color:var(--gold);">Amazonギフトカード</strong>をメールにてコードをお送りします<br>
+            <span class="note">※ メールが届かない場合はXのDMからご連絡ください。</span>
+          </div>
+
+          <div class="rd-label">贈呈タイミング</div>
+          <div class="rd-value">
+            掲載確定（フリー）または初回支払い完了（プレミアム・LEGEND）確認後、<strong>1週間以内</strong>に送付
+            <span class="note">例：8月にプレミアム初回支払い → 8月中にギフトコードを送付</span>
+          </div>
+
+          <div class="rd-label">上限</div>
+          <div class="rd-value">紹介件数に上限なし。何件ご紹介いただいても件数×報酬額をお渡しします。</div>
+
+          <div class="rd-label">受取方法</div>
+          <div class="rd-value">フォームにご登録のメールアドレスへ送付。その他ご希望の方法があればお知らせください。</div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="caution-box">
+        <strong>⚠️ ご注意</strong><br>
+        ・<strong style="color:#ff9999;">紹介前に必ず紹介先（お店・サービス）の承諾を得てください。</strong>承諾なしの紹介は無効となります。<br>
+        ・紹介先がすでに当サービスに申込済み・掲載済みの場合は紹介料の対象外となります。<br>
+        ・掲載確定（フリー）または初回支払い完了（プレミアム・LEGEND）をもって報酬対象となります。<br>
+        ・虚偽の情報や自己紹介（ご自身の店を紹介する行為）は対象外です。
+      </div>
+    </div>
+
+    <!-- ══ 紹介フォーム ══ -->
+    <div class="fade-in">
+      <div class="section-heading">紹介フォームに入力する</div>
+    </div>
+
+    <div class="form-card fade-in">
+      <form id="referral-form"
+            action="https://formspree.io/f/xgonaorg"
+            method="POST"
+            novalidate>
+
+        <!-- Formspree設定 -->
+        <input type="hidden" name="_subject" value="【FOOTBALL Connection】掲載紹介が届きました">
+        <input type="hidden" name="フォーム種別" value="掲載紹介フォーム">
+        <input type="text" name="_gotcha" style="display:none">
+
+        <!-- ██ SECTION A：紹介先（店舗・サービス）情報 ██ -->
+        <div class="form-section-title"><span>A</span> 紹介先の店舗・サービス情報</div>
+        <p style="font-size:0.83rem;color:var(--gray);margin-bottom:20px;line-height:1.7;">
+          紹介したい店舗・サービスの情報をご入力ください。わかる範囲で構いません。
+        </p>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" for="ref-shop-name">店舗・サービス名<span class="required">*</span></label>
+            <input type="text" id="ref-shop-name" name="紹介先_店舗名" class="form-input"
+              placeholder="例：居酒屋 鷹の爪" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ref-owner-name">オーナー・担当者名</label>
+            <input type="text" id="ref-owner-name" name="紹介先_担当者名" class="form-input"
+              placeholder="例：田中 一郎（わかれば）">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" for="ref-prefecture">都道府県<span class="required">*</span></label>
+            <select id="ref-prefecture" name="紹介先_都道府県" class="form-select" required>
+              <option value="">選択してください</option>
+              <option>北海道</option><option>青森県</option><option>岩手県</option><option>宮城県</option>
+              <option>秋田県</option><option>山形県</option><option>福島県</option><option>茨城県</option>
+              <option>栃木県</option><option>群馬県</option><option>埼玉県</option><option>千葉県</option>
+              <option>東京都</option><option>神奈川県</option><option>新潟県</option><option>富山県</option>
+              <option>石川県</option><option>福井県</option><option>山梨県</option><option>長野県</option>
+              <option>岐阜県</option><option>静岡県</option><option>愛知県</option><option>三重県</option>
+              <option>滋賀県</option><option>京都府</option><option>大阪府</option><option>兵庫県</option>
+              <option>奈良県</option><option>和歌山県</option><option>鳥取県</option><option>島根県</option>
+              <option>岡山県</option><option>広島県</option><option>山口県</option><option>徳島県</option>
+              <option>香川県</option><option>愛媛県</option><option>高知県</option><option>福岡県</option>
+              <option>佐賀県</option><option>長崎県</option><option>熊本県</option><option>大分県</option>
+              <option>宮崎県</option><option>鹿児島県</option><option>沖縄県</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ref-genre">業種</label>
+            <select id="ref-genre" name="紹介先_業種" class="form-select">
+              <option value="">選択してください</option>
+              <option>バー</option><option>居酒屋</option><option>レストラン</option><option>カフェ</option>
+              <option>ジム・トレーニング</option><option>マッサージ・整体</option><option>美容室</option>
+              <option>その他サービス</option><option>わからない</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="ref-address">住所・エリア（わかれば）</label>
+          <input type="text" id="ref-address" name="紹介先_住所エリア" class="form-input"
+            placeholder="例：東京都新橋2丁目 / 大阪市北区梅田近辺">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="ref-contact">連絡先（電話番号 or メール・SNS）</label>
+          <input type="text" id="ref-contact" name="紹介先_連絡先" class="form-input"
+            placeholder="例：03-xxxx-xxxx / @twitter_handle / info@example.com（わかれば）">
+        </div>
+
+        <!-- アメフトとの関わり -->
+        <div class="form-group">
+          <label class="form-label">アメリカンフットボール・フラッグフットボール・タッチフットボールとの関わり（複数選択可）<span class="required">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="checkbox" name="紹介先_加盟区分" value="OB/OG・現役・スタッフ・家族・パートナーとして経営または参画" id="ref-mem-1">
+              <div>
+                <strong>① OB/OG・現役・スタッフ・家族・パートナーが経営または参画</strong>
+                <p style="font-size:0.8rem;color:var(--gray);margin-top:3px;">アメリカンフットボール・フラッグフットボール・タッチフットボールの経験者・関係者がオーナーやスタッフとして参画している</p>
+              </div>
+            </label>
+            <label class="radio-label">
+              <input type="checkbox" name="紹介先_加盟区分" value="店内にアメリカンフットボール・フラッグフットボール・タッチフットボール関連の展示・写真・環境あり" id="ref-mem-2">
+              <div>
+                <strong>② 店内にアメリカンフットボール・フラッグフットボール・タッチフットボール関連の展示・写真・環境あり</strong>
+                <p style="font-size:0.8rem;color:var(--gray);margin-top:3px;">アメリカンフットボール・フラッグフットボール・タッチフットボールの展示物・ディスプレイなどがある</p>
+              </div>
+            </label>
+          </div>
+          <p id="ref-mem-error" style="color:#ff6b6b;font-size:0.8rem;margin-top:8px;display:none;">⚠️ 少なくとも1つ選択してください。</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="ref-football-detail">アメリカンフットボール・フラッグフットボール・タッチフットボールとの関わり詳細（わかれば）</label>
+          <textarea id="ref-football-detail" name="紹介先_アメフト関係詳細" class="form-textarea" rows="3"
+            placeholder="例：オーナーの田中さんは関東大学リーグのOBで、店内に当時のトロフィーやユニフォームが飾られています。"></textarea>
+        </div>
+
+        <div class="form-section-divider"></div>
+
+        <!-- ██ SECTION B：紹介者情報 ██ -->
+        <div class="form-section-title"><span>B</span> 紹介者情報（あなたの情報）</div>
+        <p style="font-size:0.83rem;color:var(--gray);margin-bottom:20px;line-height:1.7;">
+          紹介料のお振込みのために必要な情報です。個人情報は紹介料の支払い目的のみに使用します。
+        </p>
+
+        <div class="referrer-section">
+          <div class="form-grid-2">
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" for="referrer-name">お名前<span class="required">*</span></label>
+              <input type="text" id="referrer-name" name="紹介者_氏名" class="form-input"
+                placeholder="例：山田 花子" required>
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" for="referrer-kana">フリガナ</label>
+              <input type="text" id="referrer-kana" name="紹介者_フリガナ" class="form-input"
+                placeholder="例：ヤマダ ハナコ">
+            </div>
+          </div>
+          <div style="height:16px;"></div>
+          <div class="form-grid-2">
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" for="referrer-email">メールアドレス<span class="required">*</span></label>
+              <input type="email" id="referrer-email" name="紹介者_メール" class="form-input"
+                placeholder="例：yamada@example.com" required>
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" for="referrer-phone">電話番号</label>
+              <input type="tel" id="referrer-phone" name="紹介者_電話" class="form-input"
+                placeholder="例：090-1234-5678">
+            </div>
+          </div>
+          <div style="height:16px;"></div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="referrer-relation">紹介先との関係</label>
+            <input type="text" id="referrer-relation" name="紹介者_紹介先との関係" class="form-input"
+              placeholder="例：同じチームのOB仲間 / 大学の先輩 / 常連客として通っている">
+          </div>
+        </div>
+
+        <div style="height:20px;"></div>
+
+        <!-- ██ SECTION C：振込先口座 ██ -->
+        <div class="form-section-title"><span>C</span> 報酬の受取先</div>
+        <p style="font-size:0.83rem;color:var(--gray);margin-bottom:20px;line-height:1.7;">
+          デジタルギフトをお送りするメールアドレスと、希望のギフト種類をご入力ください。
+        </p>
+
+        <div class="bank-section">
+          <div class="form-grid-2">
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" for="gift-email">アマゾンギフトカード受取メールアドレス<span class="required">*</span></label>
+              <input type="email" id="gift-email" name="アマゾンギフト_受取メール" class="form-input"
+                placeholder="例：yamada@example.com" required>
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" for="gift-type">希望のデジタルギフト種類</label>
+              <select id="gift-type" name="ギフト希望種類" class="form-select" style="display:none;">
+                <option value="Amazonギフトカード" selected>Amazonギフトカード</option>
+              </select>
+              <p style="font-size:0.82rem;color:var(--gold);font-weight:700;margin-top:8px;">Amazonギフトカードでお送りします</p>
+            </div>
+          </div>
+          <div class="bank-note">
+            🎁 Amazonギフトカードのコードをメールにてお送りします。メールが届かない場合はXのDMからご連絡ください。
+          </div>
+        </div>
+
+        <div style="height:20px;"></div>
+        <div class="form-group">
+          <label class="form-label" for="referrer-message">その他メッセージ（任意）</label>
+          <textarea id="referrer-message" name="その他メッセージ" class="form-textarea" rows="3"
+            placeholder="補足事項・紹介先へのコメントなどあればご自由に。"></textarea>
+        </div>
+
+        <!-- 承諾確認チェックボックス -->
+        <div style="background:rgba(212,160,23,0.08);border:2px solid var(--gold);border-radius:var(--radius-sm);padding:20px 24px;margin-bottom:24px;">
+          <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
+            <input type="checkbox" id="consent-check" name="承諾確認"
+                   value="紹介前に紹介先の承諾を得たことを確認済み"
+                   style="width:20px;height:20px;min-width:20px;margin-top:2px;accent-color:var(--gold);cursor:pointer;">
+            <span style="font-size:0.9rem;color:var(--white);line-height:1.7;">
+              <strong style="color:var(--gold);">【必須】</strong>
+              紹介フォームを送信する前に、紹介先のオーナー・担当者に
+              <strong>「FOOTBALL Connectionへの掲載を紹介してよいか」の承諾を得ました。</strong><br>
+              <span style="font-size:0.8rem;color:var(--gray);">※承諾なしの紹介は無効となり、紹介料の対象外となります。</span>
+            </span>
+          </label>
+          <p id="consent-error" style="color:#ff6b6b;font-size:0.82rem;margin-top:8px;margin-left:32px;display:none;">
+            ⚠️ 紹介先の承諾を得たことを確認してからチェックしてください。
+          </p>
+        </div>
+
+        <!-- Submit -->
+        <div class="submit-area">
+          <p class="submit-note">
+            ✅ 送信後、<strong style="color:var(--white);">1〜2営業日以内</strong>にご登録のメールアドレスへ確認のご連絡をいたします。<br>
+            掲載確定後（フリー）または初回支払い完了後（プレミアム・LEGEND）に、<strong style="color:var(--gold);">Amazonギフトカード</strong>をお送りします。
+          </p>
+          <button type="submit" class="btn btn-gold btn-lg" id="referral-submit-btn" style="min-width:280px;">
+            🤝 紹介フォームを送信する
+          </button>
+          <p id="referral-error" style="color:#ff6b6b;font-size:0.82rem;margin-top:12px;display:none;"></p>
+        </div>
+
+      </form>
+
+      <!-- 送信成功メッセージ -->
+      <div class="form-success" id="referral-success">
+        <div class="success-icon">🎉</div>
+        <h3>ご紹介ありがとうございます！</h3>
+        <p>
+          フォームの受付が完了しました。<br>
+          <strong style="color:var(--white);">1〜2営業日以内</strong>に確認メールをお送りします。<br><br>
+          紹介先の掲載確定後（フリー¥500）または初回支払い完了後（プレミアム¥5,000 / LEGEND¥10,000）に、<br>
+          <strong style="color:var(--gold);">Amazonギフトカード</strong>をご登録のメールへお送りします。<br>
+          今後ともFOOTBALL Connectionをよろしくお願いします 🏈
+        </p>
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap;">
+          <a href="index.html" class="btn btn-outline" style="display:inline-block;">← トップへ戻る</a>
+          <a href="referral.html" class="btn btn-gold" style="display:inline-block;">もう1件紹介する</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="fade-in" style="margin-bottom:40px;">
+      <div class="section-heading">よくある質問</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+
+        <details style="background:var(--navy-light);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-sm);padding:16px 20px;">
+          <summary style="font-weight:700;color:var(--white);cursor:pointer;font-size:0.9rem;">
+            Q. 事前にお店の承諾は必要ですか？
+          </summary>
+          <p style="margin-top:10px;font-size:0.85rem;color:var(--gray);line-height:1.75;">
+            <strong style="color:var(--white);">はい、必須です。</strong>紹介フォームを送信する前に、必ず紹介先のオーナー・担当者に「FOOTBALL Connectionへの掲載を紹介してもよいか」の承諾を得てください。<br>
+            承諾を得ずに送信された紹介は無効とし、紹介料の対象外となります。また、運営から紹介先へ連絡する際に<strong style="color:var(--white);">「〇〇様からご紹介いただきました」と必ずお伝えします。</strong>
+          </p>
+        </details>
+
+        <details style="background:var(--navy-light);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-sm);padding:16px 20px;">
+          <summary style="font-weight:700;color:var(--white);cursor:pointer;font-size:0.9rem;">
+            Q. 紹介先がフリープランで掲載後に有料プランに変更した場合は？
+          </summary>
+          <p style="margin-top:10px;font-size:0.85rem;color:var(--gray);line-height:1.75;">
+            フリープラン掲載確定時に¥500のデジタルギフトをお送りします。その後、紹介先がプレミアム（¥5,000）またはLEGEND（¥10,000）にアップグレードして初回支払いが完了した場合は、追加で差額分のギフトをお送りします。<br>
+            <strong style="color:var(--white);">例：フリー→LEGEND：¥500 + ¥9,500 = 合計¥10,000相当</strong>
+          </p>
+        </details>
+
+        <details style="background:var(--navy-light);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-sm);padding:16px 20px;">
+          <summary style="font-weight:700;color:var(--white);cursor:pointer;font-size:0.9rem;">
+            Q. 何件でも紹介できますか？
+          </summary>
+          <p style="margin-top:10px;font-size:0.85rem;color:var(--gray);line-height:1.75;">
+            はい、件数に上限はありません。紹介いただいた件数分（掲載確定または初回支払い完了分）、それぞれのプランに応じた報酬額×件数をデジタルギフトでお送りします。
+          </p>
+        </details>
+
+        <details style="background:var(--navy-light);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-sm);padding:16px 20px;">
+          <summary style="font-weight:700;color:var(--white);cursor:pointer;font-size:0.9rem;">
+            Q. 紹介先が申込を断った場合は？
+          </summary>
+          <p style="margin-top:10px;font-size:0.85rem;color:var(--gray);line-height:1.75;">
+            紹介先が掲載を辞退・不成立となった場合は、紹介料の支払い対象外となります。
+            また審査で掲載基準を満たさなかった場合も対象外です。あらかじめご了承ください。
+          </p>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- SNS CTA -->
+    <div class="sns-cta fade-in">
+      <p style="font-size:1rem;font-weight:700;margin-bottom:8px;">ご質問は SNS からもどうぞ</p>
+      <p style="color:var(--gray);font-size:0.88rem;margin-bottom:20px;">X（旧Twitter）のDMでもご質問・紹介のご相談を受け付けています。</p>
+      <a href="https://twitter.com/intent/tweet?text=%23FOOTBALLConnection+掲載紹介について聞きたいです" target="_blank" rel="noopener noreferrer" class="x-btn">
+        <span style="font-size:1.1rem;font-weight:900;">𝕏</span>
+        X（旧Twitter）でお問い合わせ
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FOOTBALL CONNECTION</div>
+        <p class="footer-tagline">せっかくなら、アメフト関係者の店に行こう。<br>全国の仲間の店・サービスをつなぐプラットフォーム。</p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigation</div>
+        <div class="footer-nav-links">
+          <a href="index.html">トップ</a>
+          <a href="shops.html">店舗・サービスを探す</a>
+          <a href="events.html">イベント</a>
+          <a href="apply.html">加盟申込</a>
+          <a href="referral.html">掲載紹介</a>
+          <a href="terms.html">利用規約</a>
+          <a href="tokusho.html">特定商取引法に基づく表記</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FOOTBALL Connection. Operated by TSUMUGU合同会社</p>
+      <p style="margin-top:8px;"><a href="https://x.com/FOOTBALLCo78247" target="_blank" style="color:var(--gray);font-size:0.85rem;transition:var(--transition);">𝕏 @FOOTBALLCo78247</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script>
+(function () {
+  const form      = document.getElementById('referral-form');
+  const submitBtn = document.getElementById('referral-submit-btn');
+  const errEl     = document.getElementById('referral-error');
+  const successEl = document.getElementById('referral-success');
+
+  // ── バリデーション ──
+  function validate() {
+    const shopName   = document.getElementById('ref-shop-name').value.trim();
+    const prefecture = document.getElementById('ref-prefecture').value;
+    const memTypes   = document.querySelectorAll('input[name="紹介先_加盟区分"]:checked');
+    const refName    = document.getElementById('referrer-name').value.trim();
+    const refEmail   = document.getElementById('referrer-email').value.trim();
+    const giftEmail  = document.getElementById('gift-email').value.trim();
+
+    if (!shopName)   return '紹介先の店舗・サービス名を入力してください。';
+    if (!prefecture) return '紹介先の都道府県を選択してください。';
+    if (memTypes.length === 0) {
+      const errBox = document.getElementById('ref-mem-error');
+      if (errBox) errBox.style.display = 'block';
+      return 'アメフト・フラッグ・タッチフットボールとの関わりを1つ以上選択してください。';
+    }
+    if (!refName)    return 'お名前（紹介者）を入力してください。';
+    if (!refEmail)   return 'メールアドレス（紹介者）を入力してください。';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(refEmail)) return 'メールアドレスの形式が正しくありません。';
+    if (!giftEmail)  return 'ギフト受取メールアドレスを入力してください。';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(giftEmail)) return 'ギフト受取メールアドレスの形式が正しくありません。';
+
+    // 承諾チェックボックス確認
+    const consentCheck = document.getElementById('consent-check');
+    const consentError = document.getElementById('consent-error');
+    if (!consentCheck.checked) {
+      consentError.style.display = 'block';
+      consentCheck.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return '紹介先の承諾を得たことを確認してください。';
+    }
+    consentError.style.display = 'none';
+
+    return null;
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const error = validate();
+    if (error) {
+      errEl.textContent = '⚠️ ' + error;
+      errEl.style.display = 'block';
+      errEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    errEl.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.textContent = '送信中...⏳';
+
+    // チェックボックスの値を1フィールドにまとめる
+    const checkedMemTypes = [...document.querySelectorAll('input[name="紹介先_加盟区分"]:checked')].map(el => el.value);
+    let hiddenField = document.getElementById('_hidden_ref_mem');
+    if (!hiddenField) {
+      hiddenField = document.createElement('input');
+      hiddenField.type = 'hidden';
+      hiddenField.id = '_hidden_ref_mem';
+      hiddenField.name = '紹介先_加盟区分（選択）';
+      form.appendChild(hiddenField);
+    }
+    hiddenField.value = checkedMemTypes.join(' / ');
+    document.querySelectorAll('input[name="紹介先_加盟区分"]').forEach(el => el.removeAttribute('name'));
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        successEl.style.display = 'block';
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        const data = await response.json().catch(() => ({}));
+        const msg = (data.errors && data.errors.map(err => err.message).join(', ')) || '送信に失敗しました。';
+        throw new Error(msg);
+      }
+    } catch (err) {
+      errEl.textContent = '⚠️ ' + err.message + ' 時間をおいて再度お試しください。';
+      errEl.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = '🤝 紹介フォームを送信する';
+    }
+  });
+
+  // details要素のアクセシビリティ強化
+  document.querySelectorAll('details').forEach(function(detail) {
+    detail.addEventListener('toggle', function() {
+      // open時にスムーズに見せる
+    });
+  });
+})();
+</script>
+</body>
+</html>

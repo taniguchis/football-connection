@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#0A1628">
+  <meta name="description" content="BAR ごえん｜銀座｜立教大学RushersOBの谷口真一氏が参画するコミュニティバー。経営者・ビジネスパーソンが集う大人の社交場。銀座の懇親会・接待・二次会に。ごえん特製カクテル無料の来店特典あり。">
+  <meta name="keywords" content="BAR ごえん, 銀座 バー, 銀座 懇親会, 銀座 コミュニティバー, 銀座 接待, 銀座 交流会, 新橋 バー, アメフト 関係者 店, 銀座 二次会, 銀座 社交場, 立教大学 OB, Rushers">
+  <title>BAR ごえん｜銀座｜アメフトOBが参画する大人のコミュニティバー | FOOTBALL CONNECTION</title>
+
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="apple-touch-icon" href="images/logo-square.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260322">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNJ4ZBMYGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNJ4ZBMYGR');
+  </script>
+
+  <style>
+    /* ══════════════════════════════════════
+       BAR ごえん ─ カラーテーマ
+       深夜の銀座／シャンパンゴールド × ディープネイビー
+       ══════════════════════════════════════ */
+    :root {
+      --g-gold:     #C9A84C;
+      --g-gold-dim: rgba(201,168,76,0.10);
+      --g-gold-bd:  rgba(201,168,76,0.28);
+      --g-dark:     #04060f;
+    }
+    .sd-page {
+      --sd-accent:        var(--g-gold);
+      --sd-accent-dim:    var(--g-gold-dim);
+      --sd-accent-border: var(--g-gold-bd);
+    }
+
+    /* ── ヒーロー ── */
+    .sd-hero {
+      background: linear-gradient(155deg,
+        #02040e 0%, #060c1e 40%, #0a1628 75%, #030810 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    /* 背景：シャンパングラス */
+    .sd-hero::before {
+      content: '🥂';
+      position: absolute; right: -2%; top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(130px, 24vw, 280px);
+      opacity: 0.055; pointer-events: none; line-height: 1;
+    }
+    /* 背景：光のグラデーション演出 */
+    .sd-hero::after {
+      content: '';
+      position: absolute;
+      top: -40%; left: 50%;
+      width: 60vw; height: 60vw;
+      background: radial-gradient(circle,
+        rgba(201,168,76,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ── ゴールド仕切り線 ── */
+    .g-divider {
+      display: flex; align-items: center; gap: 14px;
+      margin: 30px 0;
+      color: rgba(201,168,76,0.45);
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .g-divider::before, .g-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right,
+        transparent, rgba(201,168,76,0.38), transparent);
+    }
+
+    /* ── ストーリーブロック ── */
+    .story-block {
+      background: linear-gradient(135deg,
+        rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.02) 100%);
+      border: 1px solid rgba(201,168,76,0.22);
+      border-left: 3px solid var(--g-gold);
+      border-radius: 0 12px 12px 0;
+      padding: 24px 26px;
+      margin-bottom: 30px;
+    }
+    .story-label {
+      font-size: 0.66rem;
+      color: var(--g-gold);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .story-text {
+      font-size: 0.93rem;
+      color: rgba(255,255,255,0.82);
+      line-height: 2.0;
+    }
+    .story-text strong { color: #fff; }
+    .story-attr {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 12px;
+      display: block;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── ソーシャルグレードバナー ── */
+    .grade-banner {
+      border: 1px solid rgba(201,168,76,0.30);
+      border-radius: 14px;
+      padding: 20px 24px;
+      text-align: center;
+      margin-bottom: 30px;
+      background: linear-gradient(135deg,
+        rgba(201,168,76,0.07) 0%, rgba(201,168,76,0.01) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .grade-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%,
+        rgba(201,168,76,0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .grade-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: var(--g-gold);
+      letter-spacing: 0.16em;
+      margin-bottom: 8px;
+    }
+    .grade-sub {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.75;
+    }
+
+    /* ── プレミアム写真グリッド ── */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .photo-grid .sd-img-block { margin-bottom: 0; }
+    .photo-grid img {
+      height: 180px;
+      object-fit: cover;
+      width: 100%;
+    }
+    @media (max-width: 400px) {
+      .photo-grid img { height: 130px; }
+    }
+
+    /* ── 来店特典（リニューアル） ── */
+    .visit-coupon {
+      border: 1px dashed rgba(201,168,76,0.45);
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 30px;
+      background: rgba(201,168,76,0.04);
+    }
+    .visit-coupon-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--g-gold);
+      border: 1px solid rgba(201,168,76,0.40);
+      border-radius: 4px;
+      padding: 3px 10px;
+      margin-bottom: 14px;
+    }
+    .visit-coupon-main {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.3rem, 4vw, 1.7rem);
+      color: #fff;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .visit-coupon-note {
+      font-size: 0.80rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body class="sd-page">
+
+<!-- ══════════ HEADER ══════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="shops.html" class="active">店舗・サービスを探す</a>
+      <a href="events.html">イベント</a>
+      <a href="apply.html" class="btn-header-cta">無料で掲載する</a>
+    </nav>
+    <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 トップ</a>
+    <a href="shops.html">🗺️ 店舗・サービスを探す</a>
+    <a href="events.html">📅 イベント</a>
+    <a href="apply.html">🏈 無料で掲載する</a>
+  </nav>
+</header>
+
+
+<!-- ══════════ HERO ══════════ -->
+<section class="sd-hero">
+  <div class="sd-hero-inner">
+
+    <a href="shops.html" class="sd-back-link">← 店舗・サービス一覧に戻る</a>
+
+    <div class="sd-eyecatch">
+      🥂 銀座 バー &nbsp;｜&nbsp; FOOTBALL CONNECTION 加盟店
+    </div>
+
+    <div class="sd-hero-name"><span class="hl">BAR ごえん</span></div>
+
+    <div class="sd-hook">銀座で一番熱い出会いが生まれるバー</div>
+
+    <p class="sd-lead">
+      銀座8丁目、明興ビルの地下1階。<br>
+      階段を下りると、<strong>ビジネスパーソン・経営者・スポーツ人が交わる</strong>大人の社交場が広がる。<br>
+      アメフトOBの谷口真一氏が取締役として参画し、<strong>「縁」を軸に人と人をつなぐ</strong>。<br>
+      ここで生まれた会話が、翌日の仕事を変えることがある。
+    </p>
+
+    <div class="sd-badges">
+      <span class="sd-badge accent">🥂 コミュニティバー</span>
+      <span class="sd-badge">📍 銀座8丁目</span>
+      <span class="sd-badge">🚉 新橋駅・銀座駅 徒歩圏</span>
+      <span class="sd-badge">🏈 アメフトOB参画</span>
+      <span class="sd-badge">👥 懇親会・接待・交流</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════ MAIN ══════════ -->
+<main>
+  <div class="sd-layout">
+
+    <!-- ① メイン写真（プレミアム：大1枚＋サブ2枚） -->
+    <div class="sd-img-block">
+      <img src="images/shops/goyen_01.jpg"
+           alt="BAR ごえん ─ 銀座の大人のコミュニティバー">
+      <div class="sd-img-caption">
+        <span>📷</span>
+        <span>BAR ごえん（銀座8丁目）― 大人が集い、縁が生まれる社交場</span>
+      </div>
+    </div>
+    <div class="photo-grid">
+      <div class="sd-img-block">
+        <img src="images/shops/goyen_02.jpg"
+             alt="BAR ごえん ─ 洗練された店内">
+      </div>
+      <div class="sd-img-block">
+        <img src="images/shops/goyen_03.jpg"
+             alt="BAR ごえん ─ 仲間との特別な夜">
+      </div>
+    </div>
+
+
+    <!-- ② フックカード -->
+    <div class="sd-hook-card">
+      <div class="sd-hook-card-text">
+        「ここでの一杯が、次のビジネスをつくる。<br>
+        銀座に、そういうバーがある。」
+      </div>
+      <p class="sd-hook-card-sub">― FOOTBALL CONNECTION 編集部コメント</p>
+    </div>
+
+
+    <!-- ③ OBバッジ -->
+    <div class="sd-ob-block">
+      <div class="sd-ob-icon">🏈</div>
+      <div>
+        <div class="sd-ob-label">FOOTBALL CONNECTION MEMBER</div>
+        <div class="sd-ob-text">
+          立教大学Rushers OBの谷口真一氏（TSUMUGU合同会社 代表）が取締役として参画。
+          フットボールで叩き込まれた「準備・信頼・チームワーク」の哲学が、
+          この店の空気をつくっている。
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ④ 店舗紹介 -->
+    <div class="sd-section">
+      <div class="sd-section-title">🥂 このお店について</div>
+
+      <p>
+        新橋駅から徒歩3分、銀座駅からも歩いてすぐ。<br>
+        B1Fへ続く階段を降りると、照明が落ち着いたバーカウンターと<br>
+        ゆったりとしたテーブル席が目に入る。
+      </p>
+      <p>
+        <strong>BAR ごえん</strong>の「ごえん」は、漢字で「御縁」。<br>
+        店名の通り、初対面の人でも気づけば会話が弾み、<br>
+        帰り際には名刺を交わしている——そんな夜が日常的に生まれる。
+      </p>
+
+      <div class="g-divider">SPACE &amp; CONNECTION</div>
+
+      <div class="sd-strength-card">
+        <div class="sd-strength-icon">✨</div>
+        <div>
+          <div class="sd-strength-title">「縁」が生まれるレイアウトと空気感</div>
+          <div class="sd-strength-text">
+            カウンター席とテーブル席を組み合わせた設計は、<br>
+            1人でも、グループでも、自然に話が広がる距離感を作る。<br>
+            バーテンダーが場を読んで動くから、初めての訪問でも居心地がいい。
+          </div>
+        </div>
+      </div>
+
+      <div class="sd-strength-card">
+        <div class="sd-strength-icon">🌃</div>
+        <div>
+          <div class="sd-strength-title">銀座8丁目という立地の品格</div>
+          <div class="sd-strength-text">
+            新橋・銀座というビジネスと大人の文化が交差するエリア。<br>
+            「どこで飲むか」が相手への配慮になる場所で、<br>
+            ごえんを選ぶことは間違いない選択になる。
+          </div>
+        </div>
+      </div>
+
+      <div class="sd-strength-card">
+        <div class="sd-strength-icon">💼</div>
+        <div>
+          <div class="sd-strength-title">ビジネスパーソン・経営者が集まる理由</div>
+          <div class="sd-strength-text">
+            常連の多くは経営者・管理職・士業など意思決定層。<br>
+            「あそこに行けば誰かいる」という安心感が、<br>
+            ゆるやかなネットワークを形成している。
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 店名由来ブロック -->
+    <div class="story-block">
+      <div class="story-label">✦ 店名「ごえん」の由来 ✦</div>
+      <div class="story-text">
+        ひとつは、人と人との<strong>「ご縁」</strong>。<br>
+        もうひとつは、五円のように<strong>気軽に立ち寄れる距離感</strong>。<br>
+        そして、少しのきっかけが大きなつながりに変わる——という意味も込めている。<br><br>
+        BARごえんは、ただお酒を飲む場所ではなく、<br>
+        <strong>人が集い、会話が生まれ、関係が広がっていく場所</strong>。<br>
+        ここで生まれたご縁が、また次のご縁を呼んでいく。
+      </div>
+    </div>
+
+    <!-- オーナーストーリー -->
+    <div class="story-block">
+      <div class="story-label">✦ OWNER'S STORY ✦</div>
+      <div class="story-text">
+        「人と人がつながることで、<strong>新しい価値が生まれる</strong>。<br>
+        これまでの仕事の中でも、そうした瞬間を何度も見てきました。<br>
+        <br>
+        一人ではできないことも、<br>
+        誰かと出会い、つながることで動き出す。<br>
+        <strong>そのきっかけになる"場"を、自分でつくりたい。</strong><br>
+        そんな想いから、BARごえんを始めました。<br>
+        <br>
+        ビジネスの話でも、趣味の話でもいい。<br>
+        気軽に来て、話して、また次につながっていく——<br>
+        そんな流れが自然に生まれる場所でありたいと思っています。」
+        <span class="story-attr">― 谷口真一（立教大学Rushers OB / TSUMUGU合同会社 代表）</span>
+      </div>
+    </div>
+
+
+    <!-- ⑥ ソーシャルグレードバナー -->
+    <div class="grade-banner">
+      <div class="grade-title">✦ SOCIAL GRADE ✦</div>
+      <div class="grade-sub">
+        銀座で「人を連れて行ける店」として格が通っている一軒。<br>
+        接待・懇親会・二次会、いかなる場面でも相手の期待を超える。
+      </div>
+    </div>
+
+
+    <!-- ⑦ アメフト視点 -->
+    <div class="sd-football-block">
+      <div class="sd-football-title">🏈 アメフト関係者への一言</div>
+      <p>
+        取締役の谷口真一氏は<strong>立教大学Rushers OB</strong>。<br>
+        フィールドで培った「準備と信頼」の哲学をビジネスの場に持ち込み、<br>
+        この店のカルチャーを形づくっている。<br>
+        アメフト関係者として訪れれば、自然と話が広がるはずだ。
+      </p>
+      <p>
+        OB同士の懇親会の1軒目に、<br>
+        試合後の打ち上げの締めに、<br>
+        大切な人を紹介したい夜に——<br>
+        <strong>「銀座でいいバーない？」と聞かれたら、迷わずごえんを答えてほしい。</strong>
+      </p>
+    </div>
+
+
+    <!-- ⑧ 利用シーン -->
+    <div class="sd-section">
+      <div class="sd-section-title">📅 おすすめ利用シーン</div>
+      <div class="sd-scene-grid">
+        <div class="sd-scene-item">
+          <div class="sd-scene-icon">🤝</div>
+          <div class="sd-scene-label">懇親会・<br>交流会</div>
+        </div>
+        <div class="sd-scene-item">
+          <div class="sd-scene-icon">💼</div>
+          <div class="sd-scene-label">接待・<br>会食後</div>
+        </div>
+        <div class="sd-scene-item">
+          <div class="sd-scene-icon">🥂</div>
+          <div class="sd-scene-label">二次会・<br>打ち上げ</div>
+        </div>
+        <div class="sd-scene-item">
+          <div class="sd-scene-icon">🏆</div>
+          <div class="sd-scene-label">OB会・<br>同期会</div>
+        </div>
+        <div class="sd-scene-item">
+          <div class="sd-scene-icon">📣</div>
+          <div class="sd-scene-label">観戦会・<br>イベント</div>
+        </div>
+        <div class="sd-scene-item">
+          <div class="sd-scene-icon">🌃</div>
+          <div class="sd-scene-label">銀座の夜<br>を刻む</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ⑨ 来店特典 -->
+    <div class="visit-coupon">
+      <div class="visit-coupon-tag">🎫 FOOTBALL CONNECTION 来店特典</div>
+      <div class="visit-coupon-main">「タッチダウン！」</div>
+      <p class="visit-coupon-note">
+        来店時にスタッフへ合言葉をお伝えください。<br>
+        <strong style="color:rgba(201,168,76,0.9);">ごえん特製カクテル 1杯無料</strong><br>
+        <span style="font-size:0.75rem;margin-top:4px;display:block;">※おひとり様1回限り。他サービスとの併用不可。</span>
+      </p>
+    </div>
+
+
+    <!-- ⑩ CTA -->
+    <div class="sd-cta-block">
+      <a href="https://bar.goencorp.jp/" target="_blank" rel="noopener noreferrer"
+         class="sd-cta-primary">
+        🥂 BAR ごえんの公式サイトを見る
+      </a>
+      <div class="sd-cta-row">
+        <a href="https://www.instagram.com/goen_202507/" target="_blank" rel="noopener noreferrer" class="sd-cta-sec">📸 Instagramを見る</a>
+        <a href="shops.html" class="sd-cta-outline">🗺️ 他の加盟店を見る</a>
+      </div>
+    </div>
+
+
+    <!-- ⑪ 基本情報 -->
+    <div class="sd-section">
+      <div class="sd-section-title">📋 基本情報</div>
+      <table class="sd-info-table">
+        <tr>
+          <td>🏪 店名</td>
+          <td><strong style="color:#fff;">BAR ごえん</strong></td>
+        </tr>
+        <tr>
+          <td>📍 エリア</td>
+          <td>東京都中央区 銀座8丁目</td>
+        </tr>
+        <tr>
+          <td>🚉 最寄駅</td>
+          <td>JR 新橋駅（徒歩3分）/ 東京メトロ 銀座駅（徒歩8分）</td>
+        </tr>
+        <tr>
+          <td>🏠 住所</td>
+          <td>東京都中央区銀座8丁目2-15 明興ビルB1F</td>
+        </tr>
+        <tr>
+          <td>📞 電話</td>
+          <td><a href="tel:0362806388">03-6280-6388</a></td>
+        </tr>
+        <tr>
+          <td>🕐 営業時間</td>
+          <td>月・火 19:00〜翌0:00<br>水・木・金 19:00〜翌5:00</td>
+        </tr>
+        <tr>
+          <td>🗓️ 定休日</td>
+          <td>土曜・日曜</td>
+        </tr>
+        <tr>
+          <td>🍽️ ジャンル</td>
+          <td>バー・コミュニティバー</td>
+        </tr>
+        <tr>
+          <td>🔗 公式サイト</td>
+          <td>
+            <a href="https://bar.goencorp.jp/" target="_blank" rel="noopener">
+              bar.goencorp.jp
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>📸 Instagram</td>
+          <td>
+            <a href="https://www.instagram.com/goen_202507/" target="_blank" rel="noopener">
+              @goen_202507
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>👤 参画メンバー</td>
+          <td>谷口真一（立教大学Rushers OB・取締役）</td>
+        </tr>
+      </table>
+
+      <div class="sd-tags">
+        <span class="sd-tag">#銀座バー</span>
+        <span class="sd-tag">#BARごえん</span>
+        <span class="sd-tag">#銀座懇親会</span>
+        <span class="sd-tag">#銀座接待</span>
+        <span class="sd-tag">#銀座交流会</span>
+        <span class="sd-tag">#銀座二次会</span>
+        <span class="sd-tag">#コミュニティバー</span>
+        <span class="sd-tag">#アメフト関係者の店</span>
+        <span class="sd-tag">#新橋バー</span>
+      </div>
+    </div>
+
+
+    <!-- ⑫ 他の加盟店（内部リンク） -->
+    <div class="sd-section">
+      <div class="sd-section-title">🏈 他のアメフト関係者の店</div>
+      <p style="margin-bottom:16px;">
+        FOOTBALL CONNECTION には全国のアメフト関係者の店・サービスが集まっています。
+      </p>
+      <a href="shops.html"
+         style="display:inline-flex;align-items:center;gap:8px;
+                background:var(--sd-accent-dim);border:1px solid var(--sd-accent-border);
+                color:var(--sd-accent);font-weight:700;font-size:0.88rem;
+                padding:12px 20px;border-radius:10px;text-decoration:none;">
+        🗺️ 全店舗・サービス一覧を見る →
+      </a>
+    </div>
+
+
+    <!-- ⑬ オーナーへ -->
+    <div class="sd-owner-box">
+      <p class="sd-owner-label">📝 店舗情報の更新・修正</p>
+      <p style="margin-bottom:12px;">
+        写真・営業時間・コメントの変更はフォームよりお気軽にどうぞ。
+      </p>
+      <a href="https://forms.gle/nfUDZPizt6Hgwv9n9" target="_blank" rel="noopener noreferrer"
+         style="display:inline-block;background:var(--sd-accent);color:#0A1628;
+                font-weight:700;font-size:0.86rem;padding:10px 22px;
+                border-radius:8px;text-decoration:none;">
+        📷 店舗情報・写真を更新する
+      </a>
+    </div>
+
+  </div>
+</main>
+
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FOOTBALL CONNECTION</div>
+        <p class="footer-tagline">
+          せっかくなら、アメフト関係者の店に行こう。<br>
+          全国の仲間の店・サービスをつなぐプラットフォーム。
+        </p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigation</div>
+        <div class="footer-nav-links">
+          <a href="index.html">トップ</a>
+          <a href="shops.html">店舗・サービスを探す</a>
+          <a href="events.html">イベント</a>
+          <a href="apply.html">無料で掲載する</a>
+          <a href="referral.html">紹介する</a>
+          <a href="terms.html">利用規約</a>
+          <a href="tokusho.html">特定商取引法</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FOOTBALL CONNECTION. All rights reserved.</p>
+      <a href="https://x.com/FOOTBALLCo78247" target="_blank" rel="noopener"
+         style="color:#666;font-size:0.82rem;">X (Twitter)</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script>
+  if (typeof initMobileMenu === 'function') initMobileMenu();
+</script>
+</body>
+</html>

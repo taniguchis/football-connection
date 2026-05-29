@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  FOOTBALL CONNECTION – 店舗詳細ページ 高品質テンプレート
+  使い方:
+    1. 「{{...}}」のプレースホルダーを実際の情報に差し替える
+    2. :root の --page-accent / --page-accent-dim を
+       店舗ジャンルに合わせた色に変更する
+    3. ヒーローの data-emoji を変更する
+    4. common.js の SHOPS_DATA / SHOP_DETAIL_PAGES に追記する
+  ============================================================
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#0A1628">
+
+  <!--
+  ── SEO META ──────────────────────────────────────────────
+  metaディスクリプション：120〜140文字
+  ・エリア名＋ジャンル
+  ・利用シーン（会食・接待・記念日など）
+  ・アメフト要素
+  ─────────────────────────────────────────────────────── -->
+  <meta name="description" content="{{META_DESCRIPTION（120〜140文字）}}">
+  <meta name="keywords" content="{{店名}}, {{エリア}} {{ジャンル}}, {{エリア}} 会食, {{エリア}} おすすめ, {{大学名}} OB, アメフト 関係者 店, {{エリア}} 接待">
+
+  <!--
+  ── タイトル ─────────────────────────────────────────────
+  形式:「店名｜エリア｜ジャンル｜アメフト関係者にもおすすめの〇〇 | FOOTBALL CONNECTION」
+  ─────────────────────────────────────────────────────── -->
+  <title>{{店名}}｜{{エリア}}｜{{ジャンル}}｜アメフト関係者にもおすすめの{{形容詞ワード}} | FOOTBALL CONNECTION</title>
+
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="apple-touch-icon" href="images/logo-square.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260322">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNJ4ZBMYGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNJ4ZBMYGR');
+  </script>
+
+  <style>
+    /* ══════════════════════════════════════════════════════
+       ページ固有スタイル
+       --page-accent: ジャンルに合わせた色
+         例) 焼肉・和食  → #e8a040（琥珀）
+             バー・夜    → #7b9cff（インディゴ）
+             フレンチ・記念日 → #C9A84C（シャンパンゴールド）
+             カフェ      → #6db87a（グリーン）
+             とんかつ・炭火 → #d4614a（炭赤）
+       ══════════════════════════════════════════════════════ */
+    :root {
+      --page-accent: {{アクセントカラー例: #e8a040}};
+      --page-accent-rgb: {{RGB値例: 232,160,64}};
+    }
+    .sd-page {
+      --sd-accent: var(--page-accent);
+      --sd-accent-dim: rgba(var(--page-accent-rgb), 0.10);
+      --sd-accent-border: rgba(var(--page-accent-rgb), 0.30);
+    }
+
+    /* ── ヒーロー背景 ── */
+    .sd-hero {
+      background: linear-gradient(155deg,
+        {{ヒーロー背景: 例 #0d0600}} 0%,
+        {{ヒーロー背景ミッド: 例 #1a0c00}} 45%,
+        #0A1628 100%);
+    }
+    /* 背景の大きな装飾絵文字 */
+    .sd-hero::before {
+      content: '{{ジャンル絵文字: 例 🥩}}';
+      position: absolute; right: -1%; top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(120px, 22vw, 260px);
+      opacity: 0.06; pointer-events: none; line-height: 1;
+    }
+
+    /* ── 仕切り線 ── */
+    .page-divider {
+      display: flex; align-items: center; gap: 12px;
+      margin: 28px 0;
+      color: rgba(var(--page-accent-rgb), 0.50);
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .page-divider::before, .page-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right,
+        transparent, rgba(var(--page-accent-rgb), 0.35), transparent);
+    }
+
+    /* ── ストーリーブロック ── */
+    .story-block {
+      background: linear-gradient(135deg,
+        rgba(var(--page-accent-rgb), 0.08),
+        rgba(var(--page-accent-rgb), 0.02));
+      border: 1px solid rgba(var(--page-accent-rgb), 0.22);
+      border-left: 3px solid var(--page-accent);
+      border-radius: 0 12px 12px 0;
+      padding: 22px 24px;
+      margin-bottom: 28px;
+    }
+    .story-block-label {
+      font-size: 0.68rem;
+      color: var(--page-accent);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .story-block-text {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.95;
+    }
+    .story-block-text strong { color: #fff; }
+
+    /* ── グレードバナー ── */
+    .grade-banner {
+      background: linear-gradient(135deg,
+        rgba(var(--page-accent-rgb), 0.08),
+        rgba(var(--page-accent-rgb), 0.02));
+      border: 1px solid rgba(var(--page-accent-rgb), 0.28);
+      border-radius: 12px;
+      padding: 18px 22px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .grade-banner-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      color: var(--page-accent);
+      letter-spacing: 0.14em;
+      margin-bottom: 6px;
+    }
+    .grade-banner-sub {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body class="sd-page">
+
+<!-- ══════════════════════════════════════════════════════
+     ヘッダー（全ページ共通）
+     ══════════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="shops.html" class="active">店舗・サービスを探す</a>
+      <a href="events.html">イベント</a>
+      <a href="apply.html" class="btn-header-cta">無料で掲載する</a>
+    </nav>
+    <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 トップ</a>
+    <a href="shops.html">🗺️ 店舗・サービスを探す</a>
+    <a href="events.html">📅 イベント</a>
+    <a href="apply.html">🏈 無料で掲載する</a>
+  </nav>
+</header>
+
+
+<!-- ══════════════════════════════════════════════════════
+     ① HERO ─ ファーストビューで「格」を伝える
+     ══════════════════════════════════════════════════════ -->
+<section class="sd-hero">
+  <div class="sd-hero-inner">
+
+    <!-- パンくず -->
+    <a href="shops.html" class="sd-back-link">← 店舗・サービス一覧に戻る</a>
+
+    <!-- アイキャッチラベル（SEO兼用） -->
+    <div class="sd-eyecatch">
+      {{ジャンル絵文字}} {{エリア}} {{ジャンル}} &nbsp;｜&nbsp; FOOTBALL CONNECTION 加盟店
+    </div>
+
+    <!-- 店名 -->
+    <div class="sd-hero-name"><span class="hl">{{店名}}</span></div>
+
+    <!--
+    ── 一言フック（最重要）────────────────────────────────
+    短く・強く・「行きたい」と思わせる一文
+    例:
+      「西麻布で焼肉といえば名前が挙がる一店」
+      「人生の節目に選びたくなるレストラン」
+      「仲間が自然と集まる、大人の隠れ家」
+    ─────────────────────────────────────────────────────── -->
+    <div class="sd-hook">{{一言フック}}</div>
+
+    <!--
+    ── リード文（150〜200文字）─────────────────────────────
+    ・店の特徴＋立地＋どんな時間を過ごせるか＋アメフトとのつながり
+    ・文末は「一軒だ。」「場所がある。」など余韻を残す
+    ─────────────────────────────────────────────────────── -->
+    <p class="sd-lead">
+      {{リード1行目（立地・シーン）。}}<br>
+      <strong>{{大学名}}OBの{{オーナー名}}オーナー</strong>が{{ストーリー凝縮}}、
+      {{どんな場面にも応えるか締め}}。
+    </p>
+
+    <!-- バッジ（ジャンル・立地・フットボール要素・利用シーン） -->
+    <div class="sd-badges">
+      <span class="sd-badge accent">{{ジャンル絵文字}} {{ジャンル}}</span>
+      <span class="sd-badge">📍 {{エリア}}</span>
+      <span class="sd-badge">🚉 {{最寄駅}}</span>
+      <span class="sd-badge">👤 {{大学名}}OB</span>
+      <span class="sd-badge">{{利用シーンバッジ}}</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     MAIN コンテンツ
+     ══════════════════════════════════════════════════════ -->
+<main>
+  <div class="sd-layout">
+
+    <!-- ── ① 店舗写真（フリープラン：1枚） ── -->
+    <div class="sd-img-block">
+      <img src="images/shops/{{画像ファイル名}}"
+           alt="{{店名}} – {{エリア}}の{{ジャンル}}">
+      <div class="sd-img-caption">
+        <span>📷</span>
+        <span>{{店名}}（{{エリア}}）― {{キャプション一文}}</span>
+      </div>
+    </div>
+
+
+    <!-- ── ② フックカード ── -->
+    <!--
+    編集部コメントとして引用スタイルで表示。
+    「知っているとカッコいい」感を演出する一言。
+    例:
+      「ここに来れば、大切な人を喜ばせられる。
+       {{エリア}}に、そういう店がある。」
+    -->
+    <div class="sd-hook-card">
+      <div class="sd-hook-card-text">
+        「{{フックカード1行目}}。<br>
+        {{フックカード2行目}}。」
+      </div>
+      <p class="sd-hook-card-sub">― FOOTBALL CONNECTION 編集部コメント</p>
+    </div>
+
+
+    <!-- ── ③ OBバッジ ── -->
+    <div class="sd-ob-block">
+      <div class="sd-ob-icon">🏈</div>
+      <div>
+        <div class="sd-ob-label">FOOTBALL CONNECTION MEMBER</div>
+        <div class="sd-ob-text">
+          {{オーナー名}}オーナーは{{大学名}}{{チーム名（あれば）}}OB。
+          {{フットボールで培った価値観や姿勢を一文で}}。
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── ④ 店舗紹介 ── -->
+    <!--
+    構成:
+      1. 空間・雰囲気（冒頭で引き込む）
+      2. 料理・サービスの質（具体的に）
+      3. 他店との違い
+      4. 初めてでも安心できる理由
+    ルール: 各段落は3行以内。情緒＋具体性。
+    -->
+    <div class="sd-section">
+      <div class="sd-section-title">{{ジャンル絵文字}} このお店について</div>
+
+      <!-- 導入文 -->
+      <p>
+        {{立地の描写（ひきこみ）。}}<br>
+        <strong>{{店名}}</strong>は{{開業背景・コンセプト一文}}。<br>
+        {{なぜこの店が特別なのかの核心}。
+      </p>
+
+      <div class="page-divider">{{英字キーワード 例: CRAFTSMANSHIP &amp; QUALITY}}</div>
+
+      <!-- 強みカード 1 -->
+      <div class="sd-strength-card">
+        <div class="sd-strength-icon">{{絵文字}}</div>
+        <div>
+          <div class="sd-strength-title">{{強み1タイトル}}</div>
+          <div class="sd-strength-text">
+            {{強み1説明。2〜3文。具体的に。}}
+          </div>
+        </div>
+      </div>
+
+      <!-- 強みカード 2 -->
+      <div class="sd-strength-card">
+        <div class="sd-strength-icon">{{絵文字}}</div>
+        <div>
+          <div class="sd-strength-title">{{強み2タイトル（立地・アクセス）}}</div>
+          <div class="sd-strength-text">
+            {{強み2説明。立地の価値を具体的に。}}
+          </div>
+        </div>
+      </div>
+
+      <!-- 強みカード 3 -->
+      <div class="sd-strength-card">
+        <div class="sd-strength-icon">{{絵文字}}</div>
+        <div>
+          <div class="sd-strength-title">{{強み3タイトル（初めてでも安心）}}</div>
+          <div class="sd-strength-text">
+            {{強み3説明。「連れて行って外さない」理由。}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── ⑤ ストーリー（高品質の核心） ── -->
+    <!--
+    「なぜこの店が存在するのか」を語る。
+    オーナーの背景・想い・信念を短く濃く。
+    引用スタイルや体言止めが効果的。
+    -->
+    <div class="story-block">
+      <div class="story-block-label">✦ OWNER'S STORY ✦</div>
+      <div class="story-block-text">
+        「{{オーナーストーリー1文目。背景・きっかけ。}}<br>
+        <strong>{{想いの核心を太字に}}</strong>。<br>
+        {{展望・姿勢の締め一文。}}」<br>
+        <span style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-top:8px;display:block;">
+          ― {{オーナー名}}オーナー
+        </span>
+      </div>
+    </div>
+
+
+    <!-- ── ⑥ グレードバナー（会食・接待グレード宣言） ── -->
+    <!--
+    接待・会食に使えることを格式高く宣言するバナー。
+    ジャンルに合わせて変更:
+      焼肉・和食   → SETTAI GRADE
+      フレンチ・記念日 → MILESTONE GRADE
+      バー・社交場  → SOCIAL GRADE
+    -->
+    <div class="grade-banner">
+      <div class="grade-banner-title">✦ {{グレード名 例: SETTAI GRADE}} ✦</div>
+      <div class="grade-banner-sub">
+        {{グレード説明。接待・会食・記念日などの場として格式があることを1〜2文で。}}
+      </div>
+    </div>
+
+
+    <!-- ── ⑦ アメフト視点 ── -->
+    <!--
+    必ず入れる。
+    ・出身校・チーム
+    ・フットボールで培った価値観
+    ・仲間と利用する価値
+    ・「アメフト仲間に聞かれたらここを答えてほしい」で締める
+    -->
+    <div class="sd-football-block">
+      <div class="sd-football-title">🏈 アメフト関係者への一言</div>
+      <p>
+        オーナーの{{オーナー名}}氏は<strong>{{大学名}}{{チーム名（あれば）}}OB</strong>。
+        {{フットボールで培った価値観と店づくりの関係を2〜3文で。}}
+      </p>
+      <p>
+        {{どんな場面（OB会・懇親会・会食など）に合うかを具体的に。}}<br>
+        アメフト仲間に「{{エリア}}でいい{{ジャンル}}ない？」と聞かれたら、
+        <strong>迷わずここを答えてほしい。</strong>
+      </p>
+    </div>
+
+
+    <!-- ── ⑧ 利用シーン ── -->
+    <div class="sd-section">
+      <div class="sd-section-title">📅 おすすめ利用シーン</div>
+      <div class="sd-scene-grid">
+        <div class="sd-scene-item">
+          <div class="sd-scene-icon">💼</div>
+          <div class="sd-scene-label">会食・<br>接待</div>
+        </div>
+        <div class="sd-scene-item">
+          <div class="sd-scene-icon">🏆</div>
+          <div class="sd-scene-label">OB会・<br>食事会</div>
+        </div>
+        <div class="sd-scene-item">
+          <div class="sd-scene-icon">🎉</div>
+          <div class="sd-scene-label">記念日・<br>お祝い</div>
+        </div>
+        <div class="sd-scene-item">
+          <div class="sd-scene-icon">🤝</div>
+          <div class="sd-scene-label">大切な人<br>との食事</div>
+        </div>
+        <div class="sd-scene-item">
+          <div class="sd-scene-icon">🏈</div>
+          <div class="sd-scene-label">{{ジャンル別<br>シーン5}}</div>
+        </div>
+        <div class="sd-scene-item">
+          <div class="sd-scene-icon">🌃</div>
+          <div class="sd-scene-label">{{エリア}}の<br>夜を飾る</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── ⑨ CTA ── -->
+    <!--
+    ボタン順: プライマリ（公式サイト）→ セカンダリ（SNS）→ アウトライン（一覧）
+    -->
+    <div class="sd-cta-block">
+      <a href="{{公式URL}}" target="_blank" rel="noopener noreferrer" class="sd-cta-primary">
+        {{ジャンル絵文字}} {{店名}}の公式サイトを見る
+      </a>
+      <div class="sd-cta-row">
+        <a href="{{InstagramURL}}" target="_blank" rel="noopener noreferrer" class="sd-cta-sec">
+          📸 Instagramを見る
+        </a>
+        <a href="shops.html" class="sd-cta-outline">🗺️ 他の加盟店を見る</a>
+      </div>
+    </div>
+
+
+    <!-- ── ⑩ 基本情報 ── -->
+    <div class="sd-section">
+      <div class="sd-section-title">📋 基本情報</div>
+      <table class="sd-info-table">
+        <tr><td>🏪 店名</td>    <td><strong style="color:#fff;">{{店名}}</strong></td></tr>
+        <tr><td>📍 エリア</td>  <td>{{都道府県}} {{市区}} {{エリア名}}</td></tr>
+        <tr><td>🚉 最寄駅</td>  <td>{{路線名}} {{駅名}}（徒歩{{分}}分）</td></tr>
+        <tr><td>🏠 住所</td>    <td>{{住所全文}}</td></tr>
+        <tr><td>📞 電話</td>    <td><a href="tel:{{電話番号ハイフンなし}}">{{電話番号}}</a></td></tr>
+        <tr><td>🕐 営業</td>    <td>{{営業時間（LO含む）}}</td></tr>
+        <tr><td>🗓️ 定休日</td> <td>{{定休日}}</td></tr>
+        <tr><td>🍽️ ジャンル</td><td>{{ジャンル詳細}}</td></tr>
+        <tr><td>🔗 公式サイト</td><td><a href="{{公式URL}}" target="_blank" rel="noopener">{{表示URL}}</a></td></tr>
+        <tr><td>📸 Instagram</td><td><a href="{{InstagramURL}}" target="_blank" rel="noopener">@{{Instagramハンドル}}</a></td></tr>
+        <tr><td>👤 オーナー</td> <td>{{オーナー名}}（{{大学名}}{{チーム名}}OB）</td></tr>
+      </table>
+
+      <!-- SEOタグ（自然なキーワード配置） -->
+      <div class="sd-tags">
+        <span class="sd-tag">#{{エリア}}{{ジャンル}}</span>
+        <span class="sd-tag">#{{店名}}</span>
+        <span class="sd-tag">#{{エリア}}会食</span>
+        <span class="sd-tag">#{{エリア}}接待</span>
+        <span class="sd-tag">#アメフト関係者の店</span>
+        <span class="sd-tag">#{{大学名}}OB</span>
+        <span class="sd-tag">#{{エリア}}おすすめ</span>
+        <span class="sd-tag">#{{エリア}}グルメ</span>
+      </div>
+    </div>
+
+
+    <!-- ── ⑪ 他の加盟店（内部リンク） ── -->
+    <div class="sd-section">
+      <div class="sd-section-title">🏈 他のアメフト関係者の店</div>
+      <p style="margin-bottom:16px;">
+        FOOTBALL CONNECTION には全国のアメフト関係者の店・サービスが集まっています。
+      </p>
+      <a href="shops.html"
+         style="display:inline-flex;align-items:center;gap:8px;
+                background:var(--sd-accent-dim);border:1px solid var(--sd-accent-border);
+                color:var(--sd-accent);font-weight:700;font-size:0.88rem;
+                padding:12px 20px;border-radius:10px;text-decoration:none;">
+        🗺️ 全店舗・サービス一覧を見る →
+      </a>
+    </div>
+
+
+    <!-- ── ⑫ オーナーへ（更新フォーム） ── -->
+    <div class="sd-owner-box">
+      <p class="sd-owner-label">📝 店舗オーナーの方へ</p>
+      <p style="margin-bottom:12px;">店舗情報・写真の更新・修正はフォームよりお気軽にどうぞ。</p>
+      <a href="https://forms.gle/nfUDZPizt6Hgwv9n9" target="_blank" rel="noopener noreferrer"
+         style="display:inline-block;background:var(--sd-accent);color:#0A1628;
+                font-weight:700;font-size:0.86rem;padding:10px 22px;
+                border-radius:8px;text-decoration:none;">
+        📷 店舗情報・写真を更新する
+      </a>
+    </div>
+
+  </div>
+</main>
+
+
+<!-- フッター（全ページ共通） -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FOOTBALL CONNECTION</div>
+        <p class="footer-tagline">
+          せっかくなら、アメフト関係者の店に行こう。<br>
+          全国の仲間の店・サービスをつなぐプラットフォーム。
+        </p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigation</div>
+        <div class="footer-nav-links">
+          <a href="index.html">トップ</a>
+          <a href="shops.html">店舗・サービスを探す</a>
+          <a href="events.html">イベント</a>
+          <a href="apply.html">無料で掲載する</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FOOTBALL CONNECTION. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script>
+  if (typeof initMobileMenu === 'function') initMobileMenu();
+</script>
+</body>
+</html>

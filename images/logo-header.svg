@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" width="360" height="64">
+  <defs>
+    <linearGradient id="ballBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a3a6e"/>
+      <stop offset="100%" stop-color="#0d2245"/>
+    </linearGradient>
+    <linearGradient id="goldG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F2C832"/>
+      <stop offset="100%" stop-color="#C89010"/>
+    </linearGradient>
+    <!-- ボールのマスク（尖り楕円） -->
+    <clipPath id="ballClip">
+      <ellipse cx="32" cy="32" rx="22" ry="28" transform="rotate(-35 32 32)"/>
+    </clipPath>
+  </defs>
+
+  <!-- ═══ ボールアイコン部分 ═══ -->
+  <!-- 外周グリーンスワイプ（後ろ） -->
+  <path d="M 10 44 Q 2 32 10 18 Q 20 8 32 8" 
+        stroke="#22A050" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.9"/>
+  <path d="M 54 20 Q 62 32 54 46 Q 44 56 32 56" 
+        stroke="#22A050" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- ボール本体（ネイビー・尖り楕円） -->
+  <ellipse cx="32" cy="32" rx="21" ry="27" transform="rotate(-35 32 32)" fill="url(#ballBg)"/>
+
+  <!-- ボール輪郭線 -->
+  <ellipse cx="32" cy="32" rx="21" ry="27" transform="rotate(-35 32 32)"
+           fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity="0.4"/>
+
+  <!-- 縫い目：中央縦ライン（白） -->
+  <line x1="19" y1="19" x2="45" y2="45"
+        stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.95"/>
+
+  <!-- レース横ステッチ（白） 4本、中央ラインに対して垂直方向に少しオフセット -->
+  <line x1="23" y1="28" x2="29" y2="22" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+  <line x1="27" y1="33" x2="33" y2="27" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+  <line x1="31" y1="38" x2="37" y2="32" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+  <line x1="35" y1="43" x2="41" y2="37" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- ハイライト光沢 -->
+  <ellipse cx="24" cy="22" rx="5" ry="3" fill="#FFFFFF" opacity="0.12" transform="rotate(-35 24 22)"/>
+
+  <!-- ═══ テキスト部分 ═══ -->
+  <!-- FOOTBALL （ホワイト） -->
+  <text x="76" y="30"
+    font-family="'Oswald','Arial Black','Impact',sans-serif"
+    font-size="26" font-weight="700" letter-spacing="1.5"
+    fill="#FFFFFF">FOOTBALL</text>
+
+  <!-- CONNECTION （ゴールド） -->
+  <text x="76" y="56"
+    font-family="'Oswald','Arial Black','Impact',sans-serif"
+    font-size="26" font-weight="700" letter-spacing="1.5"
+    fill="url(#goldG)">CONNECTION</text>
+
+</svg>

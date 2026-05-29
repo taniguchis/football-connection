@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0A1628">
+  <meta name="description" content="FOOTBALL Connection 掲載申込。アメフト・フラッグ・タッチフットボール関係者が経営・参画する飲食店・サービス業のオーナー様、全国ネットワークへの掲載申込はこちら。基本掲載は無料です。">
+  <title>加盟申込 | FOOTBALL CONNECTION</title>
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="apple-touch-icon" href="images/logo-square.png">
+  <link rel="stylesheet" href="css/style.css?v=20260308">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNJ4ZBMYGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNJ4ZBMYGR');
+  </script>
+  <style>
+    /* ============================
+       APPLY PAGE STYLES
+    ============================ */
+    .apply-layout { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ── アーリーバード帯 ── */
+    .earlybird-top {
+      background: linear-gradient(135deg, rgba(212,160,23,0.18) 0%, rgba(212,160,23,0.07) 100%);
+      border: 2px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 22px 28px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .earlybird-top::before {
+      content: '';
+      position: absolute; top:0; left:-100%; width:60%; height:100%;
+      background: linear-gradient(90deg, transparent, rgba(212,160,23,0.12), transparent);
+      animation: shimmer 3.5s infinite;
+    }
+    @keyframes shimmer { 0%{left:-100%} 100%{left:220%} }
+    .earlybird-top .eb-label {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+    .earlybird-top p { font-size:0.92rem; color:var(--white); position:relative;z-index:1; line-height:1.75; margin:0; }
+    .earlybird-top .eb-prices {
+      display: flex; gap: 24px; justify-content: center; margin-top: 12px; flex-wrap: wrap;
+    }
+    .eb-price-item {
+      background: rgba(10,22,40,0.6);
+      border: 1px solid rgba(212,160,23,0.4);
+      border-radius: var(--radius-sm);
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .eb-price-item .plan-name { font-size:0.78rem; color:var(--gray); margin-bottom:4px; }
+    .eb-price-item .plan-now { font-family:'Oswald',sans-serif; font-size:1.4rem; font-weight:700; color:var(--gold); }
+    .eb-price-item .plan-after { font-size:0.72rem; color:var(--gray); margin-top:2px; }
+
+    /* ── サービス概要セクション ── */
+    .service-overview { margin-bottom: 48px; }
+    .section-heading {
+      font-family:'Oswald',sans-serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--gold);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(212,160,23,0.5), transparent);
+    }
+    .service-lead {
+      font-size: 1.05rem; line-height: 1.8; color: var(--light-gray);
+      margin-bottom: 28px;
+    }
+    .service-lead strong { color: var(--white); }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .benefit-card {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: var(--transition);
+    }
+    .benefit-card:hover { border-color: rgba(212,160,23,0.4); transform: translateY(-2px); }
+    .benefit-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .benefit-title { font-weight: 700; color: var(--white); font-size: 0.92rem; margin-bottom: 6px; }
+    .benefit-desc { font-size: 0.82rem; color: var(--gray); line-height: 1.65; }
+
+    /* ── 対象・条件 ── */
+    .conditions-block { margin-bottom: 40px; }
+    .conditions-box {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+    .conditions-box .cond-title { font-weight:700; color:var(--white); margin-bottom:12px; font-size:0.95rem; }
+    .cond-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .cond-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .cond-num {
+      background: var(--gold); color: var(--navy);
+      font-size: 0.75rem; font-weight: 700;
+      width: 22px; height: 22px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .cond-text { font-size: 0.88rem; color: var(--light-gray); line-height: 1.65; }
+    .cond-text strong { color: var(--white); }
+    .policy-note {
+      background: rgba(255,255,255,0.03);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      font-size: 0.82rem; color: var(--gray); line-height: 1.75;
+    }
+
+    /* ── プラン比較 ── */
+    .compare-table { width:100%; border-collapse:collapse; margin-bottom:40px; border-radius:var(--radius); overflow:hidden; }
+    .compare-table th, .compare-table td { padding:13px 18px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.07); }
+    .compare-table thead { background:var(--navy-mid); }
+    .compare-table thead th { font-family:'Oswald',sans-serif; font-size:0.95rem; font-weight:600; color:var(--light-gray); }
+    .compare-table thead th.premium-col { background:rgba(212,160,23,0.14); color:var(--gold); }
+    .compare-table thead th.legend-col  { background:rgba(255,215,0,0.18); color:#FFD700; font-weight:800; letter-spacing:0.04em; }
+    .compare-table tbody tr:nth-child(odd) { background:rgba(255,255,255,0.02); }
+    .compare-table tbody tr:hover { background:rgba(255,255,255,0.04); }
+    .compare-table td:first-child { text-align:left; color:var(--light-gray); font-size:0.88rem; }
+    .compare-table td.premium-col { background:rgba(212,160,23,0.04); }
+    .compare-table td.legend-col  { background:rgba(255,215,0,0.07); }
+    .check-yes   { color:var(--green); font-size:1.1rem; }
+    .check-no    { color:var(--dark-gray); font-size:1.1rem; }
+    .check-extra { color:var(--gold); font-size:0.82rem; font-weight:600; }
+    .check-legend { color:#FFD700; font-size:0.82rem; font-weight:700; }
+    .price-row td { font-family:'Oswald',sans-serif; font-size:1.2rem; font-weight:700; color:var(--gold); padding:16px 18px; background:rgba(212,160,23,0.08)!important; }
+    .price-row td.premium-col { background:rgba(212,160,23,0.14)!important; }
+    .price-row td.legend-col  { background:rgba(255,215,0,0.18)!important; color:#FFD700; }
+    .price-sub { display:block; font-size:0.72rem; font-family:'Noto Sans JP',sans-serif; color:var(--gray); font-weight:400; margin-top:3px; }
+
+    /* ── フロー ── */
+    .flow-steps {
+      display: flex; gap: 0; margin-bottom: 40px; flex-wrap: wrap;
+    }
+    .flow-step {
+      flex: 1; min-width: 160px;
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 18px 16px;
+      text-align: center;
+      position: relative;
+    }
+    .flow-step:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .flow-step:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+    .flow-step::after {
+      content: '▶';
+      position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      color: var(--gold); font-size: 0.8rem; z-index: 1;
+    }
+    .flow-step:last-child::after { display: none; }
+    .flow-num { font-family:'Oswald',sans-serif; color:var(--gold); font-size:0.8rem; margin-bottom:6px; }
+    .flow-icon { font-size:1.5rem; margin-bottom:6px; }
+    .flow-label { font-size:0.8rem; color:var(--light-gray); font-weight:600; }
+    .flow-sub { font-size:0.72rem; color:var(--gray); margin-top:4px; line-height:1.5; }
+
+    /* ── フォーム ── */
+    .form-card { background:var(--navy-light); border-radius:var(--radius); padding:40px; border:1px solid rgba(255,255,255,0.08); }
+    .form-section-title {
+      font-family:'Oswald',sans-serif; font-size:0.9rem; font-weight:600; color:var(--gold);
+      text-transform:uppercase; letter-spacing:0.1em; margin-bottom:20px;
+      padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.1);
+      display:flex; align-items:center; gap:8px;
+    }
+    .form-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+
+    /* hidden plan/type display */
+    .selected-plan-display {
+      background: rgba(212,160,23,0.08);
+      border: 1px solid rgba(212,160,23,0.3);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 0.82rem; color: var(--gold); margin-top: 10px;
+      display: none;
+    }
+
+    /* submit */
+    .submit-area { text-align:center; padding-top:28px; border-top:1px solid rgba(255,255,255,0.1); }
+    .submit-note { font-size:0.8rem; color:var(--gray); margin-bottom:20px; line-height:1.65; }
+
+    /* success state */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .form-success .success-icon { font-size: 4rem; margin-bottom: 16px; }
+    .form-success h3 { font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .form-success p { color: var(--gray); line-height: 1.75; }
+
+    /* sns cta */
+    .sns-cta { background:var(--navy-light); border-radius:var(--radius); padding:32px; text-align:center; border:1px solid rgba(255,255,255,0.07); margin-top:32px; }
+    .x-btn {
+      display:inline-flex; align-items:center; gap:10px;
+      background:#000; color:#fff; padding:14px 28px; border-radius:var(--radius-sm);
+      font-weight:700; font-size:0.95rem; border:1px solid #333; transition:var(--transition);
+      text-decoration: none;
+    }
+    .x-btn:hover { background:#222; transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,0.4); }
+
+    /* submit spinner */
+    .btn-submitting { opacity: 0.7; pointer-events: none; }
+    .btn-submitting::after {
+      content: ' ⏳';
+    }
+
+    @media (max-width:768px) {
+      .form-card { padding:24px 18px; }
+      .form-grid-2 { grid-template-columns:1fr; }
+      .flow-steps { flex-direction: column; }
+      .flow-step { border-radius: 0 !important; text-align: left; }
+      .flow-step::after { content: '▼'; right: auto; left: 50%; top: auto; bottom: -12px; transform: translateX(-50%); }
+      .flow-step:last-child::after { display: none; }
+      /* 左揃え上書き */
+      .earlybird-top { text-align: left; }
+      /* eb-prices 縦並び */
+      .earlybird-top .eb-prices {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .eb-price-item {
+        width: 100%;
+        padding: 12px 16px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .eb-price-item .plan-name { min-width: 80px; }
+      /* 比較表は横スクロール */
+      .compare-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .compare-table-wrapper table {
+        min-width: 480px;
+        table-layout: auto;
+        word-break: normal;
+      }
+      /* apply-layout 幅 */
+      .apply-layout {
+        padding: 0 16px;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+    }
+
+    /* チェックボックス カスタムアイコン */
+    .mem-check-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--green);
+      user-select: none;
+    }
+    .mem-check-label {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="shops.html">店舗・サービスを探す</a>
+      <a href="events.html">イベント</a>
+      <a href="apply.html" class="btn-header-cta">加盟申込</a>
+    </nav>
+    <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 トップ</a>
+    <a href="shops.html">🗺️ 店舗・サービスを探す</a>
+    <a href="events.html">📅 イベント</a>
+    <a href="apply.html">🏈 加盟申込はこちら</a>
+  </nav>
+</header>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>🏈 加盟申込</h1>
+    <p>アメフト・フラッグ・タッチフットボール関係者ネットワークへ、あなたの店・サービスを登録しませんか。</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+  <div class="apply-layout">
+
+    <!-- ══ 社会的証明バナー ══ -->
+    <div class="fade-in" style="background:linear-gradient(135deg,rgba(212,160,23,0.1),rgba(10,22,40,0.8));border:1px solid rgba(212,160,23,0.3);border-radius:12px;padding:20px 24px;margin-bottom:24px;text-align:center;">
+      <p style="font-size:0.8rem;color:var(--gold);font-weight:700;letter-spacing:0.12em;margin-bottom:10px;">JOIN THE NETWORK</p>
+      <p style="font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:6px;">すでに <span style="color:var(--gold);font-size:1.3rem;"><span id="stat-shop-count-apply">-</span>店舗・サービス</span> が加盟中</p>
+      <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;">東京・大阪・兵庫・神奈川など全国に広がっています。<br>アメフト関係者のネットワークに、あなたの店も加わりませんか。</p>
+    </div>
+
+    <!-- ══ フリー掲載訴求バナー ══ -->
+    <div class="earlybird-top fade-in" style="background:linear-gradient(135deg,rgba(74,222,128,0.1),rgba(22,163,74,0.08));border-color:rgba(74,222,128,0.35);">
+      <div class="eb-label" style="background:linear-gradient(135deg,#16a34a,#4ade80);color:#fff;">✅ 基本掲載は完全無料</div>
+      <p>まずは<strong style="color:#4ade80;">無料で掲載</strong>してみましょう。<br>
+      掲載後に内容の変更・プランのアップグレードもいつでも可能です。</p>
+      <div class="eb-prices">
+        <div class="eb-price-item" style="border-color:rgba(74,222,128,0.3);">
+          <div class="plan-name" style="color:#4ade80;">フリープラン</div>
+          <div class="plan-now" style="color:#4ade80;">無料<span style="font-size:0.9rem;font-weight:400;">　ずっと</span></div>
+          <div class="plan-after">初期費用なし・月額なし</div>
+        </div>
+        <div class="eb-price-item">
+          <div class="plan-name">⭐ プレミアム</div>
+          <div class="plan-now">¥5,500<span style="font-size:0.9rem;font-weight:400;">/月（税込）</span></div>
+          <div class="plan-after">上位表示・写真強化など</div>
+        </div>
+        <div class="eb-price-item" style="border-color:rgba(255,215,0,0.3);">
+          <div class="plan-name" style="color:#FFD700;">👑 LEGEND</div>
+          <div class="plan-now" style="color:#FFD700;">¥11,000<span style="font-size:0.9rem;font-weight:400;">/月（税込）</span></div>
+          <div class="plan-after">最上位・トップページ掲載</div>
+        </div>
+      </div>
+      <p style="font-size:0.8rem;color:var(--gray);margin-top:12px;text-align:center;">無理な営業はありません。まずは無料掲載でOK。掲載後にプラン変更可能です。</p>
+    </div>
+
+    <!-- ══ FOOTBALL Connection とは ══ -->
+    <div class="service-overview fade-in">
+      <div class="section-heading">What is FOOTBALL Connection?</div>
+      <p class="service-lead">
+        <strong>FOOTBALL Connection</strong> は、アメフト・フラッグ・タッチフットボールの OB/OG・現役選手・スタッフ・ご家族が経営または参画する飲食店・サービス業を、
+        全国の仲間やファンと結ぶ<strong>プラットフォーム</strong>です。<br>
+        「せっかくなら、アメフト関係者の店に行こう。」という想いで集まるコミュニティが、あなたのお店の集客を後押しします。
+      </p>
+
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🗺️</div>
+          <div class="benefit-title">全国MAPへの掲載</div>
+          <div class="benefit-desc">アメフトファンが「近くの仲間の店」を探せるマップ・一覧に自動掲載。検索・フィルター対応で見つけてもらいやすい。</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🏟️</div>
+          <div class="benefit-title">観戦会・イベント送客</div>
+          <div class="benefit-desc">NFL観戦会・OB集会などのイベント会場として紹介。コミュニティが来店のきっかけを自然に作ります。</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🔑</div>
+          <div class="benefit-title">合言葉（共通特典）</div>
+          <div class="benefit-desc">「FOOTBALL Connection」という合言葉で仲間へ特典を提供。リピーターを生む仕掛けが標準搭載。</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📝</div>
+          <div class="benefit-title">店舗紹介ページ自動生成</div>
+          <div class="benefit-desc">申込内容を元に、あなたのお店の紹介ページを自動作成。写真・内容の更新はメールでお気軽にご連絡ください。</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📣</div>
+          <div class="benefit-title">SNS・メディア連携</div>
+          <div class="benefit-desc">プレミアム会員はSNS投稿での優先紹介・特集記事掲載。アメフトコミュニティに存在を広められます。</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🤝</div>
+          <div class="benefit-title">仲間のネットワーク</div>
+          <div class="benefit-desc">全国の「アメフト関係者の店」同士が繋がるコミュニティ。情報共有・コラボ企画など横のつながりを活かせます。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ 加盟対象・条件 ══ -->
+    <div class="conditions-block fade-in">
+      <div class="section-heading">加盟対象・条件</div>
+
+      <div class="conditions-box" style="margin-bottom:16px;">
+        <div class="cond-title">📋 以下のいずれかを満たす店舗・サービスが対象です</div>
+        <div class="cond-item">
+          <div class="cond-num">①</div>
+          <div class="cond-text">
+            <strong>アメフト・フラッグ・タッチフットボール関係者が経営または参画していること</strong><br>
+            OB/OG・現役選手・コーチ・スタッフ・マネージャー・家族・パートナー企業がオーナー・スタッフ・出資者等として関わっている場合が対象です。
+          </div>
+        </div>
+        <div class="cond-item">
+          <div class="cond-num">②</div>
+          <div class="cond-text">
+            <strong>店内にアメリカンフットボール・フラッグフットボール・タッチフットボールに関連する展示・写真・環境があること</strong><br>
+            ユニフォーム・ヘルメット・トロフィーの展示、フラッグフットボールの写真掲示など、訪れたファンが「ここはアメフトの店だ」と感じられる空間であることが条件です。
+          </div>
+        </div>
+      </div>
+
+      <div class="conditions-box">
+        <div class="cond-title">🏪 対象業種</div>
+        <div class="cond-item">
+          <div class="cond-num" style="background:var(--green);color:#fff;">食</div>
+          <div class="cond-text">飲食店（バー・居酒屋・レストラン・カフェ・ダイニングバー・焼肉店など）</div>
+        </div>
+        <div class="cond-item">
+          <div class="cond-num" style="background:var(--green);color:#fff;">サ</div>
+          <div class="cond-text">サービス業（パーソナルジム・マッサージ・整体・美容室・パーソナルトレーニング・各種サービス業）</div>
+        </div>
+      </div>
+
+      <div class="policy-note">
+        ⚠️ <strong>コミュニティポリシー</strong>：ハラスメント・差別的言動は一切認めておりません。健全なアメフトコミュニティの発展を共に目指せる方のご参加をお待ちしています。
+      </div>
+    </div>
+
+    <!-- ══ プラン比較 ══ -->
+    <div class="fade-in">
+      <div class="section-heading">料金プラン比較</div>
+      <div class="compare-table-wrapper" style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:16px;">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th style="text-align:left;">機能・サービス</th>
+              <th class="free-col" style="background:rgba(74,222,128,0.15);color:#4ade80;">✅ フリー</th>
+              <th class="premium-col">⭐ プレミアム</th>
+              <th class="legend-col">👑 LEGEND</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="price-row">
+              <td style="font-family:'Noto Sans JP',sans-serif;font-size:0.82rem;color:var(--gray);font-weight:400;">
+                月額料金
+              </td>
+              <td class="free-col" style="background:rgba(74,222,128,0.1)!important;color:#4ade80;font-size:1.4rem;font-weight:700;">無料</td>
+              <td class="premium-col">¥5,500/月<span class="price-sub">税込</span></td>
+              <td class="legend-col">¥11,000/月<span class="price-sub" style="color:rgba(255,215,0,0.7);">税込・固定</span></td>
+            </tr>
+            <tr>
+              <td>店舗情報掲載（基本情報）</td>
+              <td class="free-col"><span class="check-yes">✓</span></td>
+              <td class="premium-col"><span class="check-yes">✓</span></td>
+              <td class="legend-col"><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>全国MAP・一覧への検索表示</td>
+              <td class="free-col"><span class="check-yes">✓</span></td>
+              <td class="premium-col"><span class="check-yes">✓</span></td>
+              <td class="legend-col"><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>コミュニティへの参加</td>
+              <td class="free-col"><span class="check-yes">✓</span></td>
+              <td class="premium-col"><span class="check-yes">✓</span></td>
+              <td class="legend-col"><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>合言葉特典の利用</td>
+              <td class="free-col"><span class="check-yes">✓</span></td>
+              <td class="premium-col"><span class="check-yes">✓</span></td>
+              <td class="legend-col"><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>上位表示</td>
+              <td class="free-col"><span class="check-no">—</span></td>
+              <td class="premium-col"><span class="check-yes">✓</span></td>
+              <td class="legend-col"><span class="check-legend">👑 最上位固定</span></td>
+            </tr>
+            <tr>
+              <td>写真・紹介文の強化掲載</td>
+              <td class="free-col"><span class="check-no">—</span></td>
+              <td class="premium-col"><span class="check-yes">✓</span></td>
+              <td class="legend-col"><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>SNSリンク掲載</td>
+              <td class="free-col"><span class="check-no">—</span></td>
+              <td class="premium-col"><span class="check-yes">✓</span></td>
+              <td class="legend-col"><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>特集枠掲載</td>
+              <td class="free-col"><span class="check-no">—</span></td>
+              <td class="premium-col"><span class="check-extra">不定期</span></td>
+              <td class="legend-col"><span class="check-legend">✓</span></td>
+            </tr>
+            <tr>
+              <td>トップページ掲載</td>
+              <td class="free-col"><span class="check-no">—</span></td>
+              <td class="premium-col"><span class="check-no">—</span></td>
+              <td class="legend-col"><span class="check-legend">✓</span></td>
+            </tr>
+            <tr>
+              <td>イベント開催優先権</td>
+              <td class="free-col"><span class="check-no">—</span></td>
+              <td class="premium-col"><span class="check-no">—</span></td>
+              <td class="legend-col"><span class="check-legend">✓</span></td>
+            </tr>
+            <tr>
+              <td>運営からの推薦コメント掲載</td>
+              <td class="free-col"><span class="check-no">—</span></td>
+              <td class="premium-col"><span class="check-yes">✓</span></td>
+              <td class="legend-col"><span class="check-legend">✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.8rem;color:var(--gray);margin-bottom:40px;">※ 有料プランはいつでもアップグレード可能。まずは無料掲載でOK。</p>
+    </div>
+
+    <!-- ══ 申込フロー ══ -->
+    <div class="fade-in" style="margin-bottom:48px;">
+      <div class="section-heading">加盟までの流れ</div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-num">STEP 01</div>
+          <div class="flow-icon">📝</div>
+          <div class="flow-label">フォーム送信</div>
+          <div class="flow-sub">下記フォームに入力・送信</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">STEP 02</div>
+          <div class="flow-icon">📩</div>
+          <div class="flow-label">受付確認メール</div>
+          <div class="flow-sub">1〜2営業日以内に返信</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">STEP 03</div>
+          <div class="flow-icon">💬</div>
+          <div class="flow-label">内容確認・調整</div>
+          <div class="flow-sub">メール or オンラインMTG</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">STEP 04</div>
+          <div class="flow-icon">🏈</div>
+          <div class="flow-label">掲載スタート</div>
+          <div class="flow-sub">全国MAPに公開！</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ 申込フォーム ══ -->
+    <div class="fade-in">
+      <div class="section-heading">お申込みフォーム</div>
+    </div>
+
+    <div class="form-card fade-in">
+      <!-- ▼ Formspree endpoint -->
+      <form id="apply-form"
+            action="https://formspree.io/f/xgonaorg"
+            method="POST"
+            novalidate>
+
+        <!-- Formspree: 件名設定 -->
+        <input type="hidden" name="_subject" value="【FOOTBALL Connection】加盟申込が届きました">
+        <!-- Formspree: リダイレクト先（送信後） -->
+        <input type="hidden" name="_next" value="">
+        <!-- スパム対策 -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <!-- 01 基本情報 -->
+        <div class="form-section-title"><span>01</span> 店舗・サービス基本情報</div>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" for="shop-name">店舗・サービス名<span class="required">*</span></label>
+            <input type="text" id="shop-name" name="店舗名" class="form-input"
+              placeholder="例：BAR ごえん" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="owner-name">代表者名<span class="required">*</span></label>
+            <input type="text" id="owner-name" name="代表者名" class="form-input"
+              placeholder="例：谷口 真一" required>
+          </div>
+        </div>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" for="phone">電話番号<span class="required">*</span></label>
+            <input type="tel" id="phone" name="電話番号" class="form-input"
+              placeholder="例：03-1234-5678" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">メールアドレス<span class="required">*</span></label>
+            <input type="email" id="email" name="メールアドレス" class="form-input"
+              placeholder="例：info@example.com" required>
+          </div>
+        </div>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" for="prefecture">都道府県<span class="required">*</span></label>
+            <select id="prefecture" name="都道府県" class="form-select" required>
+              <option value="">選択してください</option>
+              <option>北海道</option><option>青森県</option><option>岩手県</option><option>宮城県</option>
+              <option>秋田県</option><option>山形県</option><option>福島県</option><option>茨城県</option>
+              <option>栃木県</option><option>群馬県</option><option>埼玉県</option><option>千葉県</option>
+              <option>東京都</option><option>神奈川県</option><option>新潟県</option><option>富山県</option>
+              <option>石川県</option><option>福井県</option><option>山梨県</option><option>長野県</option>
+              <option>岐阜県</option><option>静岡県</option><option>愛知県</option><option>三重県</option>
+              <option>滋賀県</option><option>京都府</option><option>大阪府</option><option>兵庫県</option>
+              <option>奈良県</option><option>和歌山県</option><option>鳥取県</option><option>島根県</option>
+              <option>岡山県</option><option>広島県</option><option>山口県</option><option>徳島県</option>
+              <option>香川県</option><option>愛媛県</option><option>高知県</option><option>福岡県</option>
+              <option>佐賀県</option><option>長崎県</option><option>熊本県</option><option>大分県</option>
+              <option>宮崎県</option><option>鹿児島県</option><option>沖縄県</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="genre">業種<span class="required">*</span></label>
+            <select id="genre" name="業種" class="form-select" required>
+              <option value="">選択してください</option>
+              <option>バー</option><option>居酒屋</option><option>レストラン</option><option>カフェ</option>
+              <option>ジム・トレーニング</option><option>マッサージ・整体</option><option>美容室</option>
+              <option>その他サービス</option><option>その他</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 01-B 店舗詳細情報（任意） -->
+        <div class="form-section-title" style="margin-top:24px;"><span style="background:var(--green);">＋</span> 店舗詳細情報 <span style="font-size:0.75rem;font-weight:400;color:var(--gray);margin-left:8px;">（任意・掲載ページに使用します）</span></div>
+
+        <div class="form-group">
+          <label class="form-label" for="address">詳細住所</label>
+          <input type="text" id="address" name="詳細住所" class="form-input"
+            placeholder="例：東京都中央区銀座8丁目2-15 明興ビルB1F">
+          <p style="font-size:0.78rem;color:var(--gray);margin-top:6px;">MAP掲載・店舗ページのアクセス情報として使用します。後日確認MTGでお伺いすることも可能です。</p>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" for="shop-url">店舗URL / ホームページ</label>
+            <input type="url" id="shop-url" name="店舗URL" class="form-input"
+              placeholder="例：https://example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="shop-instagram">Instagram</label>
+            <input type="url" id="shop-instagram" name="Instagram" class="form-input"
+              placeholder="例：https://www.instagram.com/xxxxx/">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" for="shop-hours">営業時間</label>
+            <input type="text" id="shop-hours" name="営業時間" class="form-input"
+              placeholder="例：月〜金 18:00〜24:00 / 土 17:00〜23:00">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="shop-holiday">定休日</label>
+            <input type="text" id="shop-holiday" name="定休日" class="form-input"
+              placeholder="例：日曜・祝日">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="shop-tel">店舗電話番号（公開用）</label>
+          <input type="tel" id="shop-tel" name="店舗電話番号（公開用）" class="form-input"
+            placeholder="例：03-1234-5678　※上記の担当者番号と異なる場合のみ">
+          <p style="font-size:0.78rem;color:var(--gray);margin-top:6px;">店舗ページに掲載する公開用番号です。担当者番号と同じ場合は空欄でOKです。</p>
+        </div>
+
+        <!-- 02 希望プラン -->
+        <div class="form-section-title" style="margin-top:8px;"><span>02</span> 希望プラン</div>
+        <div class="form-group">
+          <label class="form-label">希望プランを選択してください<span class="required">*</span></label>
+          <div class="radio-group">
+            <!-- フリープラン（最も目立たせる）-->
+            <label class="radio-label" style="border:2px solid #4ade80;background:rgba(74,222,128,0.06);">
+              <input type="radio" name="希望プラン" value="フリープラン（無料）" id="plan-free" required>
+              <div>
+                <strong style="color:#4ade80;">✅ フリープラン（無料）</strong>
+                <span style="color:#4ade80;font-weight:700;margin-left:8px;">完全無料・初期費用なし</span>
+                <p style="font-size:0.8rem;color:var(--gray);margin-top:4px;">店舗情報掲載・全国MAP検索表示・コミュニティ参加・合言葉特典利用。まずはここから。</p>
+              </div>
+            </label>
+            <!-- プレミアム -->
+            <label class="radio-label">
+              <input type="radio" name="希望プラン" value="プレミアムプラン（¥5,500/月・税込）" id="plan-premium">
+              <div>
+                <strong>⭐ プレミアムプラン</strong>
+                <span style="color:var(--gold);font-weight:700;margin-left:8px;">月額 ¥5,500（税込）</span>
+                <p style="font-size:0.8rem;color:var(--gray);margin-top:4px;">上位表示・写真強化・SNSリンク掲載・特集枠（不定期）・運営からの推薦コメント掲載</p>
+              </div>
+            </label>
+            <!-- LEGEND -->
+            <label class="radio-label" style="border:2px solid #FFD700;background:rgba(255,215,0,0.06);">
+              <input type="radio" name="希望プラン" value="LEGENDプラン（¥11,000/月・税込）" id="plan-legend">
+              <div>
+                <strong style="color:#FFD700;">👑 LEGEND プラン</strong>
+                <span style="color:#FFD700;font-weight:700;margin-left:8px;">月額 ¥11,000（税込）</span>
+                <p style="font-size:0.8rem;color:var(--gray);margin-top:4px;">最上位表示・トップページ掲載・イベント優先権・特集記事・コミュニティ優先紹介</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 03 加盟区分 -->
+        <div class="form-section-title" style="margin-top:8px;"><span>03</span> 加盟区分（アメフト・フラッグ・タッチフットボールとの関わり）</div>
+        <div class="form-group">
+          <label class="form-label">該当するものをすべて選択してください（複数選択可）<span class="required">*</span></label>
+          <p style="font-size:0.8rem;color:var(--gray);margin-bottom:12px;">両方に該当する場合は両方にチェックを入れてください。</p>
+          <div class="radio-group">
+            <!-- チェックボックスをlabelの外に出してiOS誤検知を防ぐ -->
+            <input type="checkbox" name="加盟区分" value="OB/OG・現役・スタッフ・家族・パートナー企業として経営または参画" id="mem-type-1" style="position:absolute;opacity:0;pointer-events:none;">
+            <label class="radio-label mem-check-label" for="mem-type-1" data-target="mem-type-1">
+              <span class="mem-check-icon" id="mem-type-1-icon">☐</span>
+              <div>
+                <strong>① OB/OG・現役・スタッフ・家族・パートナー企業として経営または参画</strong>
+                <p style="font-size:0.8rem;color:var(--gray);margin-top:4px;">アメフト・フラッグ・タッチフットボールの経験者・関係者がオーナー・スタッフ等として参画している</p>
+              </div>
+            </label>
+            <input type="checkbox" name="加盟区分" value="アメフト関連の展示・写真・環境あり" id="mem-type-2" style="position:absolute;opacity:0;pointer-events:none;">
+            <label class="radio-label mem-check-label" for="mem-type-2" data-target="mem-type-2">
+              <span class="mem-check-icon" id="mem-type-2-icon">☐</span>
+              <div>
+                <strong>② アメフト関連の展示・写真・環境あり</strong>
+                <p style="font-size:0.8rem;color:var(--gray);margin-top:4px;">店内にアメリカンフットボール・フラッグフットボール・タッチフットボールに関連する展示物・ディスプレイ・写真などがある</p>
+              </div>
+            </label>
+          </div>
+          <p id="mem-type-error" style="color:#ff6b6b;font-size:0.8rem;margin-top:8px;display:none;">⚠️ 少なくとも1つ選択してください。</p>
+        </div>
+
+        <!-- 04 アメフトとの関わり詳細 -->
+        <div class="form-section-title" style="margin-top:8px;"><span>04</span> アメフト・フラッグ・タッチフットボールとの関わり（詳細）</div>
+        <div class="form-group">
+          <label class="form-label" for="football-desc">具体的な関わりをご記入ください<span class="required">*</span></label>
+          <textarea id="football-desc" name="アメフト関わり詳細" class="form-textarea" rows="4"
+            placeholder="例：オーナーが関西学生リーグでQBとして活躍。引退後、仲間との繋がりを大切にしたいと考えこのお店を開きました。現在もOBチームの練習後の集合場所として利用されています。"
+            required></textarea>
+        </div>
+
+        <!-- 05 メッセージ -->
+        <div class="form-group">
+          <label class="form-label" for="message">ご質問・メッセージ（任意）</label>
+          <textarea id="message" name="メッセージ" class="form-textarea" rows="3"
+            placeholder="ご要望・ご質問があればお気軽にどうぞ。「まずは話を聞いてみたい」もOKです！"></textarea>
+        </div>
+
+        <!-- 利用規約同意チェックボックス -->
+        <div style="background:rgba(26,107,60,0.08);border:2px solid var(--green);border-radius:var(--radius-sm);padding:20px 24px;margin-bottom:24px;">
+          <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
+            <input type="checkbox" id="terms-check" name="利用規約同意"
+                   value="利用規約に同意済み"
+                   style="width:20px;height:20px;min-width:20px;margin-top:2px;accent-color:var(--green);cursor:pointer;">
+            <span style="font-size:0.9rem;color:var(--white);line-height:1.7;">
+              <strong style="color:var(--green);">【必須】</strong>
+              <a href="terms.html" target="_blank" style="color:var(--gold);text-decoration:underline;">利用規約</a>
+              を読み、内容に同意します。
+            </span>
+          </label>
+          <p id="terms-error" style="color:#ff6b6b;font-size:0.82rem;margin-top:8px;margin-left:32px;display:none;">
+            ⚠️ 利用規約への同意が必要です。
+          </p>
+        </div>
+
+        <!-- Submit -->
+        <div class="submit-area">
+          <p class="submit-note">
+            ✅ フォーム送信後、<strong style="color:var(--white);">1〜2営業日以内</strong>にご登録のメールアドレスへご連絡いたします。<br>
+            確認後、フリープランはそのまま掲載開始、有料プランは決済確認後に掲載を開始いたします。
+          </p>
+          <button type="submit" class="btn btn-gold btn-lg" id="submit-btn" style="min-width:280px;">
+            🏈 加盟申込を送信する
+          </button>
+          <p id="form-error" style="color:#ff6b6b;font-size:0.82rem;margin-top:12px;display:none;"></p>
+        </div>
+
+      </form>
+
+      <!-- 送信成功メッセージ -->
+      <div class="form-success" id="form-success">
+        <div class="success-icon">🎉</div>
+        <h3>申込を受け付けました！</h3>
+        <p>ご入力いただきありがとうございます。<br>
+        <strong style="color:var(--white);">1〜2営業日以内</strong>にご登録のメールアドレスへご連絡いたします。<br><br>
+        確認後、フリープランはそのまま掲載開始、有料プランは決済確認後に掲載を開始いたします。</p>
+        <!-- Stripe決済ボタン（プラン選択で動的表示） -->
+        <div id="stripe-btn-area" style="margin-top:28px;"></div>
+
+        <!-- 掲載後の情報更新案内 -->
+        <div style="margin-top:28px;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.3);border-radius:var(--radius-sm);padding:20px 24px;text-align:left;">
+          <p style="font-size:0.88rem;font-weight:700;color:var(--gold);margin-bottom:8px;">📷 掲載後の店舗情報・写真の更新について</p>
+          <p style="font-size:0.82rem;color:var(--light-gray);line-height:1.75;margin-bottom:14px;">
+            掲載開始後、店舗写真や営業時間・メニューなどの情報更新は<br>下記フォームからいつでもお送りいただけます。
+          </p>
+          <a href="https://forms.gle/nfUDZPizt6Hgwv9n9" target="_blank" rel="noopener noreferrer"
+             style="display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:0.85rem;padding:10px 22px;border-radius:var(--radius-sm);text-decoration:none;">
+            📷 店舗情報・写真を更新する
+          </a>
+        </div>
+
+        <a href="index.html" class="btn btn-outline" style="margin-top:16px;display:inline-block;">
+          ← トップページへ戻る
+        </a>
+      </div>
+    </div>
+
+    <!-- 紹介CTA -->
+    <div class="fade-in" style="background:rgba(212,160,23,0.07);border:1px solid rgba(212,160,23,0.25);border-radius:var(--radius);padding:28px 32px;text-align:center;margin-bottom:24px;">
+      <p style="font-size:0.78rem;color:var(--gold);font-weight:700;letter-spacing:0.08em;margin-bottom:8px;">💰 REFERRAL PROGRAM</p>
+      <p style="font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;">知り合いのアメフト関係者の店を紹介するだけで <span style="color:var(--gold);">最大¥10,000</span></p>
+      <p style="font-size:0.85rem;color:var(--gray);margin-bottom:18px;">掲載確定後にAmazonギフトカード（フリー¥500／プレミアム¥5,000／LEGEND¥10,000）をメール送付。件数制限なし。</p>
+      <a href="referral.html" class="btn btn-gold" style="display:inline-block;">🤝 掲載紹介フォームへ</a>
+    </div>
+
+    <!-- SNS CTA -->
+    <div class="sns-cta fade-in">
+      <p style="font-size:1rem;font-weight:700;margin-bottom:8px;">お急ぎの方・ご質問は SNS からもどうぞ</p>
+      <p style="color:var(--gray);font-size:0.88rem;margin-bottom:20px;">
+        X（旧Twitter）のDMでも加盟申込・お問い合わせを受け付けています。<br>
+        「まずは話を聞きたい」という場合もお気軽にどうぞ。
+      </p>
+      <a href="https://twitter.com/intent/tweet?text=%23FOOTBALLConnection+加盟申込について問い合わせたいです" target="_blank" rel="noopener noreferrer" class="x-btn">
+        <span style="font-size:1.1rem;font-weight:900;">𝕏</span>
+        X（旧Twitter）でお問い合わせ
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FOOTBALL CONNECTION</div>
+        <p class="footer-tagline">せっかくなら、アメフト関係者の店に行こう。<br>全国の仲間の店・サービスをつなぐプラットフォーム。</p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigation</div>
+        <div class="footer-nav-links">
+          <a href="index.html">トップ</a>
+          <a href="shops.html">店舗・サービスを探す</a>
+          <a href="events.html">イベント</a>
+          <a href="apply.html">加盟申込</a>
+          <a href="referral.html">掲載紹介</a>
+          <a href="terms.html">利用規約</a>
+          <a href="tokusho.html">特定商取引法に基づく表記</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FOOTBALL Connection. Operated by TSUMUGU合同会社</p>
+      <p style="margin-top:8px;"><a href="https://x.com/FOOTBALLCo78247" target="_blank" style="color:var(--gray);font-size:0.85rem;transition:var(--transition);">𝕏 @FOOTBALLCo78247</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script>
+  // 加盟店数を自動反映
+  const statApplyEl = document.getElementById('stat-shop-count-apply');
+  if (statApplyEl) statApplyEl.textContent = SHOP_COUNT;
+
+(function() {
+  const form      = document.getElementById('apply-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const errEl     = document.getElementById('form-error');
+  const successEl = document.getElementById('form-success');
+
+  // ── チェックボックス iOS対応：タッチ・クリックで確実にチェック制御 ──
+  function updateMemCheckUI(id) {
+    const cb = document.getElementById(id);
+    const label = document.querySelector('[data-target="' + id + '"]');
+    const icon = document.getElementById(id + '-icon');
+    if (!cb || !label || !icon) return;
+    if (cb.checked) {
+      icon.textContent = '☑';
+      label.style.borderColor = 'var(--green)';
+      label.style.background = 'rgba(26,107,60,0.18)';
+    } else {
+      icon.textContent = '☐';
+      label.style.borderColor = '';
+      label.style.background = '';
+    }
+    // エラー非表示
+    const errBox = document.getElementById('mem-type-error');
+    const anyChecked = document.querySelectorAll('input[name="加盟区分"]:checked').length > 0;
+    if (errBox && anyChecked) errBox.style.display = 'none';
+  }
+
+  ['mem-type-1', 'mem-type-2'].forEach(function(id) {
+    const label = document.querySelector('[data-target="' + id + '"]');
+    if (!label) return;
+    // クリック・タッチ両方に対応
+    label.addEventListener('click', function(e) {
+      e.preventDefault();
+      const cb = document.getElementById(id);
+      cb.checked = !cb.checked;
+      updateMemCheckUI(id);
+    });
+    label.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      const cb = document.getElementById(id);
+      cb.checked = !cb.checked;
+      updateMemCheckUI(id);
+    });
+  });
+
+  // ── クライアントサイドバリデーション ──
+  function validate() {
+    const shopName  = document.getElementById('shop-name').value.trim();
+    const ownerName = document.getElementById('owner-name').value.trim();
+    const phone     = document.getElementById('phone').value.trim();
+    const email     = document.getElementById('email').value.trim();
+    const pref      = document.getElementById('prefecture').value;
+    const genre     = document.getElementById('genre').value;
+    const plan      = document.querySelector('input[name="希望プラン"]:checked');
+    const memTypes  = document.querySelectorAll('input[name="加盟区分"]:checked');
+    const fbDesc    = document.getElementById('football-desc').value.trim();
+
+    if (!shopName)        return '店舗・サービス名を入力してください。';
+    if (!ownerName)       return '代表者名を入力してください。';
+    if (!phone)           return '電話番号を入力してください。';
+    if (!email)           return 'メールアドレスを入力してください。';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return 'メールアドレスの形式が正しくありません。';
+    if (!pref)            return '都道府県を選択してください。';
+    if (!genre)           return '業種を選択してください。';
+    if (!plan)            return '希望プランを選択してください。';
+    if (memTypes.length === 0) {
+      const errBox = document.getElementById('mem-type-error');
+      if (errBox) errBox.style.display = 'block';
+      return '加盟区分を1つ以上選択してください。';
+    }
+    if (!fbDesc)          return 'アメフト・フラッグ・タッチフットボールとの関わりを入力してください。';
+
+    // 利用規約同意チェック
+    const termsCheck = document.getElementById('terms-check');
+    const termsError = document.getElementById('terms-error');
+    if (!termsCheck.checked) {
+      termsError.style.display = 'block';
+      termsCheck.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return '利用規約への同意が必要です。';
+    }
+    termsError.style.display = 'none';
+
+    return null;
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const error = validate();
+    if (error) {
+      errEl.textContent = '⚠️ ' + error;
+      errEl.style.display = 'block';
+      errEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    // チェックボックスの選択値を1フィールドにまとめてFormspreeへ送信
+    const checkedMemTypes = [...document.querySelectorAll('input[name="加盟区分"]:checked')].map(el => el.value);
+    let hiddenMemField = document.getElementById('_hidden_mem_type');
+    if (!hiddenMemField) {
+      hiddenMemField = document.createElement('input');
+      hiddenMemField.type = 'hidden';
+      hiddenMemField.id = '_hidden_mem_type';
+      hiddenMemField.name = '加盟区分（選択）';
+      form.appendChild(hiddenMemField);
+    }
+    hiddenMemField.value = checkedMemTypes.join(' / ');
+    // 個別チェックボックスのnameを送信対象から除外（重複防止）
+    document.querySelectorAll('input[name="加盟区分"]').forEach(el => el.removeAttribute('name'));
+
+    // 選択プランを保存
+    const selectedPlan = document.querySelector('input[name="希望プラン"]:checked');
+    const planValue = selectedPlan ? selectedPlan.value : '';
+
+    errEl.style.display = 'none';
+    submitBtn.classList.add('btn-submitting');
+    submitBtn.textContent = '送信中...';
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        // 成功 → サンクスページへリダイレクト
+        window.location.href = 'thanks.html';
+
+        // プランに応じたStripe決済ボタンを表示
+        const stripeArea = document.getElementById('stripe-btn-area');
+        const STRIPE_STANDARD = 'https://buy.stripe.com/7sYcMXcJxbDm4H39rgdwc06';
+        const STRIPE_PREMIUM  = 'https://buy.stripe.com/7sY7sD9xl5eY8Xj6f4dwc07';
+        let stripeUrl = '';
+        let planLabel = '';
+        if (planValue.includes('スタンダード')) {
+          stripeUrl = STRIPE_STANDARD;
+          planLabel = 'スタンダードプラン';
+        } else if (planValue.includes('プレミアム')) {
+          stripeUrl = STRIPE_PREMIUM;
+          planLabel = 'プレミアムプラン（¥5,000/月・税別）';
+        }
+        if (stripeUrl) {
+          stripeArea.innerHTML = `
+            <p style="color:var(--light-gray);font-size:0.88rem;margin-bottom:14px;">引き続き、下記ボタンからお支払い情報をご登録ください：</p>
+            <a href="${stripeUrl}" target="_blank" rel="noopener noreferrer"
+               style="display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:1rem;padding:16px 36px;border-radius:var(--radius-sm);text-decoration:none;transition:opacity 0.2s;"
+               onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+              💳 ${planLabel} の決済ページへ進む
+            </a>
+            <p style="font-size:0.78rem;color:var(--gray);margin-top:10px;">※ Stripe の安全な決済ページへ移動します</p>
+          `;
+        }
+      } else {
+        const data = await response.json().catch(() => ({}));
+        const msg = (data.errors && data.errors.map(e => e.message).join(', ')) || '送信に失敗しました。';
+        throw new Error(msg);
+      }
+    } catch (err) {
+      errEl.textContent = '⚠️ ' + err.message + ' しばらく経ってから再度お試しください。';
+      errEl.style.display = 'block';
+      submitBtn.classList.remove('btn-submitting');
+      submitBtn.textContent = '🏈 加盟申込を送信する';
+    }
+  });
+})();
+</script>
+</body>
+</html>

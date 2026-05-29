@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNS発信キット｜FOOTBALL CONNECTION</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0A1628;
+      --amber: #C9873A;
+      --amber-light: rgba(201,135,58,0.15);
+      --amber-border: rgba(201,135,58,0.35);
+      --green: #1A6B3C;
+      --white: #ffffff;
+      --dim: rgba(255,255,255,0.55);
+      --dimmer: rgba(255,255,255,0.35);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #060d18;
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── ヘッダー ── */
+    .kit-header {
+      background: linear-gradient(135deg, #0A1628 0%, #0d1f3a 100%);
+      border-bottom: 1px solid var(--amber-border);
+      padding: 28px 24px 24px;
+      text-align: center;
+    }
+    .kit-header-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.1rem, 4vw, 1.5rem);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--amber);
+      margin-bottom: 6px;
+    }
+    .kit-header-sub {
+      font-size: 0.78rem;
+      color: var(--dim);
+      letter-spacing: 0.12em;
+    }
+
+    /* ── 説明バナー ── */
+    .kit-intro {
+      background: linear-gradient(135deg, rgba(201,135,58,0.1), rgba(10,22,40,0.9));
+      border: 1px solid var(--amber-border);
+      border-radius: 12px;
+      margin: 24px 16px;
+      padding: 20px 20px;
+    }
+    .kit-intro-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--amber);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .kit-intro-text {
+      font-size: 0.88rem;
+      line-height: 1.9;
+      color: var(--dim);
+    }
+    .kit-intro-text strong { color: var(--white); }
+
+    /* ── フロー図 ── */
+    .flow-block {
+      margin: 0 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .flow-step {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.78rem;
+      color: var(--dim);
+      text-align: center;
+      line-height: 1.5;
+    }
+    .flow-step strong { color: var(--white); display: block; font-size: 0.82rem; }
+    .flow-arrow { color: var(--amber); font-size: 1.2rem; flex-shrink: 0; }
+
+    /* ── タブ ── */
+    .tab-nav {
+      display: flex;
+      gap: 0;
+      margin: 0 16px 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 12px 8px;
+      border: none;
+      background: transparent;
+      color: var(--dimmer);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.04em;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .tab-btn:last-child { border-right: none; }
+    .tab-btn.active {
+      background: var(--amber);
+      color: var(--navy);
+    }
+
+    /* ── セクション ── */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .post-section {
+      margin: 0 16px 32px;
+    }
+
+    /* ── 投稿カード ── */
+    .post-card {
+      background: #0a1628;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .post-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .platform-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .platform-instagram { background: linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); color: #fff; }
+    .platform-x { background: #000; color: #fff; border: 1px solid #333; }
+    .platform-facebook { background: #1877f2; color: #fff; }
+    .platform-personal { background: rgba(201,135,58,0.2); color: var(--amber); border: 1px solid var(--amber-border); }
+
+    .post-card-type {
+      font-size: 0.72rem;
+      color: var(--dimmer);
+      margin-left: auto;
+    }
+    .post-card-body { padding: 18px 18px 14px; }
+
+    /* ── 画像プレビュー ── */
+    .img-preview-wrap {
+      margin-bottom: 14px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    .img-preview-wrap img {
+      width: 100%;
+      display: block;
+      max-height: 260px;
+      object-fit: cover;
+    }
+    .img-label {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background: rgba(0,0,0,0.65);
+      color: var(--amber);
+      font-size: 0.65rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── テキストエリア ── */
+    .copy-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      color: var(--amber);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .copy-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 0.86rem;
+      line-height: 2.0;
+      color: rgba(255,255,255,0.85);
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'Noto Sans JP', sans-serif;
+      min-height: 80px;
+      position: relative;
+    }
+
+    /* ── コピーボタン ── */
+    .copy-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      margin-top: 10px;
+      padding: 12px;
+      background: var(--amber);
+      color: var(--navy);
+      border: none;
+      border-radius: 8px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.06em;
+    }
+    .copy-btn:hover { background: #d99545; }
+    .copy-btn.copied {
+      background: #2ecc71;
+      color: #fff;
+    }
+
+    /* ── ハッシュタグブロック ── */
+    .hashtag-block {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: #7ec8e3;
+      line-height: 2.0;
+      word-break: break-all;
+    }
+    .hashtag-block-label {
+      font-size: 0.65rem;
+      color: var(--dimmer);
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+    }
+
+    /* ── 転送メモ ── */
+    .relay-memo {
+      background: rgba(201,135,58,0.08);
+      border: 1px solid var(--amber-border);
+      border-left: 3px solid var(--amber);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 0 16px 24px;
+      font-size: 0.82rem;
+      color: var(--dim);
+      line-height: 1.9;
+    }
+    .relay-memo strong { color: var(--amber); }
+
+    /* ── タイミングガイド ── */
+    .timing-guide {
+      margin: 0 16px 32px;
+      background: rgba(26,107,60,0.08);
+      border: 1px solid rgba(26,107,60,0.25);
+      border-radius: 12px;
+      padding: 18px 18px;
+    }
+    .timing-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      color: #4a9e6b;
+      margin-bottom: 14px;
+    }
+    .timing-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      font-size: 0.82rem;
+    }
+    .timing-time {
+      background: rgba(26,107,60,0.2);
+      color: #4a9e6b;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      white-space: nowrap;
+      font-size: 0.78rem;
+    }
+    .timing-desc { color: var(--dim); line-height: 1.7; }
+    .timing-desc strong { color: var(--white); }
+
+    /* ── セクション見出し ── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 16px 16px;
+      color: var(--dimmer);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .section-divider::before, .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ── フッター ── */
+    .kit-footer {
+      text-align: center;
+      padding: 32px 16px 48px;
+      font-size: 0.72rem;
+      color: var(--dimmer);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="kit-header">
+  <div class="kit-header-logo">🏈 FOOTBALL CONNECTION</div>
+  <div class="kit-header-sub">SNS 発信キット ― 2026.04.19</div>
+</header>
+
+<!-- イントロ -->
+<div class="kit-intro">
+  <div class="kit-intro-title">📋 TODAY'S MISSION</div>
+  <div class="kit-intro-text">
+    今日、<strong>2本の投稿</strong>を打ちます。<br>
+    <strong>投稿①（昼〜夕）</strong>：OBに「こんなサイトあるよ」を知らせる<br>
+    <strong>投稿②（夜）</strong>：アメフト関係者オーナーに「無料で載せませんか」を届ける<br><br>
+    各テキストをコピーして、そのままSNSに貼り付けてください。
+  </div>
+</div>
+
+<!-- 発信フロー -->
+<div class="flow-block">
+  <div class="flow-step"><strong>公式アカウント</strong>Instagram / X / Facebook</div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step"><strong>谷口さん個人</strong>Facebook でシェア</div>
+</div>
+
+<!-- タブ -->
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('post1')">投稿① 使用者向け</button>
+  <button class="tab-btn" onclick="switchTab('post2')">投稿② 掲載店向け</button>
+  <button class="tab-btn" onclick="switchTab('timing')">運用メモ</button>
+</div>
+
+<!-- ============================================================
+     投稿① 使用者向け
+     ============================================================ -->
+<div id="tab-post1" class="tab-content active">
+
+  <div class="section-divider">投稿① ― OB・アメフトファン向け（昼〜夕方に投稿）</div>
+
+  <!-- Instagram -->
+  <div class="post-section">
+    <div class="post-card">
+      <div class="post-card-header">
+        <span class="platform-badge platform-instagram">Instagram</span>
+        <span class="post-card-type">公式アカウント</span>
+      </div>
+      <div class="post-card-body">
+        <div class="img-preview-wrap">
+          <img src="images/sns-post-02.jpg" alt="FOOTBALL CONNECTION 投稿画像">
+          <span class="img-label">sns-post-02.jpg を使用</span>
+        </div>
+        <div class="copy-label">CAPTION</div>
+        <div class="copy-box" id="ig1-text">🏈 アメフトOBの仲間よ、聞いてほしい。
+
+「せっかくなら、アメフト関係者の店に行こう。」
+
+そんな思いでつくったのが FOOTBALL CONNECTION。
+全国のアメフト関係者が経営する飲食店を、
+ただ一か所に集めたサイトです。
+
+試合後の打ち上げ、OB会の2次会、
+仲間と行くなら、仲間の店で。
+
+現在、全国18店舗掲載中。
+プロフィールのリンクから探してみてください👇</div>
+        <button class="copy-btn" onclick="copyText('ig1-text', this)">📋 コピーする</button>
+        <div class="hashtag-block">
+          <div class="hashtag-block-label">HASHTAGS（別でコピー）</div>
+          <div id="ig1-tags">#アメフト #フットボール #FOOTBALL #アメリカンフットボール #FOOTBALLConnection #アメフトOB #フットボールコネクション #アメフト好きと繋がりたい #スポーツバー #OB会 #試合後の一杯 #仲間の店 #居酒屋 #スポーツ飲食 #アメフトファン</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('ig1-tags', this)" style="background:rgba(201,135,58,0.2);color:var(--amber);border:1px solid var(--amber-border);margin-top:8px;">🏷️ ハッシュタグをコピー</button>
+      </div>
+    </div>
+
+    <!-- X -->
+    <div class="post-card">
+      <div class="post-card-header">
+        <span class="platform-badge platform-x">X（旧Twitter）</span>
+        <span class="post-card-type">公式アカウント</span>
+      </div>
+      <div class="post-card-body">
+        <div class="img-preview-wrap">
+          <img src="images/sns-post-02.jpg" alt="FOOTBALL CONNECTION 投稿画像">
+          <span class="img-label">sns-post-02.jpg を使用</span>
+        </div>
+        <div class="copy-label">TEXT（140字以内）</div>
+        <div class="copy-box" id="x1-text">🏈 アメフト関係者が経営する飲食店だけを集めた「FOOTBALL CONNECTION」、はじめました。
+
+試合後の打ち上げ、OB会、仲間との一杯は仲間の店で。全国18店舗掲載中。
+
+せっかくなら、アメフト関係者の店に行こう。
+
+▶ football-connection.jp
+
+#アメフト #FOOTBALLConnection #アメフトOB</div>
+        <button class="copy-btn" onclick="copyText('x1-text', this)">📋 コピーする</button>
+      </div>
+    </div>
+
+    <!-- Facebook 公式 -->
+    <div class="post-card">
+      <div class="post-card-header">
+        <span class="platform-badge platform-facebook">Facebook</span>
+        <span class="post-card-type">公式ページ</span>
+      </div>
+      <div class="post-card-body">
+        <div class="img-preview-wrap">
+          <img src="images/sns-post-02.jpg" alt="FOOTBALL CONNECTION 投稿画像">
+          <span class="img-label">sns-post-02.jpg を使用</span>
+        </div>
+        <div class="copy-label">POST TEXT</div>
+        <div class="copy-box" id="fb1-text">🏈 アメフト関係者の仲間たちへ
+
+「せっかくなら、アメフト関係者の店に行こう。」
+
+FOOTBALL CONNECTIONは、アメフト関係者が経営する飲食店・バー・レストランだけを集めたサイトです。
+
+◾ 現役選手も、OBも、関係者なら誰でも使える
+◾ 試合後の打ち上げ・OB会・2次会に
+◾ 全国18店舗、掲載中（無料）
+
+仲間の店で飲む、その一杯は格別です。
+ぜひ一度、覗いてみてください👇
+
+🔗 https://football-connection.jp</div>
+        <button class="copy-btn" onclick="copyText('fb1-text', this)">📋 コピーする</button>
+      </div>
+    </div>
+
+    <!-- Facebook 個人シェア用 -->
+    <div class="post-card" style="border-color: var(--amber-border);">
+      <div class="post-card-header" style="border-bottom-color: var(--amber-border);">
+        <span class="platform-badge platform-personal">✋ 谷口さん個人 Facebook</span>
+        <span class="post-card-type">公式投稿をシェア後に一言添える</span>
+      </div>
+      <div class="post-card-body">
+        <div class="copy-label">シェア時のひとこと</div>
+        <div class="copy-box" id="fb1-personal">自分でも使いたくて作りました。アメフト仲間が経営する店って、なんか安心するんですよね。行ったことある店もあるかもしれない。ぜひ見てみてください🏈</div>
+        <button class="copy-btn" onclick="copyText('fb1-personal', this)">📋 コピーする</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     投稿② 掲載店向け
+     ============================================================ -->
+<div id="tab-post2" class="tab-content">
+
+  <div class="section-divider">投稿② ― 掲載希望オーナー向け（夜に投稿）</div>
+
+  <!-- Instagram -->
+  <div class="post-section">
+    <div class="post-card">
+      <div class="post-card-header">
+        <span class="platform-badge platform-instagram">Instagram</span>
+        <span class="post-card-type">公式アカウント</span>
+      </div>
+      <div class="post-card-body">
+        <div class="img-preview-wrap">
+          <img src="images/sns-post-01.jpg" alt="FOOTBALL CONNECTION 掲載募集画像">
+          <span class="img-label">sns-post-01.jpg を使用</span>
+        </div>
+        <div class="copy-label">CAPTION</div>
+        <div class="copy-box" id="ig2-text">🏈 アメフト関係者が経営している飲食店のオーナーの方へ
+
+あなたの店を、アメフト仲間に届けませんか？
+
+FOOTBALL CONNECTIONは、アメフト関係者が経営する飲食店を紹介するサイトです。
+
+✅ 掲載は完全無料
+✅ 専用ページを制作してお届け
+✅ 現役・OB・スタッフ、どなたでもOK
+
+「うちの店、アメフト関係者が来てくれたら嬉しいな」
+そんな気持ちがあれば、ぜひ登録してみてください。
+
+プロフィールのリンクから申し込めます👇</div>
+        <button class="copy-btn" onclick="copyText('ig2-text', this)">📋 コピーする</button>
+        <div class="hashtag-block">
+          <div class="hashtag-block-label">HASHTAGS（別でコピー）</div>
+          <div id="ig2-tags">#アメフト #フットボール #アメリカンフットボール #FOOTBALLConnection #アメフトOB #飲食店 #居酒屋 #バー #飲食店オーナー #飲食店経営 #スポーツ飲食 #無料掲載 #仲間の店 #フットボールコネクション #アメフト関係者</div>
+        </div>
+        <button class="copy-btn" onclick="copyText('ig2-tags', this)" style="background:rgba(201,135,58,0.2);color:var(--amber);border:1px solid var(--amber-border);margin-top:8px;">🏷️ ハッシュタグをコピー</button>
+      </div>
+    </div>
+
+    <!-- X -->
+    <div class="post-card">
+      <div class="post-card-header">
+        <span class="platform-badge platform-x">X（旧Twitter）</span>
+        <span class="post-card-type">公式アカウント</span>
+      </div>
+      <div class="post-card-body">
+        <div class="img-preview-wrap">
+          <img src="images/sns-post-01.jpg" alt="FOOTBALL CONNECTION 掲載募集画像">
+          <span class="img-label">sns-post-01.jpg を使用</span>
+        </div>
+        <div class="copy-label">TEXT（140字以内）</div>
+        <div class="copy-box" id="x2-text">🏈 アメフト関係者が経営している飲食店のオーナーへ
+
+あなたの店を、仲間に届けませんか？
+
+FOOTBALL CONNECTIONに掲載すると、アメフトOBや現役選手が来店のきっかけになります。
+
+◾ 完全無料
+◾ 専用ページ制作
+◾ 申込3分
+
+▶ football-connection.jp/apply.html
+
+#アメフト #FOOTBALLConnection #飲食店</div>
+        <button class="copy-btn" onclick="copyText('x2-text', this)">📋 コピーする</button>
+      </div>
+    </div>
+
+    <!-- Facebook 公式 -->
+    <div class="post-card">
+      <div class="post-card-header">
+        <span class="platform-badge platform-facebook">Facebook</span>
+        <span class="post-card-type">公式ページ</span>
+      </div>
+      <div class="post-card-body">
+        <div class="img-preview-wrap">
+          <img src="images/sns-post-01.jpg" alt="FOOTBALL CONNECTION 掲載募集画像">
+          <span class="img-label">sns-post-01.jpg を使用</span>
+        </div>
+        <div class="copy-label">POST TEXT</div>
+        <div class="copy-box" id="fb2-text">🏈 飲食店を経営しているアメフト関係者の方へ
+
+「アメフト仲間に、うちの店を知ってもらいたい」
+
+FOOTBALL CONNECTIONは、そのためのプラットフォームです。
+
+アメフト関係者が経営する飲食店だけを集め、アメフトOBや現役選手、関係者に紹介するサイト。掲載はすべて無料です。
+
+◾ 居酒屋、バー、レストラン、スナック、カフェ…業態は問いません
+◾ 現役選手、OB、スタッフ、マネージャー…アメフト経験があれば誰でも
+◾ 専用ページを制作して、サイトに掲載します
+
+一度、のぞいてみてください。
+申し込みフォームからご登録できます👇
+
+🔗 https://football-connection.jp/apply.html</div>
+        <button class="copy-btn" onclick="copyText('fb2-text', this)">📋 コピーする</button>
+      </div>
+    </div>
+
+    <!-- Facebook 個人シェア用 -->
+    <div class="post-card" style="border-color: var(--amber-border);">
+      <div class="post-card-header" style="border-bottom-color: var(--amber-border);">
+        <span class="platform-badge platform-personal">✋ 谷口さん個人 Facebook</span>
+        <span class="post-card-type">公式投稿をシェア後に一言添える</span>
+      </div>
+      <div class="post-card-body">
+        <div class="copy-label">シェア時のひとこと</div>
+        <div class="copy-box" id="fb2-personal">アメフトやってた人って、飲食店やってる人多いんですよね。もしそういう仲間がいたら、ぜひ教えてあげてください。無料で載せられます。自分も一緒に広めていきたいと思ってます🏈</div>
+        <button class="copy-btn" onclick="copyText('fb2-personal', this)">📋 コピーする</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     運用メモ
+     ============================================================ -->
+<div id="tab-timing" class="tab-content">
+
+  <div class="section-divider">TODAY'S POSTING SCHEDULE</div>
+
+  <div class="timing-guide">
+    <div class="timing-title">📅 今日の投稿スケジュール（推奨）</div>
+
+    <div class="timing-row">
+      <span class="timing-time">12:00〜13:00</span>
+      <div class="timing-desc">
+        <strong>投稿①（使用者向け）を3媒体同時投稿</strong><br>
+        Instagram → X → Facebookの順に。投稿後すぐ個人Facebookでシェア。
+      </div>
+    </div>
+
+    <div class="timing-row">
+      <span class="timing-time">20:00〜21:00</span>
+      <div class="timing-desc">
+        <strong>投稿②（掲載店向け）を3媒体同時投稿</strong><br>
+        オーナー層は夜にSNSを見ることが多い。投稿後すぐ個人Facebookでシェア。
+      </div>
+    </div>
+  </div>
+
+  <div class="relay-memo">
+    <strong>📌 シェア・転送のポイント</strong><br><br>
+    ・公式投稿をシェアするとき、<strong>「ひとこと添える」</strong>のが大事です。谷口さんの言葉が入ることで一気に信頼感が上がります。<br><br>
+    ・個人のひとことは<strong>「作った人間の本音」</strong>として書くのが最強です。ビジネス感を出さずに。<br><br>
+    ・Instagram は<strong>プロフィールのリンクをfootball-connection.jpに更新</strong>してから投稿してください。
+  </div>
+
+  <div class="section-divider">NEXT STEP</div>
+
+  <div class="relay-memo" style="border-left-color: #4a9e6b; border-color: rgba(74,158,107,0.3); background: rgba(74,158,107,0.06);">
+    <strong style="color: #4a9e6b;">🚀 今日の投稿が終わったら、次にやること</strong><br><br>
+    1. <strong style="color: #fff;">反応した人に個別DM</strong>：「いいね」「コメント」してくれた人へ一言でいい。繋がりが生まれる。<br><br>
+    2. <strong style="color: #fff;">アメフト関係のコミュニティでシェア</strong>：OB会グループLINE、チームのFacebook、学連の繋がりなど。<br><br>
+    3. <strong style="color: #fff;">掲載オーナーへ「投稿しました」と連絡</strong>：掲載されている18店舗のオーナーに「こんな発信しました」と伝えると、オーナー自身が拡散してくれる可能性大。
+  </div>
+
+</div>
+
+<!-- フッター -->
+<div class="kit-footer">
+  FOOTBALL CONNECTION ― SNS Launch Kit 2026.04.19<br>
+  このページはブラウザで開いたまま使ってください
+</div>
+
+<script>
+  function switchTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + tabId).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  function copyText(elementId, btn) {
+    const el = document.getElementById(elementId);
+    const text = el.innerText || el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.innerHTML;
+      btn.innerHTML = '✅ コピーしました！';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.classList.remove('copied');
+      }, 2000);
+    }).catch(() => {
+      // フォールバック
+      const range = document.createRange();
+      range.selectNode(el);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      const original = btn.innerHTML;
+      btn.innerHTML = '✅ コピーしました！';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+</script>
+
+</body>
+</html>

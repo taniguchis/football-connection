@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0A1628">
+  <meta name="description" content="FOOTBALL Connection 加盟店・サービス詳細。店舗情報・アクセス・来店特典を確認できます。">
+  <title>店舗詳細 | FOOTBALL CONNECTION</title>
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="apple-touch-icon" href="images/logo-square.png">
+  <link rel="stylesheet" href="css/style.css?v=20260308">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNJ4ZBMYGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNJ4ZBMYGR');
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    .detail-layout { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* ライトボックス */
+    .lightbox-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.92);
+      align-items: center; justify-content: center;
+    }
+    .lightbox-overlay.active { display: flex; }
+    .lightbox-overlay img {
+      max-width: 92vw; max-height: 88vh;
+      border-radius: var(--radius-sm);
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 28px;
+      color: #fff; font-size: 2rem; cursor: pointer;
+      line-height: 1; background: none; border: none;
+    }
+
+    .detail-title {
+      font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+    .detail-badges { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+    .detail-meta { display:flex; flex-direction:column; gap:5px; color:var(--gray); font-size:0.88rem; margin-bottom:24px; }
+    .detail-meta p { display:flex; align-items:center; gap:8px; }
+
+    .detail-block {
+      background: var(--navy-light);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 24px 28px;
+      margin-bottom: 20px;
+    }
+    .detail-block-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .detail-block p { font-size: 0.92rem; color: var(--light-gray); line-height: 1.7; }
+
+    /* info rows */
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.9rem;
+    }
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-row:first-child { padding-top: 0; }
+    .info-row .info-label { color: var(--gray); min-width: 80px; flex-shrink: 0; }
+    .info-row .info-value { color: var(--light-gray); }
+    .info-row a { color: var(--gold); text-decoration: underline; word-break: break-all; }
+    .info-row a:hover { color: var(--gold-light); }
+
+    /* coupon */
+    .coupon-box {
+      background: linear-gradient(135deg, rgba(26,107,60,0.18) 0%, rgba(10,22,40,0.85) 100%);
+      border: 2px solid var(--green);
+      border-radius: var(--radius);
+      padding: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .coupon-label {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 20px;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+    .coupon-word {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    /* notion block */
+    .notion-block {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .notion-block-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
+    .notion-block-body { flex: 1; }
+    .notion-block-body p { font-size: 0.82rem; color: var(--gray); line-height: 1.6; margin-bottom: 6px; }
+    .notion-block-body a { color: var(--gold); font-size: 0.82rem; font-weight: 600; }
+    .notion-block-body a:hover { color: var(--gold-light); }
+
+    #detail-map { height: 320px; }
+    .not-found-box { text-align: center; padding: 80px 20px; }
+
+    @media (max-width: 768px) {
+      .coupon-box { text-align: left; }
+      .not-found-box { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="shops.html" class="active">店舗・サービスを探す</a>
+      <a href="events.html">イベント</a>
+      <a href="apply.html" class="btn-header-cta">加盟申込</a>
+    </nav>
+    <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 トップ</a>
+    <a href="shops.html">🗺️ 店舗・サービスを探す</a>
+    <a href="events.html">📅 イベント</a>
+    <a href="apply.html">🏈 加盟申込はこちら</a>
+  </nav>
+</header>
+
+<!-- MAIN -->
+<main>
+  <div class="detail-layout" id="detail-content"></div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FOOTBALL CONNECTION</div>
+        <p class="footer-tagline">せっかくなら、アメフト関係者の店に行こう。<br>全国の仲間の店・サービスをつなぐプラットフォーム。</p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigation</div>
+        <div class="footer-nav-links">
+          <a href="index.html">トップ</a>
+          <a href="shops.html">店舗・サービスを探す</a>
+          <a href="events.html">イベント</a>
+          <a href="apply.html">加盟申込</a>
+          <a href="referral.html">掲載紹介</a>
+          <a href="terms.html">利用規約</a>
+          <a href="tokusho.html">特定商取引法に基づく表記</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FOOTBALL Connection. Operated by TSUMUGU合同会社</p>
+      <p style="margin-top:8px;"><a href="https://x.com/FOOTBALLCo78247" target="_blank" style="color:var(--gray);font-size:0.85rem;transition:var(--transition);">𝕏 @FOOTBALLCo78247</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- ライトボックス -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="拡大画像">
+</div>
+<script src="js/common.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const shop = getShopById(params.get('id'));
+
+  // 専用詳細ページがある店舗は即リダイレクト
+  if (shop && shop.detail_page) {
+    window.location.replace(shop.detail_page);
+  }
+
+  const contentEl = document.getElementById('detail-content');
+
+  if (!shop) {
+    contentEl.innerHTML = `
+      <a href="shops.html" class="back-btn">← 店舗・サービス一覧に戻る</a>
+      <div class="not-found-box">
+        <div style="font-size:4rem;margin-bottom:16px;">🏈</div>
+        <h2>店舗が見つかりませんでした</h2>
+        <p style="color:var(--gray);margin-bottom:24px;">URLを確認するか、一覧からお探しください。</p>
+        <a href="shops.html" class="btn btn-primary">店舗・サービス一覧へ</a>
+      </div>`;
+  } else {
+    document.title = `${shop.name} | FOOTBALL CONNECTION`;
+    const icon = getGenreIcon(shop.genre);
+
+    // 関係者情報 (ob_managed かつ football_career がある場合のみ)
+    const careerHtml = (shop.membership_type === 'ob_managed' && shop.football_career)
+      ? `<div class="detail-block fade-in">
+           <div class="detail-block-title">👤 関係者情報</div>
+           <p style="color:#86efac;font-weight:600;">${shop.football_career}</p>
+         </div>`
+      : '';
+
+    // 営業情報行（空の場合スキップ）
+    function infoRow(label, value, isLink) {
+      if (!value) return '';
+      const val = isLink
+        ? `<a href="${value}" target="_blank" rel="noopener">${value}</a>`
+        : value;
+      return `<div class="info-row"><span class="info-label">${label}</span><span class="info-value">${val}</span></div>`;
+    }
+    const infoRows = [
+      infoRow('📞 電話', shop.tel, false),
+      infoRow('🕐 営業時間', shop.hours, false),
+      infoRow('🚪 定休日', shop.holiday, false),
+      infoRow('🌐 公式サイト', shop.url, true),
+      infoRow('📷 Instagram', shop.instagram, true),
+      infoRow('▶️ YouTube', shop.youtube, true)
+    ].filter(Boolean).join('');
+
+    const infoBlockHtml = infoRows
+      ? `<div class="detail-block fade-in">
+           <div class="detail-block-title">📋 店舗情報</div>
+           ${infoRows}
+         </div>`
+      : '';
+
+    // 画像ギャラリー
+    const galleryHtml = (shop.images && shop.images.length > 0)
+      ? `<div class="detail-block fade-in">
+           <div class="detail-block-title">📷 店舗写真</div>
+           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:12px;">
+             ${shop.images.map((url, i) => `
+               <div style="border-radius:var(--radius-sm);overflow:hidden;aspect-ratio:4/3;cursor:pointer;"
+                    onclick="openLightbox(this.querySelector('img').src)">
+                 <img src="${url}" alt="店舗写真${i+1}"
+                      style="width:100%;height:100%;object-fit:cover;transition:transform 0.3s;"
+                      onmouseover="this.style.transform='scale(1.05)'"
+                      onmouseout="this.style.transform='scale(1)'">
+               </div>`).join('')}
+           </div>
+         </div>`
+      : '';
+
+    contentEl.innerHTML = `
+      <a href="shops.html" class="back-btn fade-in">← 店舗・サービス一覧に戻る</a>
+
+      <div class="fade-in">
+        <div class="detail-badges">
+          ${getPlanBadge(shop.plan)}
+          ${getMembershipBadge(shop.membership_type)}
+          <span class="badge badge-genre">${icon} ${shop.genre}</span>
+        </div>
+        <h1 class="detail-title">${shop.name}</h1>
+        <div class="detail-meta">
+          <p>📍 ${shop.area} ${shop.city}</p>
+          <p>🏠 ${shop.address}</p>
+        </div>
+      </div>
+
+      ${careerHtml}
+
+      ${galleryHtml}
+
+      ${shop.staff_comment ? `
+      <div class="staff-comment-block fade-in">
+        <div class="staff-comment-header">
+          <span class="staff-comment-icon">💬</span>
+          <span class="staff-comment-label">FOOTBALL CONNECTION 運営コメント</span>
+          <span class="staff-comment-name">FOOTBALL CONNECTION 運営</span>
+        </div>
+        <p class="staff-comment-text">「${shop.staff_comment}」</p>
+      </div>` : ''}
+
+      <div class="detail-block fade-in">
+        <div class="detail-block-title">🏈 アメフトとのつながり</div>
+        <p style="color:var(--gold);font-weight:600;margin-bottom:10px;">${shop.football_element}</p>
+        <p>${shop.comment}</p>
+      </div>
+
+      ${infoBlockHtml}
+
+      <!-- 来店特典 -->
+      <div class="coupon-box fade-in">
+        <div class="coupon-label">🎫 FOOTBALL Connection 来店特典</div>
+        <p style="color:var(--gray);font-size:0.82rem;margin-bottom:8px;">来店時にスタッフへ合言葉をお伝えください</p>
+        <div class="coupon-word">「タッチダウン！」</div>
+        <p style="font-size:0.88rem;color:var(--gray);">合言葉で来店特典あり（詳細は各店舗にご確認ください）</p>
+      </div>
+
+      <!-- 地図 -->
+      <div class="detail-block fade-in" style="padding:0;overflow:hidden;">
+        <div id="detail-map"></div>
+      </div>
+
+      <!-- 店舗情報更新のご案内 -->
+      <div class="notion-block fade-in">
+        <div class="notion-block-icon">📝</div>
+        <div class="notion-block-body">
+          <p><strong style="color:var(--light-gray);">店舗オーナーの方へ：</strong>店舗情報・写真の更新は下記フォームからお気軽にどうぞ。<br>
+          写真のアップロードもフォームから可能です。</p>
+          <a href="https://forms.gle/nfUDZPizt6Hgwv9n9" target="_blank" rel="noopener noreferrer"
+             style="display:inline-block;margin-top:10px;background:var(--gold);color:var(--navy);font-weight:700;font-size:0.88rem;padding:10px 22px;border-radius:var(--radius-sm);text-decoration:none;">
+            📷 店舗情報・写真を更新する
+          </a>
+        </div>
+      </div>
+
+      <!-- フッターCTA -->
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;" class="fade-in">
+        <a href="shops.html" class="btn btn-outline">← 店舗・サービス一覧に戻る</a>
+        <a href="events.html" class="btn btn-primary">📅 イベント情報を見る</a>
+      </div>
+    `;
+
+    // MAP
+    setTimeout(() => {
+      const detailMap = L.map('detail-map', { center:[shop.lat, shop.lng], zoom:15, scrollWheelZoom:false });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18
+      }).addTo(detailMap);
+
+      const color = shop.plan === 'legend' ? '#FFD700' : shop.plan === 'premium' ? '#D4A017' : '#1A6B3C';
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" viewBox="0 0 40 50">
+        <ellipse cx="20" cy="46" rx="9" ry="3" fill="rgba(0,0,0,0.3)"/>
+        <path d="M20 2C11.16 2 4 9.16 4 18c0 11.5 16 30 16 30s16-18.5 16-30C36 9.16 28.84 2 20 2z" fill="${color}" stroke="white" stroke-width="2"/>
+        <text x="20" y="22" text-anchor="middle" font-size="15" fill="white">🏈</text>
+      </svg>`;
+      const markerIcon = L.divIcon({ html:svg, iconSize:[40,50], iconAnchor:[20,50], popupAnchor:[0,-50], className:'' });
+      L.marker([shop.lat, shop.lng], { icon: markerIcon })
+        .addTo(detailMap)
+        .bindPopup(`<div style="font-weight:700;">${shop.name}</div><div style="font-size:0.8rem;color:#ccc;">${shop.address}</div>`)
+        .openPopup();
+
+      setTimeout(() => initScrollAnimation(), 100);
+    }, 80);
+  }
+
+  // ライトボックス
+  function openLightbox(url) {
+    document.getElementById('lightbox-img').src = url;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.getElementById('lightbox-img').src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>

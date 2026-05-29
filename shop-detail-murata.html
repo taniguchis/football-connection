@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#0A1628">
+  <meta name="description" content="むらた｜岩本町｜どでかい蛤鍋と黒トンカツが名物。出汁の旨みとインパクト抜群の黒衣とんかつ。岩本町駅すぐ、アメフト関係者の懇親会・打ち上げに最高の一軒。">
+  <meta name="keywords" content="岩本町 とんかつ, 岩本町 黒トンカツ, むらた 岩本町, 岩本町 蛤鍋, 岩本町 懇親会, アメフト 関係者 店, 岩本町 打ち上げ, 神田 とんかつ, 秋葉原 とんかつ">
+  <title>むらた｜岩本町｜蛤鍋と黒トンカツが名物の老舗 | FOOTBALL CONNECTION</title>
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="apple-touch-icon" href="images/logo-square.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260318">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNJ4ZBMYGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNJ4ZBMYGR');
+  </script>
+  <style>
+    /* =========================================
+       むらた 専用スタイル
+    ========================================= */
+
+    /* ── カラーテーマ：黒×琥珀 ── */
+    :root {
+      --murata-black:  #1a1008;
+      --murata-amber:  #C17A2A;
+      --murata-amber2: #D9962E;
+      --murata-cream:  #FDF6ED;
+      --murata-dashi:  #8B6B3D;
+    }
+
+    /* ── ヒーロー ── */
+    .murata-hero {
+      background: linear-gradient(160deg, #0d0a04 0%, #0A1628 45%, #0d1208 100%);
+      padding: clamp(100px, 12vw, 140px) 24px clamp(40px, 6vw, 64px);
+      position: relative;
+      overflow: hidden;
+    }
+    .murata-hero::before {
+      content: '🍱';
+      position: absolute; right: -1%; top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(130px, 24vw, 280px);
+      opacity: 0.055; pointer-events: none; line-height: 1;
+    }
+    /* ざらっとした粒子テクスチャ風 */
+    .murata-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        -30deg, transparent, transparent 60px,
+        rgba(193,122,42,0.025) 60px, rgba(193,122,42,0.025) 61px
+      );
+      pointer-events: none;
+    }
+    .murata-hero-inner {
+      max-width: 800px; margin: 0 auto;
+      position: relative; z-index: 2;
+    }
+    .murata-eyecatch {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(193,122,42,0.15);
+      border: 1px solid rgba(193,122,42,0.45);
+      border-radius: 30px; padding: 5px 18px;
+      font-size: 0.78rem; font-weight: 700;
+      color: var(--murata-amber2); letter-spacing: 0.08em;
+      margin-bottom: 18px;
+    }
+    .murata-hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2.2rem, 7vw, 4rem);
+      font-weight: 700; line-height: 1.1;
+      color: var(--white); margin-bottom: 14px;
+      letter-spacing: 0.04em;
+    }
+    .murata-hero h1 .hl { color: var(--murata-amber2); }
+    .murata-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 700; color: var(--white);
+      line-height: 1.55; margin-bottom: 12px;
+    }
+    .murata-hero-lead {
+      font-size: clamp(0.88rem, 1.6vw, 1rem);
+      color: #c4bdb2; line-height: 1.9; margin-bottom: 28px;
+      max-width: 640px;
+    }
+    .murata-hero-lead strong { color: var(--white); }
+    .murata-badges {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;
+    }
+    .m-badge {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 20px; padding: 5px 16px;
+      font-size: 0.8rem; color: #ddd;
+    }
+    .m-badge.amber {
+      background: rgba(193,122,42,0.14);
+      border-color: rgba(193,122,42,0.4);
+      color: var(--murata-amber2); font-weight: 700;
+    }
+    .m-badge.dark {
+      background: rgba(10,5,0,0.5);
+      border-color: rgba(193,122,42,0.3);
+      color: var(--murata-amber); font-weight: 700;
+    }
+
+    /* ── レイアウト ── */
+    .murata-layout {
+      max-width: 800px; margin: 0 auto;
+      padding: 40px 24px 100px;
+    }
+
+    /* ── 強調キャッチ ── */
+    .murata-catch-card {
+      background: linear-gradient(135deg, rgba(10,5,0,0.7) 0%, rgba(193,122,42,0.1) 100%);
+      border: 2px solid rgba(193,122,42,0.55);
+      border-radius: 16px; padding: 28px 32px;
+      margin-bottom: 32px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .murata-catch-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        -45deg, transparent, transparent 10px,
+        rgba(193,122,42,0.025) 10px, rgba(193,122,42,0.025) 11px
+      );
+    }
+    .murata-catch-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.2rem, 3.2vw, 1.8rem);
+      font-weight: 700; color: var(--murata-amber2);
+      line-height: 1.45; position: relative; z-index: 1;
+    }
+    .murata-catch-sub {
+      font-size: 0.86rem; color: #999;
+      margin-top: 8px; position: relative; z-index: 1;
+    }
+
+    /* ── コースフロー ── */
+    .course-flow {
+      display: flex; flex-direction: column; gap: 0;
+      margin: 20px 0;
+    }
+    .course-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .course-item:last-child { border-bottom: none; }
+    .course-step {
+      display: flex; flex-direction: column;
+      align-items: center; flex-shrink: 0;
+      width: 44px;
+    }
+    .course-step-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.68rem; font-weight: 700;
+      color: var(--murata-amber); letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .course-step-icon { font-size: 1.8rem; line-height: 1; }
+    .course-step-line {
+      width: 1px; flex: 1; min-height: 20px;
+      background: linear-gradient(180deg, rgba(193,122,42,0.4), transparent);
+      margin-top: 6px;
+    }
+    .course-body { flex: 1; }
+    .course-title {
+      font-weight: 700; color: var(--white);
+      font-size: 1rem; margin-bottom: 6px;
+    }
+    .course-title .course-tag {
+      display: inline-block;
+      background: rgba(193,122,42,0.18);
+      border: 1px solid rgba(193,122,42,0.35);
+      border-radius: 4px; padding: 1px 8px;
+      font-size: 0.72rem; font-weight: 700;
+      color: var(--murata-amber); margin-left: 8px;
+      vertical-align: middle;
+    }
+    .course-desc {
+      font-size: 0.9rem; color: #c0b8af; line-height: 1.8;
+    }
+    .course-desc strong { color: var(--white); }
+
+    /* ── 黒トンカツ 特大カード ── */
+    .kuro-hero-card {
+      background: linear-gradient(135deg, rgba(10,5,0,0.9) 0%, rgba(193,122,42,0.08) 100%);
+      border: 2px solid rgba(193,122,42,0.5);
+      border-radius: 16px; padding: 28px 28px;
+      margin: 24px 0; display: flex; gap: 18px; align-items: flex-start;
+    }
+    .kuro-icon-col {
+      flex-shrink: 0; text-align: center; width: 56px;
+    }
+    .kuro-icon-big { font-size: 2.8rem; line-height: 1; }
+    .kuro-label {
+      font-size: 0.68rem; color: var(--murata-amber);
+      font-weight: 700; margin-top: 4px; letter-spacing: 0.06em;
+    }
+    .kuro-body-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 700; color: var(--murata-amber2);
+      margin-bottom: 10px; line-height: 1.2;
+    }
+    .kuro-body-text {
+      font-size: 0.92rem; color: #c4bdb2; line-height: 1.85;
+    }
+    .kuro-body-text strong { color: var(--white); }
+
+    /* ── だし・鍋カード ── */
+    .dashi-card {
+      background: linear-gradient(135deg, rgba(139,107,61,0.1) 0%, rgba(10,22,40,0.7) 100%);
+      border: 1px solid rgba(139,107,61,0.35);
+      border-radius: 12px; padding: 20px 22px;
+      margin: 16px 0; display: flex; gap: 14px;
+    }
+    .dashi-icon { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
+    .dashi-title {
+      font-weight: 700; color: #e8c87a; font-size: 0.95rem; margin-bottom: 6px;
+    }
+    .dashi-text {
+      font-size: 0.87rem; color: #b8ad9e; line-height: 1.75;
+    }
+
+    /* ── セクション汎用 ── */
+    .m-section {
+      background: var(--navy-light);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 28px 32px; margin-bottom: 24px;
+    }
+    .m-section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.82rem; font-weight: 700;
+      color: var(--murata-amber2); text-transform: uppercase;
+      letter-spacing: 0.12em; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .m-section-title::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, rgba(193,122,42,0.4), transparent);
+    }
+    .m-section p {
+      font-size: 0.95rem; color: #d0c8be; line-height: 1.85;
+    }
+    .m-section p + p { margin-top: 12px; }
+    .m-section strong { color: var(--white); }
+
+    /* ── アメフト視点 ── */
+    .football-block {
+      background: linear-gradient(135deg, rgba(26,107,60,0.15) 0%, rgba(10,22,40,0.9) 100%);
+      border: 2px solid rgba(26,107,60,0.4);
+      border-radius: 16px; padding: 28px 32px; margin-bottom: 24px;
+    }
+    .football-block-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem; font-weight: 700; color: #4ade80;
+      margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+    }
+    .football-block p {
+      font-size: 0.93rem; color: #ccc; line-height: 1.85;
+    }
+    .football-block p + p { margin-top: 12px; }
+    .football-block strong { color: var(--white); }
+
+    /* ── 利用シーン ── */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px; margin-top: 16px;
+    }
+    .scene-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px; padding: 14px 10px; text-align: center;
+    }
+    .scene-icon { font-size: 1.5rem; margin-bottom: 7px; }
+    .scene-label { font-size: 0.8rem; color: #ccc; font-weight: 600; line-height: 1.4; }
+
+    /* ── 来店特典 ── */
+    .coupon-block {
+      background: linear-gradient(135deg, rgba(26,107,60,0.2), rgba(10,22,40,0.9));
+      border: 2px solid #1A6B3C; border-radius: 16px;
+      padding: 32px; text-align: center; margin-bottom: 24px;
+    }
+    .coupon-tag {
+      display: inline-block; background: #1A6B3C;
+      color: #fff; font-size: 0.74rem; font-weight: 700;
+      padding: 4px 16px; border-radius: 20px;
+      letter-spacing: 0.1em; margin-bottom: 16px;
+    }
+    .coupon-word-big {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 700; color: var(--murata-amber2); margin-bottom: 10px;
+    }
+
+    /* ── 運営コメント ── */
+    .ops-comment {
+      background: rgba(193,122,42,0.06);
+      border-left: 4px solid var(--murata-amber);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px; margin-bottom: 24px;
+    }
+    .ops-label {
+      font-size: 0.78rem; font-weight: 700;
+      color: var(--murata-amber); letter-spacing: 0.06em; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .ops-text {
+      font-size: 0.92rem; color: #ccc;
+      line-height: 1.85; font-style: italic;
+    }
+
+    /* ── CTA ── */
+    .murata-cta-block {
+      display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px;
+    }
+    .cta-primary {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: linear-gradient(135deg, #C17A2A, #D9962E);
+      color: #0A1628; font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem; font-weight: 700; letter-spacing: 0.04em;
+      padding: 18px 32px; border-radius: 12px; text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(193,122,42,0.35);
+    }
+    .cta-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(193,122,42,0.5); }
+    .cta-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    }
+    .cta-sec {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: rgba(26,107,60,0.12); border: 1px solid rgba(26,107,60,0.35);
+      color: #4ade80; font-weight: 700; font-size: 0.9rem;
+      padding: 14px 16px; border-radius: 12px; text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cta-sec:hover { background: rgba(26,107,60,0.25); transform: translateY(-2px); }
+    .cta-outline {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      border: 1px solid rgba(255,255,255,0.18); color: #aaa;
+      font-weight: 600; font-size: 0.9rem;
+      padding: 14px 16px; border-radius: 12px; text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cta-outline:hover { background: rgba(255,255,255,0.06); transform: translateY(-2px); }
+
+    /* ── 基本情報 ── */
+    .info-table { width: 100%; border-collapse: collapse; }
+    .info-table tr { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .info-table tr:last-child { border-bottom: none; }
+    .info-table td { padding: 12px 0; font-size: 0.9rem; vertical-align: top; }
+    .info-table td:first-child { color: #888; min-width: 80px; padding-right: 16px; }
+    .info-table td:last-child { color: #d0c8be; }
+    .info-table a { color: var(--murata-amber); text-decoration: underline; word-break: break-all; }
+
+    /* ── SEOタグ ── */
+    .seo-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .seo-tag {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px; padding: 4px 14px;
+      font-size: 0.74rem; color: #777;
+    }
+
+    /* モバイル */
+    @media (max-width: 600px) {
+      .m-section, .football-block, .coupon-block { padding: 20px 18px; }
+      .kuro-hero-card { flex-direction: column; }
+      .kuro-icon-col { display: flex; align-items: center; gap: 12px; width: auto; }
+      .cta-row { grid-template-columns: 1fr; }
+      .course-step-line { display: none; }
+    }
+  </style>
+</head>
+<body class="sd-page">
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="shops.html" class="active">店舗・サービスを探す</a>
+      <a href="events.html">イベント</a>
+      <a href="apply.html" class="btn-header-cta">無料で掲載する</a>
+    </nav>
+    <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 トップ</a>
+    <a href="shops.html">🗺️ 店舗・サービスを探す</a>
+    <a href="events.html">📅 イベント</a>
+    <a href="apply.html">🏈 無料で掲載する</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="murata-hero">
+  <div class="murata-hero-inner">
+    <a href="shops.html"
+       style="display:inline-flex;align-items:center;gap:6px;color:#888;font-size:0.82rem;text-decoration:none;margin-bottom:20px;"
+       onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">
+      ← 店舗・サービス一覧に戻る
+    </a>
+
+    <div class="murata-eyecatch">
+      🖤 岩本町 蛤鍋＆黒トンカツ &nbsp;｜&nbsp; FOOTBALL CONNECTION 加盟店
+    </div>
+
+    <h1 class="murata-hero">
+      <div style="font-family:'Oswald',sans-serif;font-size:clamp(2.4rem,7vw,4.2rem);font-weight:700;line-height:1.1;color:#fff;margin-bottom:12px;letter-spacing:0.04em;">
+        <span style="color:var(--murata-amber2);">むらた</span>
+      </div>
+    </h1>
+
+    <p class="murata-tagline">
+      どでかい蛤鍋の出汁と、漆黒の黒トンカツ。<br>
+      <span style="color:var(--murata-amber2);">岩本町で二本柱をとことん楽しむ一軒。</span>
+    </p>
+
+    <p class="murata-hero-lead">
+      岩本町に来たらここ一択、という声が絶えない「むらた」。<br>
+      <strong>どでかい蛤が鍋を占領する蛤鍋</strong>と、<strong>漆黒の衣をまとった黒トンカツ</strong>——<br>
+      この二本柱がむらたのすべてだ。<br>
+      だしの深さに唸り、黒トンカツのインパクトに驚く。<br>
+      アメフト仲間と囲む食卓に、これ以上ふさわしい一軒はない。
+    </p>
+
+    <div class="murata-badges">
+      <span class="m-badge dark">🖤 黒トンカツ</span>
+      <span class="m-badge amber">🐚 どでかい蛤鍋</span>
+      <span class="m-badge">📍 岩本町</span>
+      <span class="m-badge">🚉 岩本町駅</span>
+      <span class="m-badge">👥 懇親会・打ち上げ向き</span>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main>
+  <div class="murata-layout">
+
+    <!-- ① ヒーロー画像 -->
+    <div style="margin-bottom:28px;border-radius:16px;overflow:hidden;border:1px solid rgba(193,122,42,0.25);">
+      <img src="images/shops/murata_01.jpg" alt="むらた 岩本町 – どでかい蛤鍋"
+           style="width:100%;height:260px;object-fit:cover;object-position:center;display:block;">
+      <div style="background:rgba(10,5,0,0.85);padding:10px 16px;display:flex;align-items:center;gap:8px;">
+        <span style="font-size:0.78rem;color:var(--murata-amber);">📷</span>
+        <span style="font-size:0.78rem;color:#888;">むらた（岩本町）― 名物のどでかい蛤鍋</span>
+      </div>
+    </div>
+
+    <!-- ① キャッチカード -->
+    <div class="murata-catch-card">
+      <div class="murata-catch-text">
+        「どでかい蛤鍋の出汁に唸り、黒トンカツのインパクトに驚く。<br>
+        岩本町で二度うなれる、アメフト仲間に連れて行きたい一軒。」
+      </div>
+      <p class="murata-catch-sub">― FOOTBALL CONNECTION 編集部コメント</p>
+    </div>
+
+    <!-- OBバッジ -->
+    <div class="sd-ob-block" style="margin-bottom:24px;">
+      <div class="sd-ob-icon">🏈</div>
+      <div>
+        <div class="sd-ob-label">FOOTBALL CONNECTION MEMBER</div>
+        <div class="sd-ob-text">立教大学Rushers OBオーナーが営む、岩本町の蛤鍋×黒トンカツの名店。懇親会・打ち上げで何度でも使いたい一軒。</div>
+      </div>
+    </div>
+
+    <!-- ② 二本柱の紹介 -->
+    <div class="m-section">
+      <div class="m-section-title">🍽️ むらたの二本柱</div>
+      <p style="margin-bottom:20px;">
+        むらたは<strong>「蛤鍋」と「黒トンカツ」</strong>の二本柱で勝負する店だ。<br>
+        どちらも一品で語れるほどの個性と深みがある。<br>
+        この二つを食べるためだけに、岩本町に足を運ぶ価値がある。
+      </p>
+
+      <div class="course-flow">
+
+        <!-- 黒トンカツ -->
+        <div class="course-item">
+          <div class="course-step">
+            <div class="course-step-num">01</div>
+            <div class="course-step-icon">🖤</div>
+            <div class="course-step-line"></div>
+          </div>
+          <div class="course-body">
+            <div class="course-title">
+              黒トンカツ
+              <span class="course-tag" style="color:var(--murata-amber2);border-color:rgba(193,122,42,0.5);background:rgba(193,122,42,0.15);">むらたの看板</span>
+            </div>
+            <p class="course-desc">
+              むらたを語るうえで外せない、<strong>真っ黒な衣をまとった黒トンカツ</strong>。<br>
+              特製の黒い衣で仕上げた見た目のインパクトは圧倒的。<br>
+              しかしひと口噛めばわかる——<strong>中からは白くやわらかな豚肉の旨みがあふれ</strong>、<br>
+              衣の香ばしさと絶妙に調和する。<br>
+              視覚的な驚きと、食べてからの満足感が同時にやってくる一皿だ。
+            </p>
+          </div>
+        </div>
+
+        <!-- 蛤鍋 -->
+        <div class="course-item">
+          <div class="course-step">
+            <div class="course-step-num">02</div>
+            <div class="course-step-icon">🐚</div>
+          </div>
+          <div class="course-body">
+            <div class="course-title">
+              どでかい蛤鍋
+              <span class="course-tag" style="color:#a0d8b0;border-color:rgba(160,216,176,0.3);background:rgba(160,216,176,0.07);">だし全開</span>
+            </div>
+            <p class="course-desc">
+              「どでかい」という表現がそのまま当てはまる、<br>
+              主役を張れるサイズのハマグリが鍋に鎮座している。<br>
+              貝がゆっくりと開いていくたびに、<strong>琥珀色の出汁が広がっていく</strong>。<br>
+              昆布と貝の旨みが重なって生まれる、シンプルで奥行きのある味わい。<br>
+              <strong>この出汁の深さが、むらたの鍋を特別にしている。</strong><br>
+              箸を止める理由がどこにもない。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ③ 黒トンカツ深掘り -->
+    <div class="kuro-hero-card">
+      <div class="kuro-icon-col">
+        <div class="kuro-icon-big">🖤</div>
+        <div class="kuro-label">BLACK<br>TONKATSU</div>
+      </div>
+      <div>
+        <div class="kuro-body-title">黒トンカツとは何か。なぜ美味いのか。</div>
+        <p class="kuro-body-text">
+          通常の揚げ色とは正反対の、<strong>漆黒の衣</strong>が目を引く黒トンカツ。<br>
+          見た目の「黒さ」は焦げではない。特製の黒い衣が豚肉を包み、<br>
+          高温でしっかり揚げることで<strong>外はサクッ、中はしっとりの二層構造</strong>が生まれる。<br>
+          衣の旨みと豚肉の甘みが互いを引き立て、<br>
+          ソースなしでも十分なほどの完成度を持っている。
+        </p>
+        <p class="kuro-body-text" style="margin-top:12px;">
+          むらたの黒トンカツが特別なのは、その<strong>インパクトと美味さが一致している</strong>こと。<br>
+          写真を撮りたくなる見た目でありながら、食べても確かな旨さがある。<br>
+          「黒い」から美味い、のではなく、美味いから黒いのだ。
+        </p>
+      </div>
+    </div>
+
+    <!-- ④ 蛤鍋の出汁 深掘り -->
+    <div class="m-section">
+      <div class="m-section-title">🐚 蛤鍋の出汁について</div>
+
+      <div class="dashi-card">
+        <div class="dashi-icon">💧</div>
+        <div>
+          <div class="dashi-title">出汁の哲学</div>
+          <p class="dashi-text">
+            蛤の出汁は「加えない旨さ」だ。<br>
+            素材そのものが持つミネラルとグルタミン酸が溶け出し、<br>
+            一番だしのようにクリアで深い味わいを生み出す。<br>
+            むらたのどでかい蛤は、それを最大限に発揮できるサイズを選んでいる。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑤ アメフト視点コメント -->
+    <div class="football-block">
+      <div class="football-block-title">🏈 アメフト関係者への一言</div>
+      <p>
+        試合が終わった後の腹ペコ状態で「どこ行く？」となったとき、<br>
+        むらたは最高の答えになる。<br>
+        <strong>黒トンカツの「おお！」という驚きがテーブルを盛り上げ、<br>
+        蛤鍋を囲む温かい時間が仲間との語らいを自然と深めてくれる。</strong>
+      </p>
+      <p>
+        懇親会の一次会として使っても、試合後の打ち上げとして雪崩れ込んでも申し分ない。<br>
+        黒トンカツのインパクト、蛤鍋を囲む時間——<br>
+        その両方が<strong>チームで食事をする意味を改めて感じさせてくれる</strong>。<br>
+        <strong>「むらたに行ったことある？」がアメフト仲間同士の合言葉になる日も近い。</strong>
+      </p>
+    </div>
+
+    <!-- ⑥ 利用シーン -->
+    <div class="m-section">
+      <div class="m-section-title">📅 おすすめ利用シーン</div>
+      <div class="scene-grid">
+        <div class="scene-item">
+          <div class="scene-icon">🏆</div>
+          <div class="scene-label">懇親会・<br>同期会</div>
+        </div>
+        <div class="scene-item">
+          <div class="scene-icon">🎽</div>
+          <div class="scene-label">試合後の<br>打ち上げ</div>
+        </div>
+        <div class="scene-item">
+          <div class="scene-icon">🍺</div>
+          <div class="scene-label">チーム<br>飲み</div>
+        </div>
+        <div class="scene-item">
+          <div class="scene-icon">🤝</div>
+          <div class="scene-label">初対面<br>交流</div>
+        </div>
+        <div class="scene-item">
+          <div class="scene-icon">🖤</div>
+          <div class="scene-label">黒トンカツ<br>を堪能</div>
+        </div>
+        <div class="scene-item">
+          <div class="scene-icon">🐚</div>
+          <div class="scene-label">蛤鍋で<br>ゆっくり</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑦ 運営コメント -->
+    <div class="ops-comment">
+      <div class="ops-label">
+        <span style="font-size:1.1rem;">💬</span>
+        FOOTBALL CONNECTION 運営コメント
+      </div>
+      <p class="ops-text">
+        「どでかい蛤鍋と黒トンカツ、この二本柱がむらたのすべてです。<br>
+        出汁の旨みと黒衣のインパクト——どちらも一品で語れる個性がある。<br>
+        アメフト仲間との打ち上げ・懇親会に自信を持っておすすめできる、<br>
+        岩本町の頼れる一軒です。」
+      </p>
+    </div>
+
+    <!-- ⑧ 来店特典 -->
+    <div class="coupon-block">
+      <div class="coupon-tag">🎫 FOOTBALL CONNECTION 来店特典</div>
+      <p style="color:#888;font-size:0.82rem;margin-bottom:10px;">来店時にオーナーへ直接お声がけください</p>
+      <div class="coupon-word-big" style="font-size:1.1rem;line-height:1.6;">「FOOTBALL CONNECTION<br>見ました！」</div>
+      <p style="font-size:0.88rem;color:#888;margin-top:8px;">オーナーに直接声がけで来店特典あり（詳細はオーナーへご確認ください）</p>
+    </div>
+
+    <!-- ⑨ 動画 -->
+    <div class="m-section">
+      <div class="m-section-title">🎬 動画で見るむらた</div>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin-bottom:18px;">
+        <iframe
+          src="https://www.youtube.com/embed/BR5pq-kf7F4"
+          title="むらた 紹介動画"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;">
+        </iframe>
+      </div>
+      <div style="background:rgba(193,122,42,0.08);border:1px solid rgba(193,122,42,0.25);border-radius:12px;padding:20px 22px;">
+        <p style="font-size:0.8rem;letter-spacing:0.16em;color:var(--murata-amber);margin-bottom:12px;">📹 FOOTBALL CONNECTION スタッフより</p>
+        <p style="font-size:0.92rem;line-height:2.0;color:rgba(255,255,255,0.78);">
+          動画を見ればわかる——むらたは「本物」だ。<br><br>
+          どでかい蛤が出汁をたっぷり吸い込んだ鍋、漆黒の衣をまとった黒トンカツ。画面越しでも伝わってくる、あの迫力と香り。岩本町という少し渋い場所にひっそり構えるこの店が、なぜアメフト仲間に愛され続けるのか——映像がすべてを物語っている。<br><br>
+          百聞は一見にしかず。まず動画を観て、そのまま予約を入れてほしい。
+        </p>
+      </div>
+    </div>
+
+    <!-- ⑩ CTA -->
+    <div class="murata-cta-block">
+      <a href="https://retty.me/area/PRE13/ARE11/SUB1101/100000045979/"
+         target="_blank" rel="noopener noreferrer" class="cta-primary">
+        🖤 Rettyでむらたを見る・予約する
+      </a>
+      <a href="murata-sns-kit.html" class="cta-sec" style="display:flex;align-items:center;justify-content:center;gap:8px;">
+        📣 SNS投稿キット（X・Instagram・Facebook）
+      </a>
+      <div class="cta-row">
+        <a href="shops.html" class="cta-sec">
+          🗺️ 他のアメフト関係者の店を見る
+        </a>
+        <a href="referral.html" class="cta-outline">
+          🤝 仲間の店を紹介する
+        </a>
+      </div>
+    </div>
+
+    <!-- ⑪ 基本情報 -->
+    <div class="m-section">
+      <div class="m-section-title">📋 基本情報</div>
+      <table class="info-table">
+        <tr>
+          <td>🏪 店名</td>
+          <td><strong style="color:#fff;">むらた</strong></td>
+        </tr>
+        <tr>
+          <td>📍 エリア</td>
+          <td>東京都千代田区 岩本町</td>
+        </tr>
+        <tr>
+          <td>🚉 最寄駅</td>
+          <td>都営新宿線 岩本町駅 / JR秋葉原駅（徒歩圈）</td>
+        </tr>
+        <tr>
+          <td>🍽️ ジャンル</td>
+          <td>鍋・とんかつ（蛤鍋・黒トンカツ）</td>
+        </tr>
+        <tr>
+          <td>🔗 Retty</td>
+          <td><a href="https://retty.me/area/PRE13/ARE11/SUB1101/100000045979/" target="_blank" rel="noopener">Rettyでページを見る</a></td>
+        </tr>
+      </table>
+
+      <div class="seo-tags">
+        <span class="seo-tag">#岩本町とんかつ</span>
+        <span class="seo-tag">#黒トンカツ</span>
+        <span class="seo-tag">#むらた岩本町</span>
+        <span class="seo-tag">#蛤鍋</span>
+        <span class="seo-tag">#岩本町懇親会</span>
+        <span class="seo-tag">#岩本町打ち上げ</span>
+        <span class="seo-tag">#秋葉原とんかつ</span>
+        <span class="seo-tag">#アメフト関係者の店</span>
+      </div>
+    </div>
+
+    <!-- ⑫ 他の加盟店 -->
+    <div class="m-section">
+      <div class="m-section-title">🏈 アメフト関係者の加盟店</div>
+      <p style="margin-bottom:16px;">
+        FOOTBALL CONNECTIONには他にも仲間の店があります。
+        ぜひ覗いてみてください。
+      </p>
+      <a href="shop-detail-daiki.html"
+         style="display:inline-flex;align-items:center;gap:8px;background:rgba(193,122,42,0.1);border:1px solid rgba(193,122,42,0.3);color:var(--murata-amber2);font-weight:700;font-size:0.88rem;padding:12px 20px;border-radius:10px;text-decoration:none;transition:background 0.2s;margin-bottom:12px;"
+         onmouseover="this.style.background='rgba(193,122,42,0.2)'"
+         onmouseout="this.style.background='rgba(193,122,42,0.1)'">
+        🍱 とんかつ大希（蒲田）のページを見る →
+      </a><br>
+      <a href="shop-detail-tomikawa.html"
+         style="display:inline-flex;align-items:center;gap:8px;background:rgba(193,122,42,0.1);border:1px solid rgba(193,122,42,0.3);color:var(--murata-amber2);font-weight:700;font-size:0.88rem;padding:12px 20px;border-radius:10px;text-decoration:none;transition:background 0.2s;margin-bottom:12px;"
+         onmouseover="this.style.background='rgba(193,122,42,0.2)'"
+         onmouseout="this.style.background='rgba(193,122,42,0.1)'">
+        🍶 酒処 富川（渋谷）のページを見る →
+      </a><br>
+      <a href="shop-detail-mino.html"
+         style="display:inline-flex;align-items:center;gap:8px;background:rgba(193,122,42,0.1);border:1px solid rgba(193,122,42,0.3);color:var(--murata-amber2);font-weight:700;font-size:0.88rem;padding:12px 20px;border-radius:10px;text-decoration:none;transition:background 0.2s;margin-bottom:12px;"
+         onmouseover="this.style.background='rgba(193,122,42,0.2)'"
+         onmouseout="this.style.background='rgba(193,122,42,0.1)'">
+        🍶 割烹 美乃（浜松町・大門）のページを見る →
+      </a><br>
+      <a href="shops.html"
+         style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#ccc;font-weight:600;font-size:0.88rem;padding:12px 20px;border-radius:10px;text-decoration:none;margin-top:4px;transition:background 0.2s;"
+         onmouseover="this.style.background='rgba(255,255,255,0.08)'"
+         onmouseout="this.style.background='rgba(255,255,255,0.04)'">
+        🗺️ 全国の仲間の店一覧へ →
+      </a>
+    </div>
+
+    <!-- ⑬ オーナーへ -->
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:20px 24px;">
+      <p style="font-size:0.82rem;color:#777;font-weight:700;margin-bottom:10px;">📝 店舗オーナーの方へ</p>
+      <p style="font-size:0.85rem;color:#999;line-height:1.7;margin-bottom:14px;">
+        店舗情報・写真の更新・修正はフォームよりお気軽にどうぞ。
+      </p>
+      <a href="https://forms.gle/nfUDZPizt6Hgwv9n9" target="_blank" rel="noopener noreferrer"
+         style="display:inline-block;background:var(--murata-amber);color:#0A1628;font-weight:700;font-size:0.86rem;padding:10px 22px;border-radius:8px;text-decoration:none;">
+        📷 店舗情報・写真を更新する
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FOOTBALL CONNECTION</div>
+        <p class="footer-tagline">せっかくなら、アメフト関係者の店に行こう。<br>全国の仲間の店・サービスをつなぐプラットフォーム。</p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigation</div>
+        <div class="footer-nav-links">
+          <a href="index.html">トップ</a>
+          <a href="shops.html">店舗・サービスを探す</a>
+          <a href="events.html">イベント</a>
+          <a href="apply.html">加盟申込</a>
+          <a href="referral.html">掲載紹介</a>
+          <a href="terms.html">利用規約</a>
+          <a href="tokusho.html">特定商取引法に基づく表記</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FOOTBALL Connection. Operated by TSUMUGU合同会社</p>
+      <p style="margin-top:8px;"><a href="https://x.com/FOOTBALLCo78247" target="_blank" style="color:var(--gray);font-size:0.85rem;">𝕏 @FOOTBALLCo78247</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof initMobileMenu === 'function') initMobileMenu();
+    if (typeof initScrollAnimation === 'function') initScrollAnimation();
+  });
+</script>
+</body>
+</html>

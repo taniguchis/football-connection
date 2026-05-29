@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#0A1628">
+  <meta name="description" content="とんかつ大希｜蒲田のとんかつ専門店。白トンカツが絶品、懇親会・チーム飲み・試合後打ち上げに最適。蒲田駅・京急蒲田駅すぐ。アメフト関係者にも人気の一軒。">
+  <meta name="keywords" content="蒲田 とんかつ, 蒲田 白トンカツ, とんかつ大希, 蒲田 飲み会, 蒲田 居酒屋 団体, アメフト 関係者 店, 蒲田 打ち上げ">
+  <title>とんかつ大希｜蒲田｜アメフト関係者にもおすすめの絶品とんかつ店 | FOOTBALL CONNECTION</title>
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="apple-touch-icon" href="images/logo-square.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260318">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNJ4ZBMYGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNJ4ZBMYGR');
+  </script>
+  <style>
+    /* =========================================
+       とんかつ大希 専用スタイル
+    ========================================= */
+    :root {
+      --tonkatsu-gold: #D4A017;
+      --tonkatsu-brown: #8B4513;
+      --tonkatsu-cream: #FFF8E7;
+    }
+
+    /* ── ヒーロービジュアル ── */
+    .daiki-hero {
+      background: linear-gradient(155deg, #1a0e00 0%, #0A1628 40%, #0d1f0d 100%);
+      padding: clamp(100px, 12vw, 140px) 24px clamp(40px, 6vw, 60px);
+      position: relative;
+      overflow: hidden;
+    }
+    .daiki-hero::before {
+      content: '🍱';
+      position: absolute;
+      right: -2%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(120px, 22vw, 260px);
+      opacity: 0.06;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .daiki-hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .daiki-eyecatch {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,160,23,0.18);
+      border: 1px solid rgba(212,160,23,0.5);
+      border-radius: 30px;
+      padding: 5px 18px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--tonkatsu-gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+    }
+    .daiki-hero-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .daiki-hero-title .hl { color: var(--tonkatsu-gold); }
+    .daiki-catch {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .daiki-hero-lead {
+      font-size: clamp(0.88rem, 1.6vw, 1rem);
+      color: #c8c8c8;
+      line-height: 1.85;
+      margin-bottom: 28px;
+      max-width: 640px;
+    }
+    .daiki-hero-lead strong { color: var(--white); }
+    .daiki-hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .daiki-badge {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 20px;
+      padding: 5px 16px;
+      font-size: 0.8rem;
+      color: #e2e2e2;
+    }
+    .daiki-badge.gold-badge {
+      background: rgba(212,160,23,0.15);
+      border-color: rgba(212,160,23,0.4);
+      color: var(--tonkatsu-gold);
+      font-weight: 700;
+    }
+
+    /* ── レイアウト ── */
+    .daiki-layout {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 100px;
+    }
+
+    /* ── キャッチカード（一言強調） ── */
+    .daiki-catch-card {
+      background: linear-gradient(135deg, rgba(212,160,23,0.12) 0%, rgba(139,69,19,0.08) 100%);
+      border: 2px solid rgba(212,160,23,0.6);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .daiki-catch-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg, transparent, transparent 8px,
+        rgba(212,160,23,0.03) 8px, rgba(212,160,23,0.03) 9px
+      );
+    }
+    .daiki-catch-card-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+      font-weight: 700;
+      color: var(--tonkatsu-gold);
+      line-height: 1.4;
+      position: relative;
+      z-index: 1;
+    }
+    .daiki-catch-card-sub {
+      font-size: 0.88rem;
+      color: #b0b0b0;
+      margin-top: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── セクション ── */
+    .daiki-section {
+      background: var(--navy-light);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+    }
+    .daiki-section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--tonkatsu-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .daiki-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(212,160,23,0.4), transparent);
+    }
+    .daiki-section p {
+      font-size: 0.95rem;
+      color: #d4d4d4;
+      line-height: 1.85;
+    }
+    .daiki-section p + p { margin-top: 14px; }
+    .daiki-section strong { color: var(--white); }
+
+    /* ── 白トンカツ訴求カード ── */
+    .shiro-card {
+      background: linear-gradient(135deg, rgba(255,248,231,0.06) 0%, rgba(212,160,23,0.04) 100%);
+      border: 1px solid rgba(212,160,23,0.25);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .shiro-card-icon { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
+    .shiro-card-title {
+      font-weight: 700;
+      color: var(--tonkatsu-gold);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+    .shiro-card-text {
+      font-size: 0.87rem;
+      color: #c4c4c4;
+      line-height: 1.7;
+    }
+
+    /* ── アメフト視点ブロック ── */
+    .football-block {
+      background: linear-gradient(135deg, rgba(26,107,60,0.15) 0%, rgba(10,22,40,0.9) 100%);
+      border: 2px solid rgba(26,107,60,0.4);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+    }
+    .football-block-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #4ade80;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .football-block p {
+      font-size: 0.93rem;
+      color: #d0d0d0;
+      line-height: 1.85;
+    }
+    .football-block p + p { margin-top: 12px; }
+    .football-block strong { color: var(--white); }
+
+    /* ── 利用シーン ── */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .scene-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 12px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .scene-icon { font-size: 1.6rem; margin-bottom: 8px; }
+    .scene-label {
+      font-size: 0.82rem;
+      color: #d0d0d0;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* ── 基本情報テーブル ── */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .info-table tr {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .info-table tr:last-child { border-bottom: none; }
+    .info-table td {
+      padding: 12px 0;
+      font-size: 0.9rem;
+      vertical-align: top;
+    }
+    .info-table td:first-child {
+      color: #888;
+      min-width: 80px;
+      padding-right: 16px;
+    }
+    .info-table td:last-child { color: #d4d4d4; }
+
+    /* ── 来店特典ボックス ── */
+    .coupon-block {
+      background: linear-gradient(135deg, rgba(26,107,60,0.2) 0%, rgba(10,22,40,0.9) 100%);
+      border: 2px solid #1A6B3C;
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .coupon-tag {
+      display: inline-block;
+      background: #1A6B3C;
+      color: #fff;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 20px;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    .coupon-word-big {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--tonkatsu-gold);
+      margin-bottom: 10px;
+    }
+
+    /* ── CTAボタン群 ── */
+    .daiki-cta-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .daiki-cta-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #D4A017, #E8B82A);
+      color: #0A1628;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 18px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(212,160,23,0.35);
+    }
+    .daiki-cta-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(212,160,23,0.45);
+    }
+    .daiki-cta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .daiki-cta-sec {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(26,107,60,0.15);
+      border: 1px solid rgba(26,107,60,0.4);
+      color: #4ade80;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 14px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .daiki-cta-sec:hover {
+      background: rgba(26,107,60,0.28);
+      transform: translateY(-2px);
+    }
+    .daiki-cta-outline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #c0c0c0;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 14px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .daiki-cta-outline:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-2px);
+    }
+
+    /* ── 運営コメント ── */
+    .ops-comment {
+      background: rgba(212,160,23,0.06);
+      border-left: 4px solid var(--tonkatsu-gold);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+    }
+    .ops-comment-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .ops-comment-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--tonkatsu-gold);
+      letter-spacing: 0.06em;
+    }
+    .ops-comment-text {
+      font-size: 0.92rem;
+      color: #d0d0d0;
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    /* ── SEOテキスト ── */
+    .seo-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .seo-tag {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.76rem;
+      color: #888;
+    }
+
+    /* モバイル */
+    @media (max-width: 600px) {
+      .daiki-section { padding: 20px 18px; }
+      .football-block { padding: 22px 18px; }
+      .coupon-block { padding: 22px 18px; }
+      .daiki-cta-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="sd-page">
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="shops.html" class="active">店舗・サービスを探す</a>
+      <a href="events.html">イベント</a>
+      <a href="apply.html" class="btn-header-cta">無料で掲載する</a>
+    </nav>
+    <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 トップ</a>
+    <a href="shops.html">🗺️ 店舗・サービスを探す</a>
+    <a href="events.html">📅 イベント</a>
+    <a href="apply.html">🏈 無料で掲載する</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="daiki-hero">
+  <div class="daiki-hero-inner">
+    <a href="shops.html" style="display:inline-flex;align-items:center;gap:6px;color:#888;font-size:0.82rem;text-decoration:none;margin-bottom:20px;transition:color 0.2s;"
+       onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">
+      ← 店舗・サービス一覧に戻る
+    </a>
+
+    <div class="daiki-eyecatch">
+      🍱 蒲田 とんかつ専門店 &nbsp;｜&nbsp; FOOTBALL CONNECTION 加盟店
+    </div>
+
+    <h1 class="daiki-hero-title">
+      とんかつ<span class="hl">大希</span>
+    </h1>
+
+    <p class="daiki-catch">
+      蒲田で「とんかつ食べるならここ」と<br class="sp-br">言いたくなる、<span style="color:var(--tonkatsu-gold);">白トンカツの名店。</span>
+    </p>
+
+    <p class="daiki-hero-lead">
+      JR蒲田・京急蒲田からすぐ。<strong>白トンカツ</strong>のしっとり柔らかい食感と、
+      じわっと広がる<strong>肉の旨味</strong>は一度食べたら忘れられない。
+      食事としてがっつり行きたい日も、飲みの締めに立ち寄りたい日も、
+      試合後の腹ペコで集まりたい日も――アメフト関係者にこそ使ってほしい、
+      <strong>蒲田の頼れる一軒</strong>。
+    </p>
+
+    <div class="daiki-hero-badges">
+      <span class="daiki-badge gold-badge">🍱 白トンカツ</span>
+      <span class="daiki-badge gold-badge">🏈 立教大学Rushers OB経営</span>
+      <span class="daiki-badge">📍 蒲田</span>
+      <span class="daiki-badge">🚉 蒲田駅・京急蒲田駅</span>
+      <span class="daiki-badge">👥 団体利用OK</span>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main>
+  <div class="daiki-layout">
+
+    <!-- ① ヒーロー画像 -->
+    <div style="margin-bottom:28px;border-radius:16px;overflow:hidden;border:1px solid rgba(212,160,23,0.25);">
+      <img src="images/shops/daiki_01.jpg" alt="とんかつ大希 蒲田 – 白トンカツのイメージ"
+           style="width:100%;height:auto;display:block;">
+      <div style="background:rgba(26,14,0,0.85);padding:10px 16px;display:flex;align-items:center;gap:8px;">
+        <span style="font-size:0.78rem;color:var(--tonkatsu-gold);">📷</span>
+        <span style="font-size:0.78rem;color:#888;">とんかつ大希（蒲田）― じっくり低温で揚げた絶品とんかつ</span>
+      </div>
+    </div>
+
+    <!-- ① キャッチカード -->
+    <div class="daiki-catch-card">
+      <div class="daiki-catch-card-text">
+        「白トンカツが本当に美味しい一店。<br>
+        蒲田に来たら、ここ以外考えられない。」
+      </div>
+      <p class="daiki-catch-card-sub">― FOOTBALL CONNECTION 編集部コメント</p>
+    </div>
+
+    <!-- OBバッジ -->
+    <div class="sd-ob-block" style="margin-bottom:24px;">
+      <div class="sd-ob-icon">🏈</div>
+      <div>
+        <div class="sd-ob-label">FOOTBALL CONNECTION MEMBER</div>
+        <div class="sd-ob-text">立教大学Rushers OB（三井光秀オーナー）が営む白トンカツの名店。フラッグフットボール経験も持つアメフトコミュニティの店。</div>
+      </div>
+    </div>
+
+    <!-- ② 店舗紹介：食の魅力 -->
+    <div class="daiki-section">
+      <div class="daiki-section-title">🍱 店舗紹介</div>
+
+      <p>
+        蒲田という街に根ざした<strong>とんかつ専門店「とんかつ大希」</strong>。
+        数あるとんかつ店の中でも、この店が支持される理由はひとつ――
+        <strong>白トンカツの圧倒的な旨さ</strong>だ。
+      </p>
+
+      <div class="shiro-card">
+        <div class="shiro-card-icon">🤍</div>
+        <div>
+          <div class="shiro-card-title">白トンカツとは？</div>
+          <p class="shiro-card-text">
+            通常のとんかつが黄金色の揚げ色をつけるのに対し、
+            白トンカツは低温でじっくり揚げることで衣を白く仕上げる技法。
+            見た目のやさしさとは裏腹に、衣はしっかりとした食感を持ちながら
+            油切れが良く、さっぱりと食べられるのが特徴だ。
+          </p>
+        </div>
+      </div>
+
+      <p>
+        大希の白トンカツは、<strong>衣のサクッと感よりも「しっとり柔らかさ」を大切に</strong>している。<br>
+        噛むたびにじゅわっと広がる肉汁、繊維がほぐれるような柔らかな肉質、<br>
+        そして余計な脂っこさのないクリーンな後味——。<br>
+        これは「揚げ物」というより、もはや一種の<strong>丁寧な料理</strong>だ。
+      </p>
+
+      <div class="shiro-card">
+        <div class="shiro-card-icon">✨</div>
+        <div>
+          <div class="shiro-card-title">しっとり柔らかい白トンカツの魅力</div>
+          <p class="shiro-card-text">
+            表面はふんわりとした衣。中からはしっとりとした豚肉の旨味があふれる。
+            揚げ油の選定と温度管理へのこだわりが、他では味わえない食感を生み出している。
+            一口食べた瞬間「あ、これ本物だ」と思わせる、確かなクオリティ。
+          </p>
+        </div>
+      </div>
+
+      <p>
+        店内は<strong>落ち着いた雰囲気</strong>で、気軽に使いやすい。
+        がっつりとんかつを食べたい日はもちろん、
+        複数名での食事や軽く飲みながら使う夜の利用にも対応。
+        「とんかつ屋だから飲めない」なんてことはなく、
+        <strong>食事としてもお酒の場としても楽しめる柔軟さ</strong>がある。
+      </p>
+    </div>
+
+    <!-- ③ アメフト視点コメント -->
+    <div class="football-block">
+      <div class="football-block-title">🏈 アメフト関係者への一言</div>
+
+      <p>
+        オーナーは<strong>大学アメフト部のOB</strong>。
+        だから分かる――試合が終わった後の「とにかく腹が減った」という感覚も、
+        懇親会でみんなで盛り上がりたい気持ちも、チームの仲間と気兼ねなく使える
+        店を探しているということも。
+      </p>
+      <p>
+        <strong>団体利用にも対応できる</strong>ので、試合後の打ち上げや
+        懇親会の一次会・二次会として使いやすい。
+        「今日どこ行く？」「蒲田なら大希でしょ」という会話が
+        自然と生まれるような、<strong>アメフト関係者同士の集まりに最適な空間</strong>だ。
+      </p>
+      <p>
+        初対面の人との交流にもぴったり。
+        美味しいとんかつがあれば、話は自然と弾む。
+        共通の話題（アメフト）＋美味しい食事＋使いやすい雰囲気の三拍子が揃った
+        <strong>仲間に紹介したい一軒</strong>。
+      </p>
+    </div>
+
+    <!-- ④ おすすめ利用シーン -->
+    <div class="daiki-section">
+      <div class="daiki-section-title">📅 おすすめ利用シーン</div>
+      <div class="scene-grid">
+        <div class="scene-item">
+          <div class="scene-icon">🏆</div>
+          <div class="scene-label">懇親会・<br>同期会</div>
+        </div>
+        <div class="scene-item">
+          <div class="scene-icon">🎽</div>
+          <div class="scene-label">試合後の<br>打ち上げ</div>
+        </div>
+        <div class="scene-item">
+          <div class="scene-icon">🍺</div>
+          <div class="scene-label">チーム<br>飲み</div>
+        </div>
+        <div class="scene-item">
+          <div class="scene-icon">🤝</div>
+          <div class="scene-label">初対面<br>交流</div>
+        </div>
+        <div class="scene-item">
+          <div class="scene-icon">👫</div>
+          <div class="scene-label">少人数での<br>食事</div>
+        </div>
+        <div class="scene-item">
+          <div class="scene-icon">🍱</div>
+          <div class="scene-label">ランチ・<br>一人飯</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑤ 運営コメント -->
+    <div class="ops-comment">
+      <div class="ops-comment-header">
+        <span style="font-size:1.2rem;">💬</span>
+        <span class="ops-comment-label">FOOTBALL CONNECTION 運営コメント</span>
+      </div>
+      <p class="ops-comment-text">
+        「白トンカツが本当に美味しい一店です。オーナーはアメフトOBで、
+        試合後の打ち上げ・懇親会・チーム飲みに使いやすい雰囲気が魅力。
+        蒲田でとんかつを食べるなら、仲間にここを自信を持って推せます。
+        一度食べたらリピート確定の味。ぜひ足を運んでみてください。」
+      </p>
+    </div>
+
+    <!-- ⑥ 来店特典 -->
+    <div class="coupon-block">
+      <div class="coupon-tag">🎫 FOOTBALL Connection 来店特典</div>
+      <p style="color:#999;font-size:0.82rem;margin-bottom:10px;">来店時にスタッフへ合言葉をお伝えください</p>
+      <div class="coupon-word-big">「タッチダウン！」</div>
+      <p style="font-size:0.88rem;color:#888;margin-top:8px;">合言葉で来店特典あり（詳細は店舗へご確認ください）</p>
+    </div>
+
+    <!-- ⑦ CTA -->
+    <div class="daiki-cta-block">
+      <a href="https://www.google.com/maps/search/とんかつ大希+蒲田" target="_blank" rel="noopener noreferrer" class="daiki-cta-primary">
+        🍱 このお店に行ってみる（Googleマップで確認）
+      </a>
+      <div class="daiki-cta-row">
+        <a href="shops.html" class="daiki-cta-sec">
+          🗺️ 他のアメフト関係者の店を見る
+        </a>
+        <a href="referral.html" class="daiki-cta-outline">
+          🤝 仲間の店を紹介する
+        </a>
+      </div>
+    </div>
+
+    <!-- ⑧ 基本情報 -->
+    <div class="daiki-section">
+      <div class="daiki-section-title">📋 基本情報</div>
+      <table class="info-table">
+        <tr>
+          <td>🏪 店名</td>
+          <td><strong style="color:#fff;">とんかつ大希</strong></td>
+        </tr>
+        <tr>
+          <td>📍 エリア</td>
+          <td>東京都大田区 蒲田</td>
+        </tr>
+        <tr>
+          <td>🚉 最寄駅</td>
+          <td>JR蒲田駅 / 京急蒲田駅（徒歩圏）</td>
+        </tr>
+        <tr>
+          <td>🍱 ジャンル</td>
+          <td>とんかつ専門店</td>
+        </tr>
+        <tr>
+          <td>🏈 関係</td>
+          <td>立教大学Rushers OB（三井光秀オーナー）</td>
+        </tr>
+      </table>
+
+      <!-- SEOタグ -->
+      <div class="seo-tags">
+        <span class="seo-tag">#蒲田とんかつ</span>
+        <span class="seo-tag">#蒲田白トンカツ</span>
+        <span class="seo-tag">#蒲田飲み会</span>
+        <span class="seo-tag">#蒲田居酒屋団体</span>
+        <span class="seo-tag">#アメフト関係者の店</span>
+        <span class="seo-tag">#蒲田打ち上げ</span>
+        <span class="seo-tag">#懇親会</span>
+        <span class="seo-tag">#とんかつ大希</span>
+      </div>
+    </div>
+
+    <!-- ⑨ アメフト関係者の他の店 -->
+    <div class="daiki-section">
+      <div class="daiki-section-title">🏈 他のアメフト関係者の店・サービス</div>
+      <p style="margin-bottom:16px;">
+        FOOTBALL CONNECTIONには、全国のアメフト・フラッグ・タッチフットボール関係者が経営・参画する
+        店舗・サービスが集まっています。蒲田周辺にもまだまだ仲間の店があるかも。
+      </p>
+      <a href="shops.html" style="display:inline-flex;align-items:center;gap:8px;background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.35);color:var(--tonkatsu-gold);font-weight:700;font-size:0.9rem;padding:12px 24px;border-radius:10px;text-decoration:none;transition:background 0.2s;"
+         onmouseover="this.style.background='rgba(212,160,23,0.22)'"
+         onmouseout="this.style.background='rgba(212,160,23,0.12)'">
+        🗺️ 全国の仲間の店一覧を見る →
+      </a>
+    </div>
+
+    <!-- ⑩ 店舗オーナーへ -->
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px 24px;">
+      <p style="font-size:0.82rem;color:#888;margin-bottom:10px;font-weight:700;">📝 店舗オーナーの方へ</p>
+      <p style="font-size:0.85rem;color:#aaa;line-height:1.7;margin-bottom:14px;">
+        店舗情報・写真の更新・修正は下記フォームよりお気軽にどうぞ。
+      </p>
+      <a href="https://forms.gle/nfUDZPizt6Hgwv9n9" target="_blank" rel="noopener noreferrer"
+         style="display:inline-block;background:var(--tonkatsu-gold);color:#0A1628;font-weight:700;font-size:0.86rem;padding:10px 22px;border-radius:8px;text-decoration:none;">
+        📷 店舗情報・写真を更新する
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FOOTBALL CONNECTION</div>
+        <p class="footer-tagline">せっかくなら、アメフト関係者の店に行こう。<br>全国の仲間の店・サービスをつなぐプラットフォーム。</p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigation</div>
+        <div class="footer-nav-links">
+          <a href="index.html">トップ</a>
+          <a href="shops.html">店舗・サービスを探す</a>
+          <a href="events.html">イベント</a>
+          <a href="apply.html">加盟申込</a>
+          <a href="referral.html">掲載紹介</a>
+          <a href="terms.html">利用規約</a>
+          <a href="tokusho.html">特定商取引法に基づく表記</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FOOTBALL Connection. Operated by TSUMUGU合同会社</p>
+      <p style="margin-top:8px;"><a href="https://x.com/FOOTBALLCo78247" target="_blank" style="color:var(--gray);font-size:0.85rem;">𝕏 @FOOTBALLCo78247</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script>
+  // モバイルメニュー
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof initMobileMenu === 'function') initMobileMenu();
+    if (typeof initScrollAnimation === 'function') initScrollAnimation();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#0A1628">
+  <meta name="description" content="Protein Nation｜東京・原宿発のプロテイン&サプリメント専門店。アメフト関係者が経営するフィットネスブランド。ECサイト＆実店舗で24時間対応。FOOTBALL CONNECTION加盟店。">
+  <meta name="keywords" content="Protein Nation, プロテイン 東京, サプリメント 専門店, 原宿 プロテイン, アメフト OB 店, フィットネス サプリ, FOOTBALL CONNECTION, theproteinnation">
+  <title>Protein Nation｜原宿発・プロテイン&サプリ専門店｜アメフト関係者が経営 | FOOTBALL CONNECTION</title>
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="apple-touch-icon" href="images/logo-square.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260325">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNJ4ZBMYGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNJ4ZBMYGR');
+  </script>
+  <style>
+    /* =========================================
+       Protein Nation 専用スタイル
+       カラーテーマ：レッド × ブラック × ホワイト
+    ========================================= */
+
+    .sd-page {
+      --sd-accent: #e63946;
+      --sd-accent-dark: #b02030;
+      --sd-accent-dim: rgba(230,57,70,0.12);
+      --sd-accent-border: rgba(230,57,70,0.32);
+    }
+
+    /* ── ヒーロー：ブラック×レッド ── */
+    .sd-hero {
+      background: linear-gradient(155deg, #0d0000 0%, #0A1628 45%, #1a0305 100%);
+    }
+    .sd-hero::before {
+      content: '💪';
+      position: absolute; right: -1%; top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(110px, 20vw, 240px);
+      opacity: 0.05; pointer-events: none; line-height: 1;
+    }
+
+    .red-divider {
+      display: flex; align-items: center; gap: 14px;
+      margin: 30px 0;
+      color: rgba(230,57,70,0.55);
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .red-divider::before, .red-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(230,57,70,0.45), transparent);
+    }
+
+    .vision-block {
+      background: linear-gradient(135deg, rgba(230,57,70,0.09), rgba(13,0,0,0.65));
+      border: 1px solid rgba(230,57,70,0.22);
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin: 24px 0;
+    }
+    .vision-label {
+      font-size: 0.7rem; letter-spacing: 0.2em;
+      color: var(--sd-accent); margin-bottom: 14px; text-transform: uppercase;
+    }
+    .vision-block-text {
+      font-size: 0.95rem; line-height: 2.1;
+      color: rgba(255,255,255,0.82);
+    }
+    .vision-block-text strong { color: #fff; }
+
+    /* ── バナー ── */
+    .pn-banner {
+      background: linear-gradient(135deg, #1a0305 0%, #0A1628 60%, #0d0000 100%);
+      border-left: 3px solid var(--sd-accent);
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin: 28px 0;
+      font-size: 0.88rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.72);
+    }
+    .pn-banner .banner-icon {
+      font-size: 1.3rem;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    /* ── 商品ラインカード ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .product-card {
+      background: rgba(230,57,70,0.07);
+      border: 1px solid rgba(230,57,70,0.2);
+      border-radius: 12px;
+      padding: 20px 16px;
+    }
+    .product-card .product-icon { font-size: 1.6rem; margin-bottom: 8px; }
+    .product-card .product-name { font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .product-card .product-desc { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+    /* ── メイン画像 ── */
+    .shop-main-photo {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      margin-bottom: 10px;
+      object-fit: cover;
+      max-height: 480px;
+    }
+
+    /* ── OBバッジ ── */
+    .ob-badge {
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(230,57,70,0.08);
+      border: 1px solid rgba(230,57,70,0.22);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 32px;
+    }
+
+    /* ── CTAボタン ── */
+    .cta-primary {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: linear-gradient(135deg, #e63946, #b02030);
+      color: #fff; text-decoration: none;
+      padding: 17px 24px; border-radius: 12px;
+      font-weight: 700; font-size: 1rem; letter-spacing: 0.05em;
+    }
+    .cta-secondary {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+      color: #fff; text-decoration: none;
+      padding: 17px 24px; border-radius: 12px;
+      font-weight: 700; font-size: 1rem; letter-spacing: 0.05em;
+    }
+    .cta-tertiary {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.85); text-decoration: none;
+      padding: 15px 24px; border-radius: 12px;
+      font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em;
+    }
+
+    /* ── 関連店舗リンク ── */
+    .related-link {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px; padding: 14px 16px;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .related-link:hover { background: rgba(230,57,70,0.08); }
+  </style>
+</head>
+<body class="sd-page">
+
+<!-- ══════════ HEADER ══════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="shops.html" class="active">店舗・サービスを探す</a>
+      <a href="events.html">イベント</a>
+      <a href="apply.html" class="btn-header-cta">無料で掲載する</a>
+    </nav>
+    <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 トップ</a>
+    <a href="shops.html">🗺️ 店舗・サービスを探す</a>
+    <a href="events.html">📅 イベント</a>
+    <a href="apply.html">🏈 無料で掲載する</a>
+  </nav>
+</header>
+
+  <!-- ========== HERO ========== -->
+  <section class="sd-hero" style="position:relative;overflow:hidden;padding:56px 24px 44px;">
+    <div style="max-width:720px;margin:0 auto;position:relative;z-index:1;">
+
+      <!-- パンくず -->
+      <p style="font-size:0.7rem;color:rgba(255,255,255,0.35);letter-spacing:0.1em;margin-bottom:20px;">
+        <a href="index.html" style="color:rgba(255,255,255,0.35);text-decoration:none;">HOME</a>
+        &nbsp;/&nbsp;
+        <a href="shops.html" style="color:rgba(255,255,255,0.35);text-decoration:none;">SHOPS</a>
+        &nbsp;/&nbsp; Protein Nation
+      </p>
+
+      <!-- ジャンルタグ -->
+      <p style="font-family:'Oswald',sans-serif;font-size:0.72rem;letter-spacing:0.22em;color:var(--sd-accent);margin-bottom:12px;text-transform:uppercase;">
+        PROTEIN &amp; SUPPLEMENT / TOKYO
+      </p>
+
+      <!-- 店名 -->
+      <h1 style="font-family:'Oswald',sans-serif;font-size:clamp(2rem,8vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:0.06em;margin-bottom:18px;">
+        Protein Nation
+      </h1>
+
+      <!-- キャッチ -->
+      <p style="font-size:clamp(0.9rem,3vw,1.1rem);color:rgba(255,255,255,0.7);line-height:1.8;margin-bottom:24px;">
+        鍛える仲間のために。アメフト関係者が手がける、<br>
+        東京発のプロテイン&サプリメント専門ブランド。
+      </p>
+
+      <!-- バッジ -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="background:rgba(230,57,70,0.15);color:#e63946;border:1px solid rgba(230,57,70,0.35);padding:6px 14px;border-radius:20px;font-size:0.75rem;letter-spacing:0.08em;">💪 フィットネス・サプリ</span>
+        <span style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.15);padding:6px 14px;border-radius:20px;font-size:0.75rem;letter-spacing:0.06em;">📍 東京都</span>
+        <span style="background:rgba(230,57,70,0.12);color:#e89098;border:1px solid rgba(230,57,70,0.3);padding:6px 14px;border-radius:20px;font-size:0.75rem;letter-spacing:0.06em;">🌐 EC＋実店舗</span>
+        <span style="background:rgba(201,135,58,0.12);color:#C9873A;border:1px solid rgba(201,135,58,0.3);padding:6px 14px;border-radius:20px;font-size:0.75rem;letter-spacing:0.06em;">🏈 アメフト関係者オーナー</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAIN ========== -->
+  <main class="sd-main" style="background:#080008;min-height:60vh;">
+  <div class="sd-body" style="max-width:720px;margin:0 auto;padding:40px 20px 80px;">
+
+    <!-- ── メイン写真 ── -->
+    <img
+      src="images/shops/proteinnation_01.jpg"
+      alt="Protein Nation｜プロテイン&サプリメント専門店"
+      class="shop-main-photo"
+    >
+    <p style="text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.35);margin-bottom:32px;letter-spacing:0.08em;">Protein Nation ― People's Protein（ホエイプロテイン）</p>
+
+    <!-- ── フックカード ── -->
+    <div style="background:linear-gradient(135deg,rgba(230,57,70,0.12),rgba(8,0,8,0.8));border:1px solid rgba(230,57,70,0.25);border-radius:14px;padding:28px 24px;margin-bottom:36px;text-align:center;">
+      <p style="font-size:1.15rem;font-weight:700;color:#fff;line-height:1.8;margin-bottom:12px;">
+        アメフト仲間の身体を、もっと強くしたい。<br>
+        <span style="color:#e63946;">その想いがひとつのブランドになった。</span>
+      </p>
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.9;">
+        プロテインを選ぶなら、信頼できる仲間の店で。<br>東京発、アメフト関係者が本気で作ったサプリメントブランド。
+      </p>
+    </div>
+
+    <!-- ── OBバッジ ── -->
+    <div class="ob-badge">
+      <div style="font-size:2.2rem;flex-shrink:0;">🏈</div>
+      <div>
+        <div style="font-size:0.7rem;letter-spacing:0.18em;color:var(--sd-accent);margin-bottom:5px;">FOOTBALL CONNECTION MEMBER</div>
+        <div style="font-size:0.92rem;font-weight:700;color:#fff;line-height:1.6;">オーナー 外山 裕之｜Bentley University アメフト部 OB<br><span style="font-size:0.82rem;font-weight:500;">品川CC ブルザイズ OB</span></div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:4px;">米国の大学でフィールドに立ち、帰国後は品川のチームでプレー。そのフィジカルへのこだわりがブランドの原点。</div>
+      </div>
+    </div>
+
+    <div class="red-divider">ABOUT</div>
+
+    <!-- ── 店舗紹介 ── -->
+    <p style="font-size:0.95rem;line-height:2.1;color:rgba(255,255,255,0.78);margin-bottom:24px;">
+      <strong style="color:#fff;">Protein Nation</strong> は、東京・原宿を拠点に展開するプロテイン&サプリメント専門ブランド。オーナーの <strong style="color:#fff;">外山 裕之</strong> さんは米国 Bentley University のアメフト部出身。帰国後は <strong style="color:#fff;">品川CC ブルザイズ</strong>（東京都品川区・社会人X1 Super挑戦チーム）でもプレーした、本物のフットボールプレイヤーだ。
+    </p>
+    <p style="font-size:0.95rem;line-height:2.1;color:rgba(255,255,255,0.78);margin-bottom:32px;">
+      公式ECサイト（theproteinnationjp.com）では24時間いつでも購入可能。アメフト選手・OBはもちろん、本気で身体を鍛えるすべての人へ向けた、本物志向のサプリメントが揃う。
+    </p>
+
+    <div class="red-divider">PRODUCTS</div>
+
+    <!-- ── 商品ライン ── -->
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-icon">🥤</div>
+        <div class="product-name">ホエイプロテイン</div>
+        <div class="product-desc">高品質なホエイを使用。トレーニング後の栄養補給に。</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">💊</div>
+        <div class="product-name">サプリメント</div>
+        <div class="product-desc">ビタミン・ミネラルなど、パフォーマンス向上に必要な栄養素を。</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">⚡</div>
+        <div class="product-name">スポーツニュートリション</div>
+        <div class="product-desc">試合・練習前後のエネルギー補給をサポート。</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🛒</div>
+        <div class="product-name">ECサイト 24時間対応</div>
+        <div class="product-desc">オンラインでいつでも注文可能。仕事終わりの深夜でもOK。</div>
+      </div>
+    </div>
+
+    <!-- ── オーナーズストーリー ── -->
+    <div class="red-divider">OWNER'S STORY</div>
+    <div class="vision-block">
+      <div class="vision-label">✦ OWNER'S STORY</div>
+      <p class="vision-block-text">
+        米国 <strong>Bentley University</strong> でアメリカンフットボールに打ち込み、本場のフィジカル文化を全身で体感した外山 裕之さん。帰国後は <strong>品川CC ブルザイズ</strong> に加わり、社会人レベルでも競技を続けた。<br><br>
+        「アメフト仲間が本当に信頼できるプロテインを作りたい」——そのシンプルな想いがブランドの出発点。選手として身体と向き合い続けてきたからこそわかる、本物の栄養補給の大切さをプロダクトに込めた。<br><br>
+        Protein Nation の製品ラインは、<strong>選手目線で設計</strong>されたサプリメントが揃う。トレーニングの質を上げ、回復を早め、パフォーマンスを最大化する——それを実現するのは、フィールドを知るオーナーだからこそ。
+      </p>
+    </div>
+
+    <!-- ── バナー ── -->
+    <div class="pn-banner">
+      <span class="banner-icon">💪</span>
+      <strong>鍛える仲間のために、信頼できるものを。</strong><br>
+      Protein Nationは、アメフト関係者が本気で作ったプロテイン&サプリメントブランドです。<br>
+      ECサイト（24時間対応）でいつでもお求めいただけます。
+    </div>
+
+    <!-- ── アメフト視点 ── -->
+    <div class="red-divider">FOOTBALL PERSPECTIVE</div>
+    <div style="background:rgba(230,57,70,0.06);border:1px solid rgba(230,57,70,0.18);border-radius:12px;padding:24px 22px;margin-bottom:32px;">
+      <p style="font-size:0.8rem;letter-spacing:0.16em;color:var(--sd-accent);margin-bottom:14px;">🏈 FOOTBALL CONNECTION スタッフより</p>
+      <p style="font-size:0.93rem;line-height:2.0;color:rgba(255,255,255,0.78);">
+        飲食店だけが「仲間の店」じゃない。<br><br>
+        Protein Nation のオーナー・外山 裕之さんは、米国 Bentley University のアメフト部を経て、品川CC ブルザイズ（社会人 X1 Super 挑戦チーム）でもプレーした本物のフットボールプレイヤー。フィールドで身体を張ってきたからこそわかる、「本当に効くサプリ」をブランドに込めています。<br><br>
+        練習後・試合後・オフシーズンのトレーニング——すべてのシーンに、アメフト仲間が作ったプロテインを選んでほしい。
+      </p>
+    </div>
+
+    <!-- ── 利用シーン ── -->
+    <div class="red-divider">SCENES</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px;">
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px 14px;">
+        <div style="font-size:1.3rem;margin-bottom:6px;">💼</div>
+        <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:4px;">仕事終わりのジムのお供に</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.6;">現役時代みたいには動けない。でも、諦めたくない。そんな30代・40代の一杯に。</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px 14px;">
+        <div style="font-size:1.3rem;margin-bottom:6px;">🔄</div>
+        <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:4px;">回復に時間がかかるようになった</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.6;">昔は2日で治った筋肉痛が、今は4日かかる。タンパク質の摂り方を変えるだけで違う。</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px 14px;">
+        <div style="font-size:1.3rem;margin-bottom:6px;">🍺</div>
+        <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:4px;">飲み会の翌朝にも</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.6;">飲みすぎた翌日こそ、ちゃんと補給。身体のメンテナンスを後回しにしない。</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px 14px;">
+        <div style="font-size:1.3rem;margin-bottom:6px;">👔</div>
+        <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:4px;">スーツの下の身体を、保ちたい</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.6;">フットボールをやっていた自分を、忘れたくない。その気持ちに応える栄養補給を。</div>
+      </div>
+    </div>
+
+    <!-- ── 基本情報 ── -->
+    <div class="red-divider">BASIC INFO</div>
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;margin-bottom:28px;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.88rem;">
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);width:36%;white-space:nowrap;">🏪 ブランド名</td>
+          <td style="padding:14px 18px;color:#fff;font-weight:700;">Protein Nation</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">📍 エリア</td>
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.8);">東京都</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">🌐 注文受付</td>
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.8);">24時間（ECサイト）</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">🏢 運営会社</td>
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.8);">株式会社スーパープロテインハウス</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">🏈 オーナー</td>
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.8);">外山 裕之<br><span style="font-size:0.78rem;color:rgba(255,255,255,0.5);">Bentley University アメフト部 OB｜品川CC ブルザイズ OB</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">🌐 公式サイト</td>
+          <td style="padding:14px 18px;"><a href="https://theproteinnationjp.com/" target="_blank" rel="noopener" style="color:var(--sd-accent);text-decoration:none;">theproteinnationjp.com ↗</a></td>
+        </tr>
+        <tr>
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">📱 Instagram</td>
+          <td style="padding:14px 18px;"><a href="https://www.instagram.com/theproteinnation.jp/" target="_blank" rel="noopener" style="color:var(--sd-accent);text-decoration:none;">@theproteinnation.jp ↗</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ── 割引コードバナー ── -->
+    <div style="background:linear-gradient(135deg,rgba(201,135,58,0.18),rgba(13,0,0,0.8));border:2px solid rgba(201,135,58,0.55);border-radius:14px;padding:26px 24px;margin-bottom:28px;">
+      <div style="font-size:0.7rem;letter-spacing:0.2em;color:#C9873A;margin-bottom:12px;text-transform:uppercase;">🎁 FOOTBALL CONNECTION 限定特典</div>
+      <p style="font-size:1.05rem;font-weight:700;color:#fff;line-height:1.7;margin-bottom:14px;">
+        Football Connectionを見た方に<br>
+        <span style="color:#C9873A;">全商品 5% OFF</span> の特別割引！
+      </p>
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.72);line-height:2.0;margin-bottom:18px;">
+        フットボール仲間には Protein Nation 全商品を特別に5%オフでご提供します。<br>
+        公式サイトのチェックアウト時に <strong style="color:#fff;">「ディスカウントの活用」</strong> ボタンを押して、下記のコードを入力してください。
+      </p>
+      <div style="background:rgba(0,0,0,0.4);border:1px dashed rgba(201,135,58,0.6);border-radius:10px;padding:16px;text-align:center;margin-bottom:16px;">
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.45);letter-spacing:0.15em;margin-bottom:6px;">DISCOUNT CODE</div>
+        <div style="font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;letter-spacing:0.2em;color:#C9873A;">CONNECTION</div>
+      </div>
+      <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);line-height:1.8;">
+        ※ チームでまとめて購入したい方は、別途お気軽にお問い合わせください。
+      </p>
+    </div>
+
+    <!-- ── CTAボタン ── -->
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:40px;">
+      <a href="https://theproteinnationjp.com/" target="_blank" rel="noopener" class="cta-primary">
+        🛒 公式ECサイトで購入する（コード: CONNECTION）
+      </a>
+      <a href="https://www.instagram.com/theproteinnation.jp/" target="_blank" rel="noopener" class="cta-secondary">
+        📸 Instagramをフォローする
+      </a>
+    </div>
+
+    <!-- ── 関連店舗 ── -->
+    <div class="red-divider" style="margin-top:48px;">RELATED SHOPS</div>
+    <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-bottom:16px;">東京エリアの仲間の店</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:40px;">
+      <a href="shop-detail-goyen.html" class="related-link">
+        <span style="font-size:1.3rem;">🍷</span>
+        <span style="color:#fff;font-size:0.88rem;font-weight:700;">BAR ごえん（銀座）</span>
+        <span style="margin-left:auto;color:var(--sd-accent);font-size:0.8rem;">→</span>
+      </a>
+      <a href="shop-detail-midori.html" class="related-link">
+        <span style="font-size:1.3rem;">🍃</span>
+        <span style="color:#fff;font-size:0.88rem;font-weight:700;">スナック みどり（世田谷・深沢）</span>
+        <span style="margin-left:auto;color:var(--sd-accent);font-size:0.8rem;">→</span>
+      </a>
+      <a href="shop-detail-tomikawa.html" class="related-link">
+        <span style="font-size:1.3rem;">🍶</span>
+        <span style="color:#fff;font-size:0.88rem;font-weight:700;">酒処 富川（渋谷）</span>
+        <span style="margin-left:auto;color:var(--sd-accent);font-size:0.8rem;">→</span>
+      </a>
+    </div>
+
+    <!-- ── メインへ戻る ── -->
+    <div style="text-align:center;padding-top:20px;">
+      <a href="shops.html" class="cta-tertiary" style="display:inline-flex;padding:13px 28px;border-radius:50px;font-size:0.85rem;">
+        ← 店舗一覧に戻る
+      </a>
+    </div>
+
+  </div>
+  </main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FOOTBALL CONNECTION</div>
+        <p class="footer-tagline">
+          せっかくなら、アメフト関係者の店に行こう。<br>
+          全国の仲間の店・サービスをつなぐプラットフォーム。
+        </p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigation</div>
+        <div class="footer-nav-links">
+          <a href="index.html">トップ</a>
+          <a href="shops.html">店舗・サービスを探す</a>
+          <a href="events.html">イベント</a>
+          <a href="apply.html">無料で掲載する</a>
+          <a href="referral.html">紹介する</a>
+          <a href="terms.html">利用規約</a>
+          <a href="tokusho.html">特定商取引法</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FOOTBALL CONNECTION. All rights reserved.</p>
+      <a href="https://x.com/FOOTBALLCo78247" target="_blank" rel="noopener"
+         style="color:#666;font-size:0.82rem;">X (Twitter)</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script>
+  if (typeof initMobileMenu === 'function') initMobileMenu();
+</script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0A1628">
+  <meta name="description" content="FOOTBALL Connection主催の関係者イベント・観戦会情報。全国の加盟店でアメリカンフットボール・フラッグフットボール・タッチフットボール関係者が集まるイベントを開催しています。">
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="apple-touch-icon" href="images/logo-square.png">
+  <link rel="stylesheet" href="css/style.css?v=20260308">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNJ4ZBMYGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNJ4ZBMYGR');
+  </script>
+  <style>
+    .events-layout { max-width: 1000px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    .filter-tabs { display:flex; gap:8px; margin-bottom:32px; flex-wrap:wrap; }
+    .filter-tab {
+      padding: 8px 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: transparent;
+      color: var(--gray);
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .filter-tab:hover { border-color:var(--green); color:var(--white); }
+    .filter-tab.active { background:var(--green); border-color:var(--green); color:#fff; font-weight:700; }
+
+    .events-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; margin-bottom:48px; }
+
+    .event-card-full {
+      background: var(--navy-light);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .event-card-full:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:rgba(26,107,60,0.4); }
+
+    .event-card-header {
+      background: linear-gradient(135deg, var(--green-dark) 0%, #0d2b14 100%);
+      padding: 18px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .event-card-header::before {
+      content:'';
+      position:absolute; inset:0;
+      background-image: repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(255,255,255,0.04) 30px, rgba(255,255,255,0.04) 31px);
+    }
+    .event-header-top { display:flex; align-items:flex-start; justify-content:space-between; gap:10px; position:relative;z-index:1; }
+    .event-title-main { font-family:'Oswald',sans-serif; font-size:1.15rem; font-weight:700; line-height:1.3; color:#fff; }
+
+    .event-card-body { padding: 20px 22px; }
+    .event-info-row { display:flex; align-items:flex-start; gap:8px; font-size:0.88rem; color:var(--light-gray); margin-bottom:7px; }
+    .event-info-row .lbl { color:var(--gray); min-width:36px; font-size:0.78rem; flex-shrink:0; margin-top:2px; }
+    .event-description {
+      margin-top:12px; padding-top:12px;
+      border-top:1px solid rgba(255,255,255,0.07);
+      font-size:0.88rem; color:var(--gray); line-height:1.7;
+    }
+    .event-shop-link { display:inline-flex; align-items:center; gap:6px; margin-top:12px; color:var(--gold); font-size:0.84rem; font-weight:600; transition:var(--transition); }
+    .event-shop-link:hover { color:var(--gold-light); }
+
+    .events-cta-section {
+      background: linear-gradient(135deg, rgba(26,107,60,0.14) 0%, rgba(10,22,40,0.9) 100%);
+      border:1px solid var(--green);
+      border-radius:var(--radius);
+      padding:40px;
+      text-align:center;
+    }
+    .events-cta-section h3 { font-size:1.3rem; font-weight:700; margin-bottom:10px; }
+    .events-cta-section p { color:var(--gray); font-size:0.92rem; margin-bottom:24px; line-height:1.7; }
+
+    @media (max-width:640px) {
+      .events-grid { grid-template-columns:1fr; }
+      .events-cta-section { padding:28px 20px; text-align:left; }
+      .event-header-top { flex-direction:column; }
+      p { text-align:left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="shops.html">店舗・サービスを探す</a>
+      <a href="events.html" class="active">イベント</a>
+      <a href="apply.html" class="btn-header-cta">加盟申込</a>
+    </nav>
+    <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 トップ</a>
+    <a href="shops.html">🗺️ 店舗・サービスを探す</a>
+    <a href="events.html">📅 イベント</a>
+    <a href="apply.html">🏈 加盟申込はこちら</a>
+  </nav>
+</header>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>📅 関係者イベント・観戦会</h1>
+    <p>アメリカンフットボール・フラッグ・タッチフットボール関係者が集まる場を随時企画しています。最新情報は SNS でお知らせします。</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+  <div class="events-layout">
+
+    <div class="filter-tabs fade-in">
+      <button class="filter-tab active" data-type="">すべて</button>
+      <button class="filter-tab" data-type="観戦会">📺 観戦会</button>
+      <button class="filter-tab" data-type="交流会">🤝 交流会</button>
+    </div>
+
+    <div class="events-grid" id="events-grid"></div>
+
+    <div class="no-results" id="no-results" style="display:none;">
+      <div style="font-size:3rem;margin-bottom:16px;">📅</div>
+      <h3>該当するイベントはありません</h3>
+      <p>フィルターを変更してお試しください。</p>
+    </div>
+
+    <div class="events-cta-section fade-in">
+      <div style="font-size:2.4rem;margin-bottom:14px;">🏟️</div>
+      <h3>イベント開催ご希望の加盟店様はこちら</h3>
+      <p>LEGENDプランにはイベント開催優先権、プレミアムプランには特集枠掲載がご利用いただけます。<br>全国のアメリカンフットボール・フラッグ・タッチフットボール関係者に向けて、あなたの店でイベントを開催しましょう！</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="apply.html" class="btn btn-gold btn-lg">🏈 加盟申込はこちら</a>
+        <a href="shops.html" class="btn btn-outline btn-lg">🗺️ 加盟店一覧を見る</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FOOTBALL CONNECTION</div>
+        <p class="footer-tagline">せっかくなら、アメフト関係者の店に行こう。<br>全国の仲間の店・サービスをつなぐプラットフォーム。</p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigation</div>
+        <div class="footer-nav-links">
+          <a href="index.html">トップ</a>
+          <a href="shops.html">店舗・サービスを探す</a>
+          <a href="events.html">イベント</a>
+          <a href="apply.html">加盟申込</a>
+          <a href="referral.html">掲載紹介</a>
+          <a href="terms.html">利用規約</a>
+          <a href="tokusho.html">特定商取引法に基づく表記</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FOOTBALL Connection. Operated by TSUMUGU合同会社</p>
+      <p style="margin-top:8px;"><a href="https://x.com/FOOTBALLCo78247" target="_blank" style="color:var(--gray);font-size:0.85rem;transition:var(--transition);">𝕏 @FOOTBALLCo78247</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script>
+  function buildFullEventCard(event) {
+    const shop = getShopById(event.shop_id);
+    return `
+      <div class="event-card-full fade-in">
+        <div class="event-card-header">
+          <div class="event-header-top">
+            <h2 class="event-title-main">${event.title}</h2>
+            ${getEventTypeBadge(event.type)}
+          </div>
+        </div>
+        <div class="event-card-body">
+          <div class="event-info-row"><span class="lbl">📅</span><strong style="color:var(--gold);">${event.date}</strong></div>
+          <div class="event-info-row"><span class="lbl">🏪</span><span>${event.shop_name}</span></div>
+          <div class="event-info-row"><span class="lbl">📍</span><span>${event.area}</span></div>
+          <p class="event-description">${event.description}</p>
+          ${shop ? `<a href="shop-detail.html?id=${shop.id}" class="event-shop-link">🏈 ${shop.name}の詳細を見る →</a>` : ''}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderEvents(type) {
+    const grid = document.getElementById('events-grid');
+    const noRes = document.getElementById('no-results');
+    const list  = type ? EVENTS_DATA.filter(e => e.type === type) : EVENTS_DATA;
+    if (list.length === 0) {
+      grid.style.display = 'none'; noRes.style.display = 'block';
+    } else {
+      grid.style.display = 'grid'; noRes.style.display = 'none';
+      grid.innerHTML = list.map(buildFullEventCard).join('');
+      setTimeout(() => initScrollAnimation(), 50);
+    }
+  }
+
+  document.querySelectorAll('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      renderEvents(tab.dataset.type);
+    });
+  });
+
+  renderEvents('');
+</script>
+</body>
+</html>

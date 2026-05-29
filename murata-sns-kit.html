@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>むらた SNS投稿キット | FOOTBALL CONNECTION</title>
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:   #0A1628;
+      --amber:  #C9873A;
+      --amber2: #D9962E;
+      --black:  #060912;
+      --white:  #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .kit-header {
+      background: linear-gradient(160deg, #0d0a04 0%, #0A1628 60%);
+      border-bottom: 1px solid rgba(201,135,58,0.25);
+      padding: 18px 24px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .kit-header a { text-decoration: none; }
+    .kit-header-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.5);
+    }
+    .kit-header-logo span { color: var(--amber); }
+    .kit-header-back {
+      margin-left: auto;
+      font-size: 0.8rem; color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 6px 14px; border-radius: 20px;
+      transition: all 0.2s;
+    }
+    .kit-header-back:hover { color: var(--white); border-color: rgba(255,255,255,0.3); }
+
+    /* ── HERO ── */
+    .kit-hero {
+      background: linear-gradient(160deg, #0d0a04 0%, #0A1628 50%, #0d1208 100%);
+      padding: 48px 24px 40px;
+      text-align: center;
+      border-bottom: 1px solid rgba(201,135,58,0.15);
+    }
+    .kit-hero-label {
+      display: inline-block;
+      font-size: 0.7rem; letter-spacing: 0.22em;
+      color: var(--amber); border: 1px solid rgba(201,135,58,0.4);
+      background: rgba(201,135,58,0.08);
+      padding: 5px 18px; border-radius: 20px; margin-bottom: 18px;
+    }
+    .kit-hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      font-weight: 700; line-height: 1.2;
+      margin-bottom: 12px; letter-spacing: 0.04em;
+    }
+    .kit-hero h1 span { color: var(--amber); }
+    .kit-hero p {
+      font-size: 0.9rem; color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+    }
+
+    /* ── TABS ── */
+    .tab-bar {
+      display: flex; gap: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
+      overflow-x: auto;
+    }
+    .tab-btn {
+      flex: 1; min-width: 120px;
+      padding: 16px 12px;
+      background: none; border: none; cursor: pointer;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.82rem; font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s; white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+    .tab-btn.active {
+      color: var(--amber);
+      border-bottom-color: var(--amber);
+      background: rgba(201,135,58,0.05);
+    }
+    .tab-btn:hover:not(.active) { color: rgba(255,255,255,0.7); }
+
+    /* ── PANEL ── */
+    .tab-panel { display: none; padding: 32px 20px 60px; max-width: 760px; margin: 0 auto; }
+    .tab-panel.active { display: block; }
+
+    /* ── SNS CARD ── */
+    .sns-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .sns-card-head {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+    }
+    .sns-card-icon { font-size: 1.2rem; }
+    .sns-card-title {
+      font-size: 0.82rem; font-weight: 700;
+      color: rgba(255,255,255,0.7); letter-spacing: 0.08em;
+    }
+    .sns-card-limit {
+      margin-left: auto;
+      font-size: 0.72rem; color: rgba(255,255,255,0.3);
+      letter-spacing: 0.06em;
+    }
+    .sns-card-body { padding: 18px 18px 14px; }
+    .sns-text-area {
+      width: 100%;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 16px;
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.85;
+      resize: vertical;
+      min-height: 180px;
+    }
+    .sns-text-area:focus {
+      outline: none;
+      border-color: rgba(201,135,58,0.5);
+    }
+    .copy-btn {
+      display: flex; align-items: center; gap: 8px;
+      margin-top: 10px; margin-left: auto;
+      background: rgba(201,135,58,0.15);
+      border: 1px solid rgba(201,135,58,0.4);
+      color: var(--amber);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.8rem; font-weight: 700;
+      padding: 9px 18px; border-radius: 8px;
+      cursor: pointer; transition: all 0.2s;
+      letter-spacing: 0.06em;
+    }
+    .copy-btn:hover { background: rgba(201,135,58,0.25); }
+    .copy-btn.copied {
+      background: rgba(74,158,107,0.2);
+      border-color: rgba(74,158,107,0.5);
+      color: #4a9e6b;
+    }
+    .char-count {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      text-align: right;
+      margin-top: 6px;
+    }
+    .char-count.warn { color: #e6a817; }
+    .char-count.over { color: #e63946; }
+
+    /* ── 画像プレビュー ── */
+    .image-section {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    .image-section-title {
+      font-size: 0.75rem; letter-spacing: 0.18em;
+      color: var(--amber); margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .image-section img {
+      width: 100%; max-width: 480px;
+      border-radius: 12px;
+      border: 1px solid rgba(201,135,58,0.2);
+      display: block; margin: 0 auto 14px;
+    }
+    .image-note {
+      font-size: 0.78rem; color: rgba(255,255,255,0.4);
+      line-height: 1.7;
+    }
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 14px;
+      background: rgba(201,135,58,0.12);
+      border: 1px solid rgba(201,135,58,0.35);
+      color: var(--amber);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.82rem; font-weight: 700;
+      padding: 10px 22px; border-radius: 8px;
+      cursor: pointer; text-decoration: none;
+      transition: all 0.2s; letter-spacing: 0.06em;
+    }
+    .dl-btn:hover { background: rgba(201,135,58,0.22); }
+
+    /* ── セクション区切り ── */
+    .section-divider {
+      display: flex; align-items: center; gap: 14px;
+      margin: 28px 0 20px;
+      color: rgba(201,135,58,0.5);
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    }
+    .section-divider::before, .section-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,135,58,0.35), transparent);
+    }
+
+    /* ── 運用メモ ── */
+    .memo-card {
+      background: rgba(201,135,58,0.06);
+      border: 1px solid rgba(201,135,58,0.2);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 20px;
+    }
+    .memo-card-title {
+      font-size: 0.75rem; letter-spacing: 0.16em;
+      color: var(--amber); margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+    .memo-list {
+      list-style: none;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 2.0;
+    }
+    .memo-list li::before { content: '→ '; color: var(--amber); }
+
+    /* ── 動画リンク ── */
+    .yt-banner {
+      background: linear-gradient(135deg, rgba(255,0,0,0.08), rgba(10,22,40,0.9));
+      border: 1px solid rgba(255,60,60,0.25);
+      border-radius: 12px;
+      padding: 18px 22px;
+      display: flex; align-items: center; gap: 14px;
+      text-decoration: none;
+      margin-bottom: 24px;
+      transition: background 0.2s;
+    }
+    .yt-banner:hover { background: linear-gradient(135deg, rgba(255,0,0,0.14), rgba(10,22,40,0.9)); }
+    .yt-icon { font-size: 2rem; flex-shrink: 0; }
+    .yt-text { font-size: 0.88rem; color: rgba(255,255,255,0.8); line-height: 1.7; }
+    .yt-text strong { color: #fff; }
+    .yt-arrow { margin-left: auto; color: rgba(255,80,80,0.8); font-size: 1.1rem; }
+
+    /* ── フッター ── */
+    .kit-footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    @media (max-width: 480px) {
+      .tab-btn { font-size: 0.75rem; padding: 14px 8px; min-width: 90px; }
+      .sns-text-area { font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="kit-header">
+  <div>
+    <div class="kit-header-logo">FOOTBALL <span>CONNECTION</span></div>
+    <div style="font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:2px;">SNS投稿キット — むらた（岩本町）</div>
+  </div>
+  <a href="shop-detail-murata.html" class="kit-header-back">← 店舗ページへ戻る</a>
+</header>
+
+<!-- HERO -->
+<div class="kit-hero">
+  <div class="kit-hero-label">📣 SNS POST KIT</div>
+  <h1>むらた <span>紹介投稿</span>キット</h1>
+  <p>X・Instagram・Facebook、各プラットフォーム用テキスト＋画像をまとめました。<br>
+  コピーしてそのまま投稿できます。</p>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('x')">𝕏 X（Twitter）</button>
+  <button class="tab-btn" onclick="switchTab('instagram')">📸 Instagram</button>
+  <button class="tab-btn" onclick="switchTab('facebook')">👍 Facebook</button>
+  <button class="tab-btn" onclick="switchTab('memo')">📋 運用メモ</button>
+</div>
+
+<!-- ========== X（Twitter）========== -->
+<div id="tab-x" class="tab-panel active">
+
+  <!-- 画像 -->
+  <div class="image-section">
+    <div class="image-section-title">🖼️ 投稿用画像</div>
+    <img src="images/sns/murata-sns-post.jpg" alt="むらた SNS投稿画像">
+    <p class="image-note">上記画像を右クリック（スマホは長押し）で保存し、投稿に添付してください。</p>
+    <a href="images/sns/murata-sns-post.jpg" download="murata-sns-post.jpg" class="dl-btn">
+      ⬇ 画像をダウンロード
+    </a>
+  </div>
+
+  <a href="https://youtu.be/BR5pq-kf7F4" target="_blank" rel="noopener" class="yt-banner">
+    <div class="yt-icon">▶️</div>
+    <div class="yt-text"><strong>むらた 紹介動画（YouTube）</strong><br>動画のリンクも合わせてポストに貼るとエンゲージメントUP</div>
+    <div class="yt-arrow">↗</div>
+  </a>
+
+  <div class="section-divider">POST VARIATION</div>
+
+  <!-- バリエーション① -->
+  <div class="sns-card">
+    <div class="sns-card-head">
+      <span class="sns-card-icon">🖤</span>
+      <span class="sns-card-title">Ver.① 料理インパクト重視（140字）</span>
+      <span class="sns-card-limit">推奨：140字以内</span>
+    </div>
+    <div class="sns-card-body">
+      <textarea class="sns-text-area" id="x-text-1" oninput="countChars('x-text-1','x-count-1',140)">🖤黒いとんかつ、知ってるか。
+
+岩本町「むらた」の黒トンカツ——漆黒の衣を割ると、中から白くやわらかな豚肉があふれ出す。
+
+どでかい蛤鍋の琥珀色の出汁とセットで、二度うなれる一軒。
+
+アメフト仲間の店に行こう。
+立教大学RushersOBオーナーの店。
+
+🏈 football-connection.jp
+#岩本町グルメ #黒トンカツ #蛤鍋 #アメフト</textarea>
+      <div class="char-count" id="x-count-1"></div>
+      <div style="display:flex;justify-content:flex-end;">
+        <button class="copy-btn" onclick="copyText('x-text-1', this)">📋 コピー</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- バリエーション② -->
+  <div class="sns-card">
+    <div class="sns-card-head">
+      <span class="sns-card-icon">🏈</span>
+      <span class="sns-card-title">Ver.② OBコミュニティ訴求</span>
+      <span class="sns-card-limit">推奨：140字以内</span>
+    </div>
+    <div class="sns-card-body">
+      <textarea class="sns-text-area" id="x-text-2" oninput="countChars('x-text-2','x-count-2',140)">アメフトOBが集まる岩本町の名店「むらた」を紹介🏈
+
+🖤 黒トンカツ──漆黒の衣×やわらか豚肉
+🐚 どでかい蛤鍋──琥珀の出汁が旨すぎる
+
+オーナーは立教大学Rushers OB。
+動画で見ると伝わる、この迫力👇
+
+▶ youtu.be/BR5pq-kf7F4
+🔗 football-connection.jp/shop-detail-murata.html
+
+#FOOTBALLCONNECTION #アメフト #岩本町</textarea>
+      <div class="char-count" id="x-count-2"></div>
+      <div style="display:flex;justify-content:flex-end;">
+        <button class="copy-btn" onclick="copyText('x-text-2', this)">📋 コピー</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- バリエーション③ -->
+  <div class="sns-card">
+    <div class="sns-card-head">
+      <span class="sns-card-icon">🎬</span>
+      <span class="sns-card-title">Ver.③ 動画誘導型（短め）</span>
+      <span class="sns-card-limit">推奨：140字以内</span>
+    </div>
+    <div class="sns-card-body">
+      <textarea class="sns-text-area" id="x-text-3" oninput="countChars('x-text-3','x-count-3',140)" style="min-height:130px;">これ、見てから行ってほしい。
+
+岩本町「むらた」——黒トンカツと蛤鍋の衝撃。
+アメフト仲間のOBオーナーが営む、本物の一軒。
+
+▶ youtu.be/BR5pq-kf7F4
+
+#むらた #岩本町 #FOOTBALLCONNECTION</textarea>
+      <div class="char-count" id="x-count-3"></div>
+      <div style="display:flex;justify-content:flex-end;">
+        <button class="copy-btn" onclick="copyText('x-text-3', this)">📋 コピー</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== Instagram ========== -->
+<div id="tab-instagram" class="tab-panel">
+
+  <div class="image-section">
+    <div class="image-section-title">🖼️ 投稿用画像（正方形）</div>
+    <img src="images/sns/murata-sns-post.jpg" alt="むらた SNS投稿画像">
+    <p class="image-note">Instagramフィード投稿に最適なサイズ（1:1）です。</p>
+    <a href="images/sns/murata-sns-post.jpg" download="murata-sns-post.jpg" class="dl-btn">
+      ⬇ 画像をダウンロード
+    </a>
+  </div>
+
+  <a href="https://youtu.be/BR5pq-kf7F4" target="_blank" rel="noopener" class="yt-banner">
+    <div class="yt-icon">▶️</div>
+    <div class="yt-text"><strong>むらた 紹介動画（YouTube）</strong><br>ストーリーズでシェアするのもおすすめ</div>
+    <div class="yt-arrow">↗</div>
+  </a>
+
+  <div class="section-divider">CAPTION VARIATION</div>
+
+  <!-- Instagram Ver.① -->
+  <div class="sns-card">
+    <div class="sns-card-head">
+      <span class="sns-card-icon">🌟</span>
+      <span class="sns-card-title">Ver.① ストーリー仕立て（フィード）</span>
+    </div>
+    <div class="sns-card-body">
+      <textarea class="sns-text-area" id="ig-text-1" style="min-height:320px;">🖤 岩本町に、こんな店があったのか。
+
+どでかい蛤鍋と黒トンカツ——
+どちらも「一生に一度は食べてほしい」と言える一皿。
+
+────────────
+
+「むらた」は、立教大学 Rushers OB のオーナーが営む岩本町の名店。
+
+🐚 蛤鍋は、大ぶりの蛤からにじみ出る琥珀色の出汁が全てを語る。昆布と貝の旨みが重なって生まれる、シンプルで奥行きのある味。
+🖤 黒トンカツは、漆黒の衣を割ると中から白くやわらかな豚肉があふれ出す。視覚の驚きと食べた後の満足感が同時にやってくる。
+
+アメフトで培った「本物を追求する姿勢」が、料理にもにじみ出ている気がした。
+
+────────────
+
+FOOTBALL CONNECTION では「アメフト関係者の店」を全国で紹介中。
+アメフト仲間の店に、せっかくなら足を運んでみてほしい🏈
+
+▶ プロフのリンクから詳細ページへ
+
+#むらた #岩本町グルメ #黒トンカツ #蛤鍋 #岩本町 #東京グルメ
+#アメフト #フットボール #アメリカンフットボール #立教大学
+#FOOTBALLCONNECTION #アメフト関係者の店 #岩本町とんかつ</textarea>
+      <div style="display:flex;justify-content:flex-end;">
+        <button class="copy-btn" onclick="copyText('ig-text-1', this)">📋 コピー</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instagram Ver.② -->
+  <div class="sns-card">
+    <div class="sns-card-head">
+      <span class="sns-card-icon">🏈</span>
+      <span class="sns-card-title">Ver.② OB向けコミュニティ訴求</span>
+    </div>
+    <div class="sns-card-body">
+      <textarea class="sns-text-area" id="ig-text-2" style="min-height:280px;">アメフトOBのオーナーが岩本町で営む店、「むらた」🏈
+
+黒トンカツと蛤鍋——この2品だけのために岩本町に来る価値がある。
+
+「どでかい蛤鍋の出汁に唸り、黒トンカツのインパクトに驚く。岩本町で二度うなれる一軒。」
+
+立教大学 Rushers OB オーナーの信念が詰まった、懐が深い和食店。打ち上げ・懇親会にも最高の一軒です。
+
+動画（YouTube）でも紹介しています👇
+リンクはプロフィールから🔗
+
+#むらた #岩本町 #蛤鍋 #黒トンカツ #アメフト
+#立教大学 #Rushers #FOOTBALLCONNECTION
+#東京グルメ #岩本町グルメ #アメフト関係者の店</textarea>
+      <div style="display:flex;justify-content:flex-end;">
+        <button class="copy-btn" onclick="copyText('ig-text-2', this)">📋 コピー</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== Facebook ========== -->
+<div id="tab-facebook" class="tab-panel">
+
+  <div class="image-section">
+    <div class="image-section-title">🖼️ 投稿用画像</div>
+    <img src="images/sns/murata-sns-post.jpg" alt="むらた SNS投稿画像">
+    <p class="image-note">Facebookフィード投稿に使用してください。<br>動画リンクを本文内に貼ると自動でプレビューが表示されます。</p>
+    <a href="images/sns/murata-sns-post.jpg" download="murata-sns-post.jpg" class="dl-btn">
+      ⬇ 画像をダウンロード
+    </a>
+  </div>
+
+  <a href="https://youtu.be/BR5pq-kf7F4" target="_blank" rel="noopener" class="yt-banner">
+    <div class="yt-icon">▶️</div>
+    <div class="yt-text"><strong>むらた 紹介動画（YouTube）</strong><br>Facebook投稿内にURLを貼ると動画プレビューが自動表示されます</div>
+    <div class="yt-arrow">↗</div>
+  </a>
+
+  <div class="section-divider">POST VARIATION</div>
+
+  <!-- Facebook Ver.① 公式アカウント -->
+  <div class="sns-card">
+    <div class="sns-card-head">
+      <span class="sns-card-icon">📢</span>
+      <span class="sns-card-title">Ver.① FOOTBALL CONNECTION 公式アカウント用</span>
+    </div>
+    <div class="sns-card-body">
+      <textarea class="sns-text-area" id="fb-text-1" style="min-height:360px;">【加盟店紹介 🏈】むらた｜岩本町
+
+岩本町に、アメフト仲間に連れて行きたい一軒があります。
+
+その名は「むらた」——立教大学 Rushers OB のオーナーが営む、蛤鍋と黒トンカツで勝負する店です。
+
+▍どでかい蛤鍋
+大ぶりの蛤からにじみ出る琥珀色の出汁。昆布と貝の旨みが重なり、シンプルなのに奥行きがある。「箸を止める理由がどこにもない」という言葉そのままの鍋です。
+
+▍黒トンカツ
+真っ黒な衣を割ると、中から白くやわらかな豚肉があふれ出す。視覚のインパクトと食べた後の満足感が同時にやってくる一皿。むらたの「看板」です。
+
+アメフトで培った「本物を追求する姿勢」が、料理の一皿一皿に込められています。
+
+打ち上げ・懇親会はもちろん、「いい店を知ってる人」として仲間に教えてあげてほしい一軒です。
+
+🎬 動画でも紹介しています → https://youtu.be/BR5pq-kf7F4
+🔗 詳細ページ → https://football-connection.jp/shop-detail-murata.html
+
+#FOOTBALLCONNECTION #むらた #岩本町 #アメフト関係者の店</textarea>
+      <div style="display:flex;justify-content:flex-end;">
+        <button class="copy-btn" onclick="copyText('fb-text-1', this)">📋 コピー</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Facebook Ver.② 個人FB -->
+  <div class="sns-card">
+    <div class="sns-card-head">
+      <span class="sns-card-icon">👤</span>
+      <span class="sns-card-title">Ver.② 個人Facebook（谷口さん）シェア用</span>
+    </div>
+    <div class="sns-card-body">
+      <textarea class="sns-text-area" id="fb-text-2" style="min-height:340px;">岩本町に最高の店を見つけました🏈
+
+「むらた」——立教大学 Rushers OBのオーナーが営む蛤鍋と黒トンカツの店。
+
+黒トンカツは漆黒の衣を割ると中から白くやわらかな豚肉があふれ出す。一度見たら忘れられない一皿です。
+どでかい蛤鍋は琥珀色の出汁が全てを語る。シンプルで奥深い、本物の味。
+
+アメフトで鍛えた人が作った料理には、やっぱり本物の信念がある。
+
+僕が運営しているFOOTBALL Connectionでも加盟店として紹介しています。アメフト仲間への手みやげ情報として、ぜひシェアしてください！
+
+🎬 動画 → https://youtu.be/BR5pq-kf7F4
+🔗 詳細 → https://football-connection.jp/shop-detail-murata.html</textarea>
+      <div style="display:flex;justify-content:flex-end;">
+        <button class="copy-btn" onclick="copyText('fb-text-2', this)">📋 コピー</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== 運用メモ ========== -->
+<div id="tab-memo" class="tab-panel">
+
+  <div class="section-divider">TODAY'S SCHEDULE</div>
+
+  <div class="memo-card">
+    <div class="memo-card-title">📅 推奨投稿スケジュール</div>
+    <ul class="memo-list">
+      <li>12:00〜13:00 ── X（Twitter）に Ver.① or Ver.③ を投稿</li>
+      <li>12:30 ── Instagram にも同時投稿（Ver.① キャプション）</li>
+      <li>12:30 ── Facebook 公式アカウントに Ver.① を投稿</li>
+      <li>13:00 ── 個人Facebook から Ver.② でシェア・転送</li>
+      <li>夜（20:00前後）── X で Ver.② をリポスト or 追加投稿</li>
+    </ul>
+  </div>
+
+  <div class="section-divider">TIPS</div>
+
+  <div class="memo-card">
+    <div class="memo-card-title">💡 エンゲージメントを上げるコツ</div>
+    <ul class="memo-list">
+      <li>YouTube動画URLを本文内に貼ると自動プレビューが表示されてクリック率UP</li>
+      <li>Facebookは文章が長くても読まれやすい。Ver.① の長文がおすすめ</li>
+      <li>Xは短めのVer.③ に動画URL添付が最も拡散しやすい形式</li>
+      <li>Instagramはハッシュタグを10〜15個に絞ると最適（多すぎはスパム判定リスク）</li>
+      <li>投稿後30分以内にコメントへの返信をすると初動のアルゴリズム評価が上がる</li>
+    </ul>
+  </div>
+
+  <div class="memo-card">
+    <div class="memo-card-title">🏈 むらた 基本情報（確認用）</div>
+    <ul class="memo-list">
+      <li>店名：むらた（岩本町）</li>
+      <li>オーナー：立教大学 Rushers OB</li>
+      <li>名物：蛤鍋・黒トンカツ</li>
+      <li>最寄駅：都営新宿線 岩本町駅 / JR秋葉原駅</li>
+      <li>詳細ページ：football-connection.jp/shop-detail-murata.html</li>
+      <li>YouTube：https://youtu.be/BR5pq-kf7F4</li>
+      <li>Retty：https://retty.me/area/PRE13/ARE11/SUB1101/100000045979/</li>
+    </ul>
+  </div>
+
+  <div class="memo-card">
+    <div class="memo-card-title">📌 次のアクション</div>
+    <ul class="memo-list">
+      <li>投稿後、むらたオーナーに「紹介しました！」と一報を入れると関係強化に◎</li>
+      <li>エンゲージメント（いいね・コメント・シェア数）を翌日確認して記録</li>
+      <li>反響があれば次の店舗紹介投稿に活かす</li>
+    </ul>
+  </div>
+
+  <div style="text-align:center;margin-top:32px;">
+    <a href="shop-detail-murata.html" style="display:inline-flex;align-items:center;gap:8px;background:rgba(201,135,58,0.12);border:1px solid rgba(201,135,58,0.35);color:var(--amber);text-decoration:none;padding:12px 24px;border-radius:50px;font-size:0.85rem;font-weight:700;letter-spacing:0.06em;">
+      🏪 むらた 店舗ページへ
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="kit-footer">
+  © 2026 FOOTBALL CONNECTION — SNS投稿キット / むらた（岩本町）
+</footer>
+
+<script>
+  // ---- タブ切り替え ----
+  function switchTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  // ---- コピー ----
+  function copyText(textareaId, btn) {
+    const ta = document.getElementById(textareaId);
+    navigator.clipboard.writeText(ta.value).then(() => {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '✅ コピー完了！';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.classList.remove('copied');
+      }, 2000);
+    }).catch(() => {
+      ta.select();
+      document.execCommand('copy');
+      btn.innerHTML = '✅ コピー完了！';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.innerHTML = '📋 コピー'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  // ---- 文字数カウント ----
+  function countChars(textareaId, countId, limit) {
+    const ta = document.getElementById(textareaId);
+    const countEl = document.getElementById(countId);
+    if (!countEl) return;
+    const len = ta.value.length;
+    countEl.textContent = len + ' / ' + limit + ' 字';
+    countEl.className = 'char-count';
+    if (len > limit) countEl.classList.add('over');
+    else if (len > limit * 0.85) countEl.classList.add('warn');
+  }
+
+  // ---- 初期文字数カウント ----
+  document.addEventListener('DOMContentLoaded', () => {
+    countChars('x-text-1','x-count-1',140);
+    countChars('x-text-2','x-count-2',140);
+    countChars('x-text-3','x-count-3',140);
+  });
+</script>
+</body>
+</html>

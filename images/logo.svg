@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 60" width="400" height="60">
+  <defs>
+    <!-- フィールドライン背景 -->
+    <pattern id="fl" x="0" y="0" width="34" height="60" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="60" stroke="#1A6B3C" stroke-width="0.5" opacity="0.18"/>
+    </pattern>
+    <!-- ゴールドグラデーション -->
+    <linearGradient id="gG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F2CC3A"/>
+      <stop offset="100%" stop-color="#C08A0C"/>
+    </linearGradient>
+    <!-- ボール本体グラデーション -->
+    <linearGradient id="bG" x1="20%" y1="10%" x2="80%" y2="90%">
+      <stop offset="0%" stop-color="#D4860E"/>
+      <stop offset="50%" stop-color="#B06808"/>
+      <stop offset="100%" stop-color="#7A4404"/>
+    </linearGradient>
+    <!-- ホワイトグラデーション -->
+    <linearGradient id="wG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#BFD0E8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="400" height="60" rx="8" fill="#0A1628"/>
+  <rect width="400" height="60" rx="8" fill="url(#fl)"/>
+
+  <!-- 左グリーンアクセント -->
+  <rect x="0" y="0" width="3" height="60" rx="1.5" fill="#1A6B3C"/>
+  <!-- 上下ゴールドライン -->
+  <rect x="3" y="2" width="394" height="1" rx="0.5" fill="#D4A017" opacity="0.4"/>
+  <rect x="3" y="57" width="394" height="1" rx="0.5" fill="#D4A017" opacity="0.4"/>
+
+  <!-- FOOTBALL テキスト -->
+  <text x="14" y="42"
+    font-family="'Oswald','Arial Black',sans-serif"
+    font-size="36" font-weight="700" letter-spacing="1.5"
+    fill="url(#wG)">FOOTBALL</text>
+
+  <!-- ═══ アメフトボール ═══ -->
+  <!-- 両端が尖った本物形状（pointy oval） -->
+  <!-- cx=248, cy=30, 横幅26, 縦幅17 -->
+  <path d="M 248 13
+           C 255 13, 274 20, 274 30
+           C 274 40, 255 47, 248 47
+           C 241 47, 222 40, 222 30
+           C 222 20, 241 13, 248 13 Z"
+        fill="url(#bG)"/>
+
+  <!-- 縫い目 横ライン（白） -->
+  <line x1="222" y1="30" x2="274" y2="30" stroke="#FFFFFF" stroke-width="1.3" opacity="0.65"/>
+
+  <!-- 中央縦レース -->
+  <path d="M 248 15 C 253 22, 253 38, 248 45"
+        stroke="#FFFFFF" stroke-width="1.4" fill="none" opacity="0.85"/>
+
+  <!-- レースの横ステッチ 4本 -->
+  <line x1="245" y1="20" x2="251" y2="20" stroke="#FFFFFF" stroke-width="1.2" opacity="0.8"/>
+  <line x1="244" y1="25" x2="252" y2="25" stroke="#FFFFFF" stroke-width="1.2" opacity="0.8"/>
+  <line x1="244" y1="35" x2="252" y2="35" stroke="#FFFFFF" stroke-width="1.2" opacity="0.8"/>
+  <line x1="245" y1="40" x2="251" y2="40" stroke="#FFFFFF" stroke-width="1.2" opacity="0.8"/>
+
+  <!-- ハイライト光沢 -->
+  <ellipse cx="240" cy="23" rx="6" ry="3.5" fill="#FFFFFF" opacity="0.15" transform="rotate(-30,240,23)"/>
+
+  <!-- Connection テキスト -->
+  <text x="281" y="42"
+    font-family="'Oswald','Arial Black',sans-serif"
+    font-size="36" font-weight="700" letter-spacing="1"
+    fill="url(#gG)">Connection</text>
+
+</svg>

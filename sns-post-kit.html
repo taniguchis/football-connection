@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNS投稿キット | FOOTBALL CONNECTION</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-light: #0f2040;
+      --gold: #D4A017;
+      --gold-light: #f0c040;
+      --green: #1A6B3C;
+      --white: #ffffff;
+      --gray: #e8edf5;
+      --gray-dark: #8a9ab5;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--gray);
+      color: var(--navy);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      background: var(--navy);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 3px solid var(--gold);
+    }
+    .site-header .logo-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.08em;
+    }
+    .site-header .logo-text span { color: var(--gold); }
+    .site-header .badge {
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Page title ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #0f2a50 60%, #0d3520 100%);
+      color: var(--white);
+      padding: 52px 24px 44px;
+      text-align: center;
+    }
+    .page-hero .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      margin-bottom: 12px;
+    }
+    .page-hero h1 {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+    .page-hero p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Main container ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .section-label .platform-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .platform-icon.fb { background: #1877F2; }
+    .platform-icon.ig { background: linear-gradient(135deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+    .section-label h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .section-label .sub {
+      font-size: 0.75rem;
+      color: var(--gray-dark);
+      margin-top: 2px;
+    }
+
+    /* ── Post card ── */
+    .post-card {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(10,22,40,0.1);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .post-card .card-head {
+      background: var(--navy);
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-head .card-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+    .card-head .card-hint {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* Image panel */
+    .post-image-wrap {
+      background: #f0f4f8;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #e0e6ef;
+    }
+    .post-image-wrap img {
+      max-width: 100%;
+      max-height: 380px;
+      border-radius: 8px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+      object-fit: cover;
+    }
+    .img-note {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--gray-dark);
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* Text panel */
+    .post-text-wrap {
+      padding: 26px 26px 20px;
+    }
+    .text-box {
+      background: #f7f9fc;
+      border: 1.5px solid #dde4ef;
+      border-radius: 10px;
+      padding: 20px 22px;
+      font-size: 0.9rem;
+      line-height: 1.9;
+      color: #1a2540;
+      white-space: pre-wrap;
+      word-break: break-word;
+      position: relative;
+      cursor: text;
+    }
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 14px;
+      padding: 9px 20px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .copy-btn:hover { background: var(--green); }
+    .copy-btn.copied { background: var(--green); }
+    .copy-btn i { font-size: 0.85rem; }
+
+    /* Tag list */
+    .tag-box {
+      margin-top: 18px;
+      padding: 16px 20px;
+      background: #eef4ff;
+      border-radius: 10px;
+      border: 1px solid #c8d8f0;
+    }
+    .tag-box .tag-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .tag {
+      background: var(--white);
+      border: 1px solid #b0c4e0;
+      border-radius: 20px;
+      padding: 4px 13px;
+      font-size: 0.78rem;
+      color: #1a3560;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .tag:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+    /* Tips panel */
+    .tips-box {
+      background: linear-gradient(135deg, #f0f7f3, #e8f4ee);
+      border-left: 4px solid var(--green);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin-top: 18px;
+    }
+    .tips-box .tips-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .tips-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .tips-box ul li {
+      font-size: 0.82rem;
+      color: #1a3520;
+      line-height: 1.7;
+      padding-left: 16px;
+      position: relative;
+    }
+    .tips-box ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 50px 0;
+    }
+
+    /* ── Image download section ── */
+    .dl-section {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 30px 26px;
+      box-shadow: 0 4px 20px rgba(10,22,40,0.08);
+      margin-bottom: 40px;
+    }
+    .dl-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .dl-section h2 i { color: var(--gold); }
+    .dl-section .dl-note {
+      font-size: 0.8rem;
+      color: var(--gray-dark);
+      margin-bottom: 22px;
+      line-height: 1.6;
+    }
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .image-item {
+      border: 1.5px solid #dde4ef;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f7f9fc;
+    }
+    .image-item img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+    .image-item .img-meta {
+      padding: 12px 14px;
+    }
+    .image-item .img-meta .img-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+    .image-item .img-meta .img-desc {
+      font-size: 0.72rem;
+      color: var(--gray-dark);
+      line-height: 1.5;
+    }
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 7px 15px;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 7px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .dl-btn:hover { background: var(--gold-light); }
+
+    /* ── Footer note ── */
+    .footer-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--gray-dark);
+      padding: 30px 20px;
+      line-height: 1.8;
+    }
+    .footer-note a { color: var(--green); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .post-text-wrap { padding: 18px 16px 16px; }
+      .text-box { font-size: 0.85rem; }
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      opacity: 0;
+      transition: all 0.3s;
+      pointer-events: none;
+      z-index: 999;
+      white-space: nowrap;
+      border: 2px solid var(--gold);
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="logo-text">FOOTBALL <span>CONNECTION</span></div>
+  <span class="badge">SNS投稿キット</span>
+</header>
+
+<!-- Hero -->
+<section class="page-hero">
+  <p class="eyebrow">🏈 SNS POST KIT</p>
+  <h1>Facebook・Instagram<br>投稿テンプレート</h1>
+  <p>コピーして、そのまま使えます。<br>しつこくなく、でも届く。フットボールコミュニティへの第一声。</p>
+</section>
+
+<!-- Main -->
+<main class="container">
+
+  <!-- ━━━ 画像ダウンロードセクション ━━━ -->
+  <section class="dl-section">
+    <h2><i class="fas fa-image"></i> 投稿用画像（2種）</h2>
+    <p class="dl-note">長押し（スマホ）またはダウンロードして投稿時に添付してください。正方形1:1サイズ、Instagram・Facebook両対応。</p>
+    <div class="image-grid">
+      <div class="image-item">
+        <img src="images/sns-post-01.jpg" alt="掲載募集用画像">
+        <div class="img-meta">
+          <div class="img-name">📋 画像①「掲載募集」版</div>
+          <div class="img-desc">お店を持つフットボール関係者に向けた掲載案内用。Facebookに最適。</div>
+          <a href="images/sns-post-01.jpg" download="FC_post_01.jpg" class="dl-btn">
+            <i class="fas fa-download"></i> ダウンロード
+          </a>
+        </div>
+      </div>
+      <div class="image-item">
+        <img src="images/sns-post-02.jpg" alt="利用促進用画像">
+        <div class="img-meta">
+          <div class="img-name">🏟️ 画像②「仲間に届けよう」版</div>
+          <div class="img-desc">コミュニティへの共感訴求。Instagramのフィード・ストーリーズ両対応。</div>
+          <a href="images/sns-post-02.jpg" download="FC_post_02.jpg" class="dl-btn">
+            <i class="fas fa-download"></i> ダウンロード
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ━━━ Facebook 投稿①：掲載募集 ━━━ -->
+  <div class="section-label">
+    <div class="platform-icon fb"><i class="fab fa-facebook-f"></i></div>
+    <div>
+      <h2>Facebook 投稿①｜掲載募集</h2>
+      <div class="sub">画像① と一緒に投稿／文字数：約280字</div>
+    </div>
+  </div>
+
+  <article class="post-card">
+    <div class="card-head">
+      <span class="card-title">FACEBOOK POST — TYPE A</span>
+      <span class="card-hint">お店を持つフットボール関係者へ</span>
+    </div>
+    <div class="post-image-wrap">
+      <div>
+        <img src="images/sns-post-01.jpg" alt="掲載募集用画像">
+        <p class="img-note">↑ この画像①を添付して投稿</p>
+      </div>
+    </div>
+    <div class="post-text-wrap">
+      <div class="text-box" id="fb-text-a">🏈 アメフト・フラッグフットボール関係者の飲食店・サービスを、全国でつなぐプラットフォームができました。
+
+FOOTBALL CONNECTION は「せっかくなら、アメフト関係者の店に行こう」というコンセプトで、フットボールを愛する仲間の店を一覧で探せるサイトです。
+
+掲載は現在、完全無料。
+お店の情報を登録するだけで、全国のフットボールコミュニティへ届きます。
+
+▶ 飲食店・バー・カフェ・サービス業の方
+▶ 現役・OB・OG・指導者・スタッフ・家族 どなたでも
+
+仲間の店を、仲間に紹介できる場所。
+ぜひ一度のぞいてみてください👇
+
+🌐 https://football-connection.com
+（無料掲載申し込みはこちらから）</div>
+      <button class="copy-btn" onclick="copyText('fb-text-a', this)">
+        <i class="far fa-copy"></i> テキストをコピー
+      </button>
+
+      <div class="tag-box">
+        <div class="tag-label">📌 おすすめハッシュタグ（Facebook はひかえめでOK）</div>
+        <div class="tag-list">
+          <span class="tag" onclick="copyTag(this)">#アメフト</span>
+          <span class="tag" onclick="copyTag(this)">#フラッグフットボール</span>
+          <span class="tag" onclick="copyTag(this)">#アメリカンフットボール</span>
+          <span class="tag" onclick="copyTag(this)">#FOOTBALLCONNECTION</span>
+          <span class="tag" onclick="copyTag(this)">#フットボール仲間の店</span>
+        </div>
+      </div>
+
+      <div class="tips-box">
+        <div class="tips-label">✦ POSTING TIPS</div>
+        <ul>
+          <li>OBグループや地域コミュニティのFBグループへのシェアが効果的</li>
+          <li>「自分の後輩・仲間にも声かけを」と一言添えると拡散されやすい</li>
+          <li>投稿後に自分でコメント欄に申し込みURLを再掲するとクリックが増える</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- ━━━ Facebook 投稿②：使ってみよう（利用者向け） ━━━ -->
+  <div class="section-label">
+    <div class="platform-icon fb"><i class="fab fa-facebook-f"></i></div>
+    <div>
+      <h2>Facebook 投稿②｜利用促進（探す側へ）</h2>
+      <div class="sub">フットボールコミュニティ全体へ向けた周知用</div>
+    </div>
+  </div>
+
+  <article class="post-card">
+    <div class="card-head">
+      <span class="card-title">FACEBOOK POST — TYPE B</span>
+      <span class="card-hint">試合後・OB会・遠征で使える！という訴求</span>
+    </div>
+    <div class="post-image-wrap">
+      <div>
+        <img src="images/sns-post-02.jpg" alt="利用促進用画像">
+        <p class="img-note">↑ この画像②を添付して投稿</p>
+      </div>
+    </div>
+    <div class="post-text-wrap">
+      <div class="text-box" id="fb-text-b">試合後の打ち上げ、OB会、遠征先での一杯。
+せっかくなら、アメフト関係者の店に行きたくないですか？🏈
+
+FOOTBALL CONNECTION は、フットボールに関わるオーナーや関係者が営む店舗・サービスを全国からまとめた検索サイトです。
+
+バー、居酒屋、イタリアン、カフェ、トレーナー…
+エリアや業種で絞り込んで、仲間の店を見つけてください。
+
+📍 東京・大阪・兵庫・神奈川・滋賀など全国掲載中
+🆓 店舗掲載も完全無料でスタートできます
+
+▶ https://football-connection.com
+
+仲間の店に行くって、それだけで少しうれしい。
+ぜひ使ってみてください😊</div>
+      <button class="copy-btn" onclick="copyText('fb-text-b', this)">
+        <i class="far fa-copy"></i> テキストをコピー
+      </button>
+
+      <div class="tag-box">
+        <div class="tag-label">📌 ハッシュタグ</div>
+        <div class="tag-list">
+          <span class="tag" onclick="copyTag(this)">#アメフト</span>
+          <span class="tag" onclick="copyTag(this)">#アメフトOB</span>
+          <span class="tag" onclick="copyTag(this)">#フラッグフットボール</span>
+          <span class="tag" onclick="copyTag(this)">#試合後の打ち上げ</span>
+          <span class="tag" onclick="copyTag(this)">#FOOTBALLCONNECTION</span>
+        </div>
+      </div>
+
+      <div class="tips-box">
+        <div class="tips-label">✦ POSTING TIPS</div>
+        <ul>
+          <li>試合シーズン前（春・秋）に投稿するとエンゲージメントが上がりやすい</li>
+          <li>「私も使っています」「〇〇さんのお店が載ってます！」のような体験談を添えるとリアルな説得力が出る</li>
+          <li>チームメートにタグ付けすると自然な拡散につながる</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <div class="divider"></div>
+
+  <!-- ━━━ Instagram 投稿①：掲載募集 ━━━ -->
+  <div class="section-label">
+    <div class="platform-icon ig"><i class="fab fa-instagram"></i></div>
+    <div>
+      <h2>Instagram 投稿①｜掲載募集（フィード）</h2>
+      <div class="sub">画像①と一緒に投稿。ハッシュタグ多め</div>
+    </div>
+  </div>
+
+  <article class="post-card">
+    <div class="card-head">
+      <span class="card-title">INSTAGRAM POST — TYPE A</span>
+      <span class="card-hint">掲載してほしいお店オーナー向け</span>
+    </div>
+    <div class="post-image-wrap">
+      <div>
+        <img src="images/sns-post-01.jpg" alt="掲載募集用画像">
+        <p class="img-note">↑ この画像①を添付して投稿</p>
+      </div>
+    </div>
+    <div class="post-text-wrap">
+      <div class="text-box" id="ig-text-a">🏈 フットボール関係者のお店、無料で掲載できます。
+
+アメフト・フラッグ・タッチフットボールに携わるすべての人へ。
+
+あなたのお店を、全国の仲間に届けませんか？
+FOOTBALL CONNECTION に掲載するだけで、フットボールコミュニティの仲間があなたのお店を探してくれます。
+
+✅ 掲載完全無料
+✅ 飲食・バー・カフェ・サービス業 対応
+✅ 現役・OB・OG・指導者・家族 どなたでも
+
+プロフィールリンクから申し込みページへ👆
+（もしくは @football_connection_jp をフォローして最新情報をチェック）
+
+.
+.
+.
+#アメフト #アメリカンフットボール #フラッグフットボール #タッチフットボール
+#アメフトOB #フットボール #footballconnection
+#アメフト居酒屋 #アメフトバー #フットボールコミュニティ
+#飲食店掲載 #無料掲載 #お店紹介 #仲間の店
+#Xリーグ #社会人アメフト #学生アメフト
+#アメフト好きと繋がりたい</div>
+      <button class="copy-btn" onclick="copyText('ig-text-a', this)">
+        <i class="far fa-copy"></i> テキストをコピー
+      </button>
+
+      <div class="tips-box">
+        <div class="tips-label">✦ POSTING TIPS</div>
+        <ul>
+          <li>プロフィールのリンクを申し込みページ（apply.html）に設定してから投稿する</li>
+          <li>ストーリーズで「詳しくはプロフへ」と誘導するとフィード投稿への流入が増える</li>
+          <li>ハッシュタグは30個以内に絞ると表示順位が上がりやすい（現在18個）</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- ━━━ Instagram 投稿②：利用促進 ━━━ -->
+  <div class="section-label">
+    <div class="platform-icon ig"><i class="fab fa-instagram"></i></div>
+    <div>
+      <h2>Instagram 投稿②｜利用促進（フィード）</h2>
+      <div class="sub">画像②と一緒に投稿。フォロワー拡散を狙う</div>
+    </div>
+  </div>
+
+  <article class="post-card">
+    <div class="card-head">
+      <span class="card-title">INSTAGRAM POST — TYPE B</span>
+      <span class="card-hint">探す側・仲間全体への認知拡大</span>
+    </div>
+    <div class="post-image-wrap">
+      <div>
+        <img src="images/sns-post-02.jpg" alt="利用促進用画像">
+        <p class="img-note">↑ この画像②を添付して投稿</p>
+      </div>
+    </div>
+    <div class="post-text-wrap">
+      <div class="text-box" id="ig-text-b">あなたの店を、仲間に届けよう。🏈
+
+試合後の打ち上げ、遠征先でのごはん、OB会の会場探し。
+
+フットボール関係者のお店だけを集めた
+日本初のプラットフォーム、それが FOOTBALL CONNECTION。
+
+全国のバー、居酒屋、レストラン、カフェ、トレーナー…
+エリア・業種で絞り込んで、仲間のお店を見つけてください🗺️
+
+👇 プロフィールリンクからアクセス
+
+.
+.
+.
+#アメフト #アメリカンフットボール #フラッグフットボール
+#footballconnection #フットボールコミュニティ
+#アメフトOB #仲間の店 #試合後の打ち上げ
+#アメフト居酒屋 #アメフトバー #アメフトカフェ
+#Xリーグ #社会人アメフト #学生アメフト
+#スポーツグルメ #OB会 #アメフト好きと繋がりたい</div>
+      <button class="copy-btn" onclick="copyText('ig-text-b', this)">
+        <i class="far fa-copy"></i> テキストをコピー
+      </button>
+
+      <div class="tips-box">
+        <div class="tips-label">✦ POSTING TIPS</div>
+        <ul>
+          <li>掲載店オーナーをタグ付けすると相互シェアが生まれ、リーチが広がる</li>
+          <li>投稿後24時間はストーリーズで「フィード投稿しました」とリポストして拡散を助ける</li>
+          <li>リール動画版も将来作ると認知度がさらに上がる（動画は静止画の約2倍の表示）</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <div class="divider"></div>
+
+  <!-- ━━━ Instagram Stories テキスト ━━━ -->
+  <div class="section-label">
+    <div class="platform-icon ig"><i class="fab fa-instagram"></i></div>
+    <div>
+      <h2>Instagram ストーリーズ用コピー</h2>
+      <div class="sub">短くシンプル。スワイプアップ or プロフリンク誘導用</div>
+    </div>
+  </div>
+
+  <article class="post-card">
+    <div class="card-head">
+      <span class="card-title">STORIES COPY — SHORT VERSION</span>
+      <span class="card-hint">画像にテキストを重ねて使うイメージで</span>
+    </div>
+    <div class="post-text-wrap">
+      <div class="text-box" id="stories-text">🏈 フットボール仲間のお店、探せます。
+
+全国のアメフト・フラッグ関係者が営む
+飲食店・バー・カフェを一覧で検索👆
+
+▶ プロフリンクから見てみて！
+
+掲載も無料だよ。お店持ってる人はぜひ✨</div>
+      <button class="copy-btn" onclick="copyText('stories-text', this)">
+        <i class="far fa-copy"></i> テキストをコピー
+      </button>
+
+      <div class="tips-box">
+        <div class="tips-label">✦ STORIES TIPS</div>
+        <ul>
+          <li>背景色：ネイビー（#0A1628）＋テキストは白・ゴールドで統一するとブランドらしい</li>
+          <li>「リンクスタンプ」で https://football-connection.com に直結させる</li>
+          <li>絵文字は1〜2個にとどめてシンプルに見せると高級感が出る</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<!-- Footer note -->
+<footer class="footer-note">
+  <p>このページは内部ツールです。外部公開は不要です。<br>
+  © 2025 <a href="index.html">FOOTBALL CONNECTION</a> by TSUMUGU合同会社</p>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast">📋 コピーしました！</div>
+
+<script>
+  function copyText(id, btn) {
+    const el = document.getElementById(id);
+    const text = el.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.classList.add('copied');
+      btn.innerHTML = '<i class="fas fa-check"></i> コピーしました！';
+      showToast('テキストをコピーしました！');
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = '<i class="far fa-copy"></i> テキストをコピー';
+      }, 2500);
+    }).catch(() => {
+      // Fallback
+      const range = document.createRange();
+      range.selectNode(el);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      showToast('テキストをコピーしました！');
+    });
+  }
+
+  function copyTag(el) {
+    const text = el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      showToast(text + ' をコピーしました');
+    }).catch(() => {
+      // Fallback
+      const tmp = document.createElement('textarea');
+      tmp.value = text;
+      document.body.appendChild(tmp);
+      tmp.select();
+      document.execCommand('copy');
+      document.body.removeChild(tmp);
+      showToast(text + ' をコピーしました');
+    });
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = '📋 ' + msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+</script>
+</body>
+</html>

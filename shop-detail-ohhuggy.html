@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#0A1628">
+  <meta name="description" content="Oh!huggy!!横濱元町店｜神奈川・横浜元町のフラワーおはぎ専門店。立教大学出身・観戦歴100試合以上の本物のフットボールファンオーナーが営む。店内にはTouchdownやフットボールマガジンのバックナンバーが並ぶ、アメフト好きにはたまらない隠れ家カフェ。FOOTBALL CONNECTION加盟店。">
+  <meta name="keywords" content="Oh!huggy, フラワーおはぎ 横浜, フラワーおはぎ 元町, フットボール カフェ, アメフト 横浜, 横浜元町 カフェ, 立教大学 アメフト, FOOTBALL CONNECTION">
+  <title>Oh!huggy!!横濱元町店｜フラワーおはぎ専門カフェ｜アメフトファンオーナー | FOOTBALL CONNECTION</title>
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="apple-touch-icon" href="images/logo-square.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260325">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNJ4ZBMYGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNJ4ZBMYGR');
+  </script>
+  <style>
+    /* =========================================
+       Oh!huggy!! 専用スタイル
+       カラーテーマ：さくらピンク × 抹茶グリーン × 深夜ネイビー
+    ========================================= */
+
+    .sd-page {
+      --sd-accent: #d4789a;
+      --sd-accent-dark: #b05678;
+      --sd-accent-gold: #8fbc8f;
+      --sd-accent-dim: rgba(212,120,154,0.12);
+      --sd-accent-border: rgba(212,120,154,0.32);
+    }
+
+    /* ── ヒーロー：深夜ネイビー×さくらピンク ── */
+    .sd-hero {
+      background: linear-gradient(155deg, #0A1628 0%, #14203a 45%, #1a0d15 100%);
+    }
+    .sd-hero::before {
+      content: '🌸';
+      position: absolute; right: -1%; top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(110px, 20vw, 240px);
+      opacity: 0.05; pointer-events: none; line-height: 1;
+    }
+
+    .pink-divider {
+      display: flex; align-items: center; gap: 14px;
+      margin: 30px 0;
+      color: rgba(212,120,154,0.55);
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .pink-divider::before, .pink-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(212,120,154,0.45), transparent);
+    }
+
+    .vision-block {
+      background: linear-gradient(135deg, rgba(212,120,154,0.09), rgba(10,22,40,0.65));
+      border: 1px solid rgba(212,120,154,0.22);
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin: 24px 0;
+    }
+    .vision-label {
+      font-size: 0.7rem; letter-spacing: 0.2em;
+      color: var(--sd-accent); margin-bottom: 14px; text-transform: uppercase;
+    }
+    .vision-block-text {
+      font-size: 0.95rem; line-height: 2.1;
+      color: rgba(255,255,255,0.82);
+    }
+    .vision-block-text strong { color: #fff; }
+
+    /* ── バナー ── */
+    .oh-banner {
+      background: linear-gradient(135deg, #1a0d15 0%, #0A1628 60%, #0a1628 100%);
+      border-left: 3px solid var(--sd-accent);
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin: 28px 0;
+      font-size: 0.88rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.72);
+    }
+    .oh-banner .banner-icon {
+      font-size: 1.3rem;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    /* ── 商品ラインカード ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .product-card {
+      background: rgba(212,120,154,0.07);
+      border: 1px solid rgba(212,120,154,0.2);
+      border-radius: 12px;
+      padding: 20px 16px;
+    }
+    .product-card .product-icon { font-size: 1.6rem; margin-bottom: 8px; }
+    .product-card .product-name { font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .product-card .product-desc { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+    /* ── メイン画像 ── */
+    .shop-main-photo {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      margin-bottom: 10px;
+      object-fit: cover;
+      max-height: 480px;
+    }
+
+    /* ── OBバッジ ── */
+    .ob-badge {
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(212,120,154,0.08);
+      border: 1px solid rgba(212,120,154,0.22);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 32px;
+    }
+
+    /* ── CTAボタン ── */
+    .cta-primary {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: linear-gradient(135deg, #d4789a, #b05678);
+      color: #fff; text-decoration: none;
+      padding: 17px 24px; border-radius: 12px;
+      font-weight: 700; font-size: 1rem; letter-spacing: 0.05em;
+    }
+    .cta-secondary {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+      color: #fff; text-decoration: none;
+      padding: 17px 24px; border-radius: 12px;
+      font-weight: 700; font-size: 1rem; letter-spacing: 0.05em;
+    }
+    .cta-tertiary {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.85); text-decoration: none;
+      padding: 15px 24px; border-radius: 12px;
+      font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em;
+    }
+    .cta-phone {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: rgba(143,188,143,0.15);
+      border: 1px solid rgba(143,188,143,0.4);
+      color: #8fbc8f; text-decoration: none;
+      padding: 17px 24px; border-radius: 12px;
+      font-weight: 700; font-size: 1rem; letter-spacing: 0.05em;
+    }
+
+    /* ── 関連店舗リンク ── */
+    .related-link {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px; padding: 14px 16px;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .related-link:hover { background: rgba(212,120,154,0.08); }
+  </style>
+</head>
+<body class="sd-page">
+
+<!-- ══════════ HEADER ══════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="shops.html" class="active">店舗・サービスを探す</a>
+      <a href="events.html">イベント</a>
+      <a href="apply.html" class="btn-header-cta">無料で掲載する</a>
+    </nav>
+    <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 トップ</a>
+    <a href="shops.html">🗺️ 店舗・サービスを探す</a>
+    <a href="events.html">📅 イベント</a>
+    <a href="apply.html">🏈 無料で掲載する</a>
+  </nav>
+</header>
+
+  <!-- ========== HERO ========== -->
+  <section class="sd-hero" style="position:relative;overflow:hidden;padding:56px 24px 44px;">
+    <div style="max-width:720px;margin:0 auto;position:relative;z-index:1;">
+
+      <!-- パンくず -->
+      <p style="font-size:0.7rem;color:rgba(255,255,255,0.35);letter-spacing:0.1em;margin-bottom:20px;">
+        <a href="index.html" style="color:rgba(255,255,255,0.35);text-decoration:none;">HOME</a>
+        &nbsp;/&nbsp;
+        <a href="shops.html" style="color:rgba(255,255,255,0.35);text-decoration:none;">SHOPS</a>
+        &nbsp;/&nbsp; Oh!huggy!!横濱元町店
+      </p>
+
+      <!-- ジャンルタグ -->
+      <p style="font-family:'Oswald',sans-serif;font-size:0.72rem;letter-spacing:0.22em;color:var(--sd-accent);margin-bottom:12px;text-transform:uppercase;">
+        CAFÉ / KANAGAWA・YOKOHAMA
+      </p>
+
+      <!-- 店名 -->
+      <h1 style="font-family:'Oswald',sans-serif;font-size:clamp(1.8rem,7vw,3rem);font-weight:700;line-height:1.1;letter-spacing:0.04em;margin-bottom:18px;">
+        Oh!huggy!!横濱元町店
+      </h1>
+
+      <!-- キャッチ -->
+      <p style="font-size:clamp(0.9rem,3vw,1.1rem);color:rgba(255,255,255,0.7);line-height:1.8;margin-bottom:24px;">
+        元町パセオの2階に咲く、フラワーおはぎの専門店。<br>
+        アメフト好きオーナーの店だから、仲間へ贈る手土産にも最高。
+      </p>
+
+      <!-- バッジ -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="background:rgba(212,120,154,0.15);color:#d4789a;border:1px solid rgba(212,120,154,0.35);padding:6px 14px;border-radius:20px;font-size:0.75rem;letter-spacing:0.08em;">🌸 フラワーおはぎ専門店</span>
+        <span style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.15);padding:6px 14px;border-radius:20px;font-size:0.75rem;letter-spacing:0.06em;">📍 神奈川県 横浜・元町</span>
+        <span style="background:rgba(143,188,143,0.12);color:#8fbc8f;border:1px solid rgba(143,188,143,0.3);padding:6px 14px;border-radius:20px;font-size:0.75rem;letter-spacing:0.06em;">☕ カフェ</span>
+        <span style="background:rgba(201,135,58,0.12);color:#C9873A;border:1px solid rgba(201,135,58,0.3);padding:6px 14px;border-radius:20px;font-size:0.75rem;letter-spacing:0.06em;">🏈 フットボールファンオーナー</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAIN ========== -->
+  <main class="sd-main" style="background:#080814;min-height:60vh;">
+  <div class="sd-body" style="max-width:720px;margin:0 auto;padding:40px 20px 80px;">
+
+    <!-- ── メイン写真 ── -->
+    <img
+      src="images/shops/ohhuggy_01.jpg"
+      alt="Oh!huggy!!横濱元町店｜フラワーおはぎ専門カフェ"
+      class="shop-main-photo"
+    >
+    <p style="text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.35);margin-bottom:32px;letter-spacing:0.08em;">Oh!huggy!! ― 横濱元町のフラワーおはぎ専門店</p>
+
+    <!-- ── フックカード ── -->
+    <div style="background:linear-gradient(135deg,rgba(212,120,154,0.12),rgba(8,8,20,0.8));border:1px solid rgba(212,120,154,0.25);border-radius:14px;padding:28px 24px;margin-bottom:36px;text-align:center;">
+      <p style="font-size:1.15rem;font-weight:700;color:#fff;line-height:1.8;margin-bottom:12px;">
+        元町に、こんな店があったのか。<br>
+        <span style="color:#d4789a;">手土産に迷ったら、ここに来い。</span>
+      </p>
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.9;">
+        元町パセオ2Fに咲くフラワーおはぎの専門店。<br>
+        アメフト好きオーナーが営む、センスのいい手土産スポット。
+      </p>
+    </div>
+
+    <!-- ── OBバッジ ── -->
+    <div class="ob-badge">
+      <div style="font-size:2.2rem;flex-shrink:0;">🏈</div>
+      <div>
+        <div style="font-size:0.7rem;letter-spacing:0.18em;color:var(--sd-accent);margin-bottom:5px;">FOOTBALL CONNECTION MEMBER</div>
+        <div style="font-size:0.92rem;font-weight:700;color:#fff;line-height:1.6;">オーナー 石塚 陽子｜フットボール観戦歴 <span style="color:var(--sd-accent);">100試合以上</span> の本物のファン</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:4px;">立教大学出身。店内には1990〜2000年代のTouchdownやフットボールマガジンのバックナンバーが並ぶ。</div>
+      </div>
+    </div>
+
+    <div class="pink-divider">ABOUT</div>
+
+    <!-- ── 店舗紹介 ── -->
+    <p style="font-size:0.95rem;line-height:2.1;color:rgba(255,255,255,0.78);margin-bottom:24px;">
+      <strong style="color:#fff;">Oh!huggy!!横濱元町店</strong> は、横浜・元町パセオの2階に構えるフラワーおはぎの専門店。季節の色彩をまとった花のように美しいおはぎが並び、地元の人から観光客まで足を止める話題のカフェだ。
+    </p>
+    <p style="font-size:0.95rem;line-height:2.1;color:rgba(255,255,255,0.78);margin-bottom:32px;">
+      オーナーの<strong style="color:#fff;">石塚 陽子</strong>さんは立教大学出身、<strong style="color:#fff;">フットボール観戦歴100試合以上</strong>の筋金入りのファン。「観た」じゃなくて「浴びた」というレベルのアメフト愛が、この店の底に流れている。店内には <strong style="color:#fff;">1990〜2000年代のTouchdownやフットボールマガジンのバックナンバー</strong>が静かに並び、アメフト好きならニヤリとするはず。
+    </p>
+
+    <div class="pink-divider">FEATURES</div>
+
+    <!-- ── 特徴カード ── -->
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-icon">🌸</div>
+        <div class="product-name">フラワーおはぎ</div>
+        <div class="product-desc">季節の花をモチーフにしたカラフルなおはぎ。見た目も美しく、贈り物に最適。</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">📚</div>
+        <div class="product-name">アメフト雑誌コレクション</div>
+        <div class="product-desc">90〜00年代のTouchdown・フットボールマガジンが棚に並ぶ、隠れたアメフト聖地。</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🎁</div>
+        <div class="product-name">手土産・贈り物に</div>
+        <div class="product-desc">顧客への手土産、OB会の差し入れ、特別な一箱として。上品さが光る。</div>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">☕</div>
+        <div class="product-name">カフェスペース</div>
+        <div class="product-desc">元町パセオ2Fの落ち着いた空間で、ゆっくりと過ごせる。</div>
+      </div>
+    </div>
+
+    <!-- ── オーナーズストーリー ── -->
+    <div class="pink-divider">OWNER'S STORY</div>
+    <div class="vision-block">
+      <div class="vision-label">✦ OWNER'S STORY</div>
+      <p class="vision-block-text">
+        立教大学出身のオーナー・<strong>石塚 陽子</strong>さんは、<strong>フットボール観戦歴100試合以上</strong>の本物のファン。「好き」というレベルを超え、足でフィールドを追い続けてきた人だ。お店の一角には、90〜2000年代の <strong>Touchdown（タッチダウン）</strong> や <strong>フットボールマガジン</strong> のバックナンバーが大切に保管されている。<br><br>
+        横浜・元町という上品な街に溶け込みながらも、アメフトへの愛が静かに息づく空間。訪れた仲間が「あ、ここわかってる！」と思わず笑顔になる、そんなお店だ。<br><br>
+        花おはぎは季節ごとに変わるラインナップで、<strong>顧客への手土産や大切な人への贈り物</strong>にも喜ばれる逸品。アメフト仲間へのギフトとして、一箱持っていくのも粋だ。
+      </p>
+    </div>
+
+    <!-- ── バナー ── -->
+    <div class="oh-banner">
+      <span class="banner-icon">🌸</span>
+      <strong>元町で見つけた、アメフト好きの花おはぎ屋。</strong><br>
+      顧客への手土産、大切な人へのギフト、仲間への差し入れ——<br>Oh!huggy!!の花おはぎは、特別な一箱になる。
+    </div>
+
+    <!-- ── アメフト視点 ── -->
+    <div class="pink-divider">FOOTBALL PERSPECTIVE</div>
+    <div style="background:rgba(212,120,154,0.06);border:1px solid rgba(212,120,154,0.18);border-radius:12px;padding:24px 22px;margin-bottom:32px;">
+      <p style="font-size:0.8rem;letter-spacing:0.16em;color:var(--sd-accent);margin-bottom:14px;">🏈 FOOTBALL CONNECTION スタッフより</p>
+      <p style="font-size:0.93rem;line-height:2.0;color:rgba(255,255,255,0.78);">
+        「手土産はどこで買う？」——その答えが、横浜元町にある。<br><br>
+        Oh!huggy!!のオーナー・石塚さんは立教大学出身、<strong style="color:#fff;">フットボール観戦歴100試合以上</strong>の筋金入りのファン。店内にはTouchdownやフットボールマガジンの貴重なバックナンバーが並ぶ、知る人ぞ知るアメフト聖地でもある。<br><br>
+        顧客への手土産はもちろん、横浜エリアで試合・イベントがある日の差し入れにも。美しい花おはぎは、受け取った相手が必ず喜ぶ一箱だ。
+      </p>
+    </div>
+
+    <!-- ── 利用シーン ── -->
+    <div class="pink-divider">SCENES</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px;">
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px 14px;">
+        <div style="font-size:1.3rem;margin-bottom:6px;">🎁</div>
+        <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:4px;">顧客への手土産に</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.6;">「これどこで買ったの？」と必ず聞かれる。センスが光る一箱で、関係値が上がる。</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px 14px;">
+        <div style="font-size:1.3rem;margin-bottom:6px;">🤝</div>
+        <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:4px;">アメフト仲間への贈り物に</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.6;">FOOTBALL CONNECTION つながりのお店で買ったとわかったら、仲間は絶対喜ぶ。</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px 14px;">
+        <div style="font-size:1.3rem;margin-bottom:6px;">📚</div>
+        <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:4px;">90〜00年代アメフト好きに</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.6;">あの頃のTouchdownを手に取れる場所が、まだあった。OBなら刺さること確実。</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px 14px;">
+        <div style="font-size:1.3rem;margin-bottom:6px;">🌸</div>
+        <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:4px;">横浜観光のついでに</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.6;">元町散歩のルートに加えるだけで、その日が豊かになる。アメフト仲間を誘って来い。</div>
+      </div>
+    </div>
+
+    <!-- ── 基本情報 ── -->
+    <div class="pink-divider">BASIC INFO</div>
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;margin-bottom:28px;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.88rem;">
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);width:36%;white-space:nowrap;">🏪 店舗名</td>
+          <td style="padding:14px 18px;color:#fff;font-weight:700;">Oh!huggy!!横濱元町店</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">📍 住所</td>
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.8);">〒231-0861 神奈川県横浜市中区元町1丁目50<br>元町パセオ 2F 205</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">📞 電話</td>
+          <td style="padding:14px 18px;"><a href="tel:08035450417" style="color:var(--sd-accent);text-decoration:none;">080-3545-0417</a></td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">🕐 営業時間</td>
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.8);">火〜日 10:30〜17:00</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">📅 定休日</td>
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.8);">月曜日</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">🏈 オーナー</td>
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.8);">石塚 陽子<br><span style="font-size:0.78rem;color:rgba(255,255,255,0.5);">立教大学出身・フットボールファン</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">🏷️ 業種</td>
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.8);">花おはぎ専門店・カフェ</td>
+        </tr>
+        <tr>
+          <td style="padding:14px 18px;color:rgba(255,255,255,0.45);">📱 Instagram</td>
+          <td style="padding:14px 18px;"><a href="https://www.instagram.com/oh_huggy_yokohama_motomachi" target="_blank" rel="noopener" style="color:var(--sd-accent);text-decoration:none;">@oh_huggy_yokohama_motomachi ↗</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ── CTAボタン ── -->
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:40px;">
+      <a href="tel:08035450417" class="cta-phone">
+        📞 電話で問い合わせる
+      </a>
+      <a href="https://www.instagram.com/oh_huggy_yokohama_motomachi" target="_blank" rel="noopener" class="cta-secondary">
+        📸 Instagramをチェック
+      </a>
+    </div>
+
+    <!-- ── 関連店舗 ── -->
+    <div class="pink-divider" style="margin-top:48px;">RELATED SHOPS</div>
+    <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-bottom:16px;">首都圏エリアの仲間の店</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:40px;">
+      <a href="shop-detail-goyen.html" class="related-link">
+        <span style="font-size:1.3rem;">🍷</span>
+        <span style="color:#fff;font-size:0.88rem;font-weight:700;">BAR ごえん（銀座）</span>
+        <span style="margin-left:auto;color:var(--sd-accent);font-size:0.8rem;">→</span>
+      </a>
+      <a href="shop-detail-midori.html" class="related-link">
+        <span style="font-size:1.3rem;">🍃</span>
+        <span style="color:#fff;font-size:0.88rem;font-weight:700;">スナック みどり（世田谷・深沢）</span>
+        <span style="margin-left:auto;color:var(--sd-accent);font-size:0.8rem;">→</span>
+      </a>
+      <a href="shop-detail-proteinnation.html" class="related-link">
+        <span style="font-size:1.3rem;">💪</span>
+        <span style="color:#fff;font-size:0.88rem;font-weight:700;">Protein Nation（東京）</span>
+        <span style="margin-left:auto;color:var(--sd-accent);font-size:0.8rem;">→</span>
+      </a>
+    </div>
+
+    <!-- ── メインへ戻る ── -->
+    <div style="text-align:center;padding-top:20px;">
+      <a href="shops.html" class="cta-tertiary" style="display:inline-flex;padding:13px 28px;border-radius:50px;font-size:0.85rem;">
+        ← 店舗一覧に戻る
+      </a>
+    </div>
+
+  </div>
+  </main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FOOTBALL CONNECTION</div>
+        <p class="footer-tagline">
+          せっかくなら、アメフト関係者の店に行こう。<br>
+          全国の仲間の店・サービスをつなぐプラットフォーム。
+        </p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigation</div>
+        <div class="footer-nav-links">
+          <a href="index.html">トップ</a>
+          <a href="shops.html">店舗・サービスを探す</a>
+          <a href="events.html">イベント</a>
+          <a href="apply.html">無料で掲載する</a>
+          <a href="referral.html">紹介する</a>
+          <a href="terms.html">利用規約</a>
+          <a href="tokusho.html">特定商取引法</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FOOTBALL CONNECTION. All rights reserved.</p>
+      <a href="https://x.com/FOOTBALLCo78247" target="_blank" rel="noopener"
+         style="color:#666;font-size:0.82rem;">X (Twitter)</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script>
+  if (typeof initMobileMenu === 'function') initMobileMenu();
+</script>
+</body>
+</html>

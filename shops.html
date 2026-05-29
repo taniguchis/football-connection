@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0A1628">
+  <meta name="description" content="全国のアメリカンフットボール・フラッグフットボール・タッチフットボール関係者が経営・参画する飲食店・サービス業を地図と一覧から検索。FOOTBALL Connection加盟店一覧。">
+  <title>店舗・サービスを探す | FOOTBALL CONNECTION</title>
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="apple-touch-icon" href="images/logo-square.png">
+  <link rel="stylesheet" href="css/style.css?v=20260308">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNJ4ZBMYGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNJ4ZBMYGR');
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    .shops-layout { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .result-count { font-size: 0.9rem; color: var(--gray); margin-bottom: 20px; }
+    .result-count span { color: var(--gold); font-weight: 700; font-size: 1.1rem; }
+    .shops-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 1024px) { .shops-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 640px)  { .shops-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="shops.html" class="active">店舗・サービスを探す</a>
+      <a href="events.html">イベント</a>
+      <a href="apply.html" class="btn-header-cta">加盟申込</a>
+    </nav>
+    <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">🏠 トップ</a>
+    <a href="shops.html">🗺️ 店舗・サービスを探す</a>
+    <a href="events.html">📅 イベント</a>
+    <a href="apply.html">🏈 加盟申込はこちら</a>
+  </nav>
+</header>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>🗺️ 店舗・サービスを探す</h1>
+    <p>アメリカンフットボール・フラッグフットボール・タッチフットボール関係者が経営・参画する全国の店舗・サービスを地図と一覧から探せます。</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main style="padding:40px 0 80px;">
+  <div class="shops-layout">
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar fade-in">
+      <div class="filter-group">
+        <label for="search-input">🔍 キーワード</label>
+        <input type="text" id="search-input" placeholder="店名・エリア・関係者名..." autocomplete="off">
+      </div>
+      <div class="filter-group">
+        <label for="area-filter">📍 エリア</label>
+        <select id="area-filter">
+          <option value="">全国</option>
+          <optgroup label="関東">
+            <option value="東京都">東京都</option>
+            <option value="神奈川県">神奈川県</option>
+            <option value="埼玉県">埼玉県</option>
+            <option value="千葉県">千葉県</option>
+            <option value="茨城県">茨城県</option>
+            <option value="栃木県">栃木県</option>
+            <option value="群馬県">群馬県</option>
+          </optgroup>
+          <optgroup label="関西">
+            <option value="大阪府">大阪府</option>
+            <option value="兵庫県">兵庫県</option>
+            <option value="京都府">京都府</option>
+            <option value="奈良県">奈良県</option>
+            <option value="滋賀県">滋賀県</option>
+            <option value="和歌山県">和歌山県</option>
+          </optgroup>
+          <optgroup label="東海">
+            <option value="愛知県">愛知県</option>
+            <option value="静岡県">静岡県</option>
+            <option value="岐阜県">岐阜県</option>
+            <option value="三重県">三重県</option>
+          </optgroup>
+          <optgroup label="北海道・東北">
+            <option value="北海道">北海道</option>
+            <option value="宮城県">宮城県</option>
+            <option value="福島県">福島県</option>
+            <option value="山形県">山形県</option>
+            <option value="岩手県">岩手県</option>
+            <option value="秋田県">秋田県</option>
+            <option value="青森県">青森県</option>
+          </optgroup>
+          <optgroup label="北信越">
+            <option value="新潟県">新潟県</option>
+            <option value="長野県">長野県</option>
+            <option value="富山県">富山県</option>
+            <option value="石川県">石川県</option>
+            <option value="福井県">福井県</option>
+          </optgroup>
+          <optgroup label="中国・四国">
+            <option value="広島県">広島県</option>
+            <option value="岡山県">岡山県</option>
+            <option value="山口県">山口県</option>
+            <option value="鳥取県">鳥取県</option>
+            <option value="島根県">島根県</option>
+            <option value="香川県">香川県</option>
+            <option value="愛媛県">愛媛県</option>
+            <option value="高知県">高知県</option>
+            <option value="徳島県">徳島県</option>
+          </optgroup>
+          <optgroup label="九州・沖縄">
+            <option value="福岡県">福岡県</option>
+            <option value="佐賀県">佐賀県</option>
+            <option value="長崎県">長崎県</option>
+            <option value="熊本県">熊本県</option>
+            <option value="大分県">大分県</option>
+            <option value="宮崎県">宮崎県</option>
+            <option value="鹿児島県">鹿児島県</option>
+            <option value="沖縄県">沖縄県</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="genre-filter">🏪 業種</label>
+        <select id="genre-filter">
+          <option value="">全て</option>
+          <option value="バー">バー</option>
+          <option value="カラオケバー">カラオケバー</option>
+          <option value="居酒屋">居酒屋</option>
+          <option value="レストラン">レストラン</option>
+          <option value="焼肉">焼肉</option>
+          <option value="フレンチ">フレンチ</option>
+          <option value="とんかつ">とんかつ</option>
+          <option value="蛤鍋・とんかつ">蛤鍋・とんかつ</option>
+          <option value="カフェ">カフェ</option>
+          <option value="宿泊・オーベルジュ">宿泊・オーベルジュ</option>
+          <option value="ジム・トレーニング">ジム・トレーニング</option>
+          <option value="マッサージ">マッサージ</option>
+          <option value="その他サービス">その他サービス</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="plan-filter">⭐ プラン</label>
+        <select id="plan-filter">
+          <option value="">全て</option>
+          <option value="legend">👑 LEGEND</option>
+          <option value="premium">プレミアム</option>
+          <option value="free">フリー</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- MAP -->
+    <div class="fade-in" style="margin-bottom:40px;">
+      <div class="map-container"><div id="map"></div></div>
+    </div>
+
+    <!-- RESULTS -->
+    <p class="result-count"><span id="count-num">5</span> 件が見つかりました</p>
+
+    <!-- SHOP GRID -->
+    <div class="shops-grid" id="shops-grid"></div>
+
+    <!-- NO RESULTS -->
+    <div class="no-results" id="no-results" style="display:none;">
+      <div style="font-size:3rem;margin-bottom:16px;">🏈</div>
+      <h3>条件に合う店舗・サービスが見つかりませんでした</h3>
+      <p>検索条件を変えてお試しください。</p>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;margin-top:56px;padding:40px 24px;background:linear-gradient(135deg,rgba(212,160,23,0.08),rgba(26,107,60,0.08));border-radius:var(--radius);border:1px solid rgba(212,160,23,0.25);" class="fade-in">
+      <p style="font-size:0.78rem;color:var(--gold);font-weight:700;letter-spacing:0.15em;margin-bottom:10px;">YOUR SHOP GOES HERE</p>
+      <p style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:10px;">あなたのお店・サービスも仲間のネットワークへ</p>
+      <p style="color:var(--gray);font-size:0.88rem;line-height:1.8;margin-bottom:8px;">このページを見ているユーザーは、<strong style="color:#fff;">アメフト関係者の店を探している人たち</strong>です。<br>掲載は完全無料。今すぐ仲間の経済圏に加わりましょう。</p>
+      <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:16px 0 20px;">
+        <span style="font-size:0.78rem;color:var(--gold);background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.3);padding:4px 12px;border-radius:20px;">✓ 初期費用なし</span>
+        <span style="font-size:0.78rem;color:var(--gold);background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.3);padding:4px 12px;border-radius:20px;">✓ まず無料掲載</span>
+        <span style="font-size:0.78rem;color:var(--gold);background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.3);padding:4px 12px;border-radius:20px;">✓ いつでも変更OK</span>
+      </div>
+      <a href="apply.html" class="btn btn-free btn-lg">✅ 無料で掲載する</a>
+      <p style="font-size:0.78rem;color:var(--gray);margin-top:12px;">仲間の店を紹介するだけで特典あり → <a href="referral.html" style="color:var(--gold);">紹介フォームへ</a></p>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FOOTBALL CONNECTION</div>
+        <p class="footer-tagline">せっかくなら、アメフト関係者の店に行こう。<br>全国の仲間の店・サービスをつなぐプラットフォーム。</p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigation</div>
+        <div class="footer-nav-links">
+          <a href="index.html">トップ</a>
+          <a href="shops.html">店舗・サービスを探す</a>
+          <a href="events.html">イベント</a>
+          <a href="apply.html">加盟申込</a>
+          <a href="referral.html">掲載紹介</a>
+          <a href="terms.html">利用規約</a>
+          <a href="tokusho.html">特定商取引法に基づく表記</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FOOTBALL Connection. Operated by TSUMUGU合同会社</p>
+      <p style="margin-top:8px;"><a href="https://x.com/FOOTBALLCo78247" target="_blank" style="color:var(--gray);font-size:0.85rem;transition:var(--transition);">𝕏 @FOOTBALLCo78247</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/common.js"></script>
+<script>
+  // MAP
+  const map = L.map('map', { center: [36.5, 136.0], zoom: 6 });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 18
+  }).addTo(map);
+
+  function createIcon(plan) {
+    const color = plan === 'premium' ? '#D4A017' : '#1A6B3C';
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="44" viewBox="0 0 36 44">
+      <ellipse cx="18" cy="40" rx="8" ry="3" fill="rgba(0,0,0,0.3)"/>
+      <path d="M18 2C10.27 2 4 8.27 4 16c0 10 14 26 14 26s14-16 14-26C32 8.27 25.73 2 18 2z" fill="${color}" stroke="white" stroke-width="2"/>
+      <text x="18" y="20" text-anchor="middle" font-size="13" fill="white">🏈</text>
+    </svg>`;
+    return L.divIcon({ html: svg, iconSize:[36,44], iconAnchor:[18,44], popupAnchor:[0,-44], className:'' });
+  }
+
+  let markers = [];
+  function renderMarkers(shops) {
+    markers.forEach(m => map.removeLayer(m));
+    markers = [];
+    shops.forEach(shop => {
+      const m = L.marker([shop.lat, shop.lng], { icon: createIcon(shop.plan) }).addTo(map);
+      const careerLine = shop.football_career ? `<div style="font-size:0.78rem;color:#86efac;">👤 ${shop.football_career}</div>` : '';
+      m.bindPopup(`
+        <div style="font-weight:700;margin-bottom:4px;">${shop.name}</div>
+        <div style="font-size:0.8rem;color:#ccc;">📍 ${shop.area} ${shop.city} ／ ${shop.genre}</div>
+        ${careerLine}
+        <a href="${getShopDetailUrl(shop)}" style="display:inline-block;margin-top:8px;color:#D4A017;font-size:0.85rem;font-weight:600;">詳細を見る →</a>
+      `);
+      markers.push(m);
+    });
+  }
+
+  function renderShops(shops) {
+    const grid = document.getElementById('shops-grid');
+    const noRes = document.getElementById('no-results');
+    document.getElementById('count-num').textContent = shops.length;
+    if (shops.length === 0) {
+      grid.style.display = 'none'; noRes.style.display = 'block';
+    } else {
+      grid.style.display = 'grid'; noRes.style.display = 'none';
+      grid.innerHTML = shops.map(buildShopCard).join('');
+      setTimeout(() => initScrollAnimation(), 50);
+    }
+    renderMarkers(shops);
+  }
+
+  function sortShops(shops) {
+    // ランクスコア: LEGEND=0, プレミアム=1, スタンダード/フリー=2, 参考=3
+    function rankScore(s) {
+      if (s.is_reference) return 3;
+      if (s.plan === 'legend')   return 0;
+      if (s.plan === 'premium')  return 1;
+      return 2;
+    }
+    return [...shops].sort((a, b) => {
+      const rankDiff = rankScore(a) - rankScore(b);
+      if (rankDiff !== 0) return rankDiff;
+      // 同ランク内は加盟日順（古い順＝先着優先）
+      return new Date(a.joined_at) - new Date(b.joined_at);
+    });
+  }
+
+  function applyFilters() {
+    const kw    = document.getElementById('search-input').value.toLowerCase().trim();
+    const area  = document.getElementById('area-filter').value;
+    const genre = document.getElementById('genre-filter').value;
+    const plan  = document.getElementById('plan-filter').value;
+    const filtered = SHOPS_DATA.filter(s =>
+      !s.is_reference &&
+      (!kw   || [s.name,s.area,s.city,s.comment,s.football_element,s.football_career].some(v => v && v.toLowerCase().includes(kw))) &&
+      (!area  || s.area  === area) &&
+      (!genre || s.genre === genre) &&
+      (!plan  || s.plan  === plan)
+    );
+    renderShops(sortShops(filtered));
+  }
+
+  ['search-input','area-filter','genre-filter','plan-filter'].forEach(id => {
+    document.getElementById(id).addEventListener(id === 'search-input' ? 'input' : 'change', applyFilters);
+  });
+
+  renderShops(sortShops(SHOPS_DATA.filter(s => !s.is_reference)));
+</script>
+</body>
+</html>

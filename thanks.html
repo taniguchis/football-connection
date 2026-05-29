@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0A1628">
+  <meta name="robots" content="noindex">
+  <title>申込完了 | FOOTBALL CONNECTION</title>
+  <link rel="icon" type="image/png" href="images/logo-square.png">
+  <link rel="apple-touch-icon" href="images/logo-square.png">
+  <link rel="stylesheet" href="css/style.css?v=20260308">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNJ4ZBMYGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VNJ4ZBMYGR');
+  </script>
+  <style>
+    .thanks-section {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+    .thanks-card {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    .thanks-icon {
+      font-size: 4rem;
+      margin-bottom: 24px;
+      display: block;
+    }
+    .thanks-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .thanks-title span {
+      color: var(--gold);
+    }
+    .thanks-subtitle {
+      font-size: 1rem;
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+    .thanks-body {
+      font-size: 0.92rem;
+      color: var(--light-gray);
+      line-height: 1.85;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .thanks-body strong {
+      color: var(--gold);
+    }
+    .thanks-info {
+      background: var(--navy);
+      border: 1px solid rgba(212,160,23,0.3);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .thanks-info p {
+      font-size: 0.88rem;
+      color: var(--light-gray);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .thanks-info p + p {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .thanks-info strong {
+      color: var(--gold);
+    }
+    .thanks-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 480px) {
+      .thanks-card {
+        padding: 36px 20px;
+      }
+      .thanks-title {
+        font-size: 1.4rem;
+      }
+      .thanks-btns {
+        flex-direction: column;
+      }
+      .thanks-btns .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">
+      <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" style="height:36px;">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="shops.html">店舗・サービスを探す</a>
+      <a href="events.html">イベント</a>
+      <a href="apply.html" class="btn btn-header-cta">加盟申込</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="index.html">🏠 トップ</a>
+  <a href="shops.html">🗺️ 店舗・サービスを探す</a>
+  <a href="events.html">📅 イベント</a>
+  <a href="referral.html">🤝 紹介する（¥3,000）</a>
+  <a href="apply.html" class="btn btn-gold">🏈 加盟申込</a>
+</nav>
+
+<!-- MAIN -->
+<main>
+  <section class="thanks-section field-bg">
+    <div class="thanks-card fade-in">
+      <span class="thanks-icon">🏈</span>
+      <h1 class="thanks-title">申込を<span>受け付けました！</span></h1>
+      <p class="thanks-subtitle">FOOTBALL CONNECTION へのご申込ありがとうございます</p>
+
+      <div class="thanks-body">
+        <p>フォームの送信が完了しました。<br>
+        内容を確認の上、<strong>1〜2営業日以内</strong>に登録いただいたメールアドレスへご連絡いたします。</p>
+      </div>
+
+      <div class="thanks-info">
+        <p>
+          <strong>📧 次のステップ</strong><br>
+          担当者よりメールにてご連絡します。<br>
+          確認後、お選びいただいたプランのStripe決済ページをご案内いたします。
+        </p>
+        <p>
+          <strong>📬 連絡先</strong><br>
+          ご不明な点は <a href="mailto:taniguchis@tsumugu-solution.jp" style="color:var(--gold);">taniguchis@tsumugu-solution.jp</a> までお気軽にどうぞ。
+        </p>
+      </div>
+
+      <div class="thanks-btns">
+        <a href="index.html" class="btn btn-outline">🏠 トップへ戻る</a>
+        <a href="shops.html" class="btn btn-primary">🗺️ 加盟店を見る</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <img src="images/logo-transparent.png" alt="FOOTBALL CONNECTION" style="height:32px;">
+        </div>
+        <p style="font-size:0.82rem;color:var(--gray);margin-top:8px;line-height:1.6;">
+          せっかくなら、アメフト関係者の店に行こう。
+        </p>
+      </div>
+      <div>
+        <div class="footer-nav-title">Navigation</div>
+        <div class="footer-nav-links">
+          <a href="index.html">トップ</a>
+          <a href="shops.html">店舗・サービスを探す</a>
+          <a href="events.html">イベント</a>
+          <a href="apply.html">加盟申込</a>
+          <a href="referral.html">紹介する</a>
+          <a href="terms.html">利用規約</a>
+          <a href="tokusho.html">特定商取引法に基づく表記</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FOOTBALL CONNECTION. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+</body>
+</html>
