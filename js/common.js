@@ -334,6 +334,7 @@ const SHOPS_DATA = [
   },
   {
     id: "007",
+    name: "Eba",
     area: "東京都",
     city: "東京",
     genre: "ジム・トレーニング",
@@ -610,7 +611,7 @@ function getPlanBadge(plan) {
   } else if (plan === 'free') {
     return `<span class="badge badge-free">✅ フリー</span>`;
   } else {
-    return `<span class="badge badge-standard">スタンダード</span>`;
+    return `<span class="badge badge-standard">その他</span>`;
   }
 }
 
@@ -669,7 +670,9 @@ const SHOP_DETAIL_PAGES = {
   "018": "shop-detail-tomikawa.html",
   "019": "shop-detail-mino.html",
   "020": "shop-detail-trentasei.html",
-  "021": "shop-detail-midori.html"
+  "021": "shop-detail-midori.html",
+  "022": "shop-detail-proteinnation.html",
+  "023": "shop-detail-ohhuggy.html"
 };
 function getShopDetailUrl(shop) {
   return SHOP_DETAIL_PAGES[shop.id] || `shop-detail.html?id=${shop.id}`;

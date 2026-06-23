@@ -25,7 +25,7 @@
     ============================ */
     .apply-layout { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
 
-    /* ── アーリーバード帯 ── */
+    /* ── フリー掲載訴求帯 ── */
     .earlybird-top {
       background: linear-gradient(135deg, rgba(212,160,23,0.18) 0%, rgba(212,160,23,0.07) 100%);
       border: 2px solid var(--gold);
@@ -352,12 +352,12 @@
         </div>
         <div class="eb-price-item">
           <div class="plan-name">⭐ プレミアム</div>
-          <div class="plan-now">¥5,500<span style="font-size:0.9rem;font-weight:400;">/月（税込）</span></div>
+          <div class="plan-now">月額5,000円</div>
           <div class="plan-after">上位表示・写真強化など</div>
         </div>
         <div class="eb-price-item" style="border-color:rgba(255,215,0,0.3);">
           <div class="plan-name" style="color:#FFD700;">👑 LEGEND</div>
-          <div class="plan-now" style="color:#FFD700;">¥11,000<span style="font-size:0.9rem;font-weight:400;">/月（税込）</span></div>
+          <div class="plan-now" style="color:#FFD700;">月額10,000円</div>
           <div class="plan-after">最上位・トップページ掲載</div>
         </div>
       </div>
@@ -465,8 +465,8 @@
                 月額料金
               </td>
               <td class="free-col" style="background:rgba(74,222,128,0.1)!important;color:#4ade80;font-size:1.4rem;font-weight:700;">無料</td>
-              <td class="premium-col">¥5,500/月<span class="price-sub">税込</span></td>
-              <td class="legend-col">¥11,000/月<span class="price-sub" style="color:rgba(255,215,0,0.7);">税込・固定</span></td>
+              <td class="premium-col">月額5,000円</td>
+              <td class="legend-col">月額10,000円</td>
             </tr>
             <tr>
               <td>店舗情報掲載（基本情報）</td>
@@ -705,19 +705,19 @@
             </label>
             <!-- プレミアム -->
             <label class="radio-label">
-              <input type="radio" name="希望プラン" value="プレミアムプラン（¥5,500/月・税込）" id="plan-premium">
+              <input type="radio" name="希望プラン" value="プレミアムプラン（月額5,000円）" id="plan-premium">
               <div>
                 <strong>⭐ プレミアムプラン</strong>
-                <span style="color:var(--gold);font-weight:700;margin-left:8px;">月額 ¥5,500（税込）</span>
+                <span style="color:var(--gold);font-weight:700;margin-left:8px;">月額5,000円</span>
                 <p style="font-size:0.8rem;color:var(--gray);margin-top:4px;">上位表示・写真強化・SNSリンク掲載・特集枠（不定期）・運営からの推薦コメント掲載</p>
               </div>
             </label>
             <!-- LEGEND -->
             <label class="radio-label" style="border:2px solid #FFD700;background:rgba(255,215,0,0.06);">
-              <input type="radio" name="希望プラン" value="LEGENDプラン（¥11,000/月・税込）" id="plan-legend">
+              <input type="radio" name="希望プラン" value="LEGENDプラン（月額10,000円）" id="plan-legend">
               <div>
                 <strong style="color:#FFD700;">👑 LEGEND プラン</strong>
-                <span style="color:#FFD700;font-weight:700;margin-left:8px;">月額 ¥11,000（税込）</span>
+                <span style="color:#FFD700;font-weight:700;margin-left:8px;">月額10,000円</span>
                 <p style="font-size:0.8rem;color:var(--gray);margin-top:4px;">最上位表示・トップページ掲載・イベント優先権・特集記事・コミュニティ優先紹介</p>
               </div>
             </label>
@@ -829,8 +829,8 @@
     <!-- 紹介CTA -->
     <div class="fade-in" style="background:rgba(212,160,23,0.07);border:1px solid rgba(212,160,23,0.25);border-radius:var(--radius);padding:28px 32px;text-align:center;margin-bottom:24px;">
       <p style="font-size:0.78rem;color:var(--gold);font-weight:700;letter-spacing:0.08em;margin-bottom:8px;">💰 REFERRAL PROGRAM</p>
-      <p style="font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;">知り合いのアメフト関係者の店を紹介するだけで <span style="color:var(--gold);">最大¥10,000</span></p>
-      <p style="font-size:0.85rem;color:var(--gray);margin-bottom:18px;">掲載確定後にAmazonギフトカード（フリー¥500／プレミアム¥5,000／LEGEND¥10,000）をメール送付。件数制限なし。</p>
+      <p style="font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;">知り合いのアメフト関係者の店を紹介するだけで <span style="color:var(--gold);">最大10,000円</span></p>
+      <p style="font-size:0.85rem;color:var(--gray);margin-bottom:18px;">掲載確定後にAmazonギフトカード（フリー500円／プレミアム5,000円／LEGEND10,000円）をメール送付。件数制限なし。</p>
       <a href="referral.html" class="btn btn-gold" style="display:inline-block;">🤝 掲載紹介フォームへ</a>
     </div>
 
@@ -1016,16 +1016,12 @@
 
         // プランに応じたStripe決済ボタンを表示
         const stripeArea = document.getElementById('stripe-btn-area');
-        const STRIPE_STANDARD = 'https://buy.stripe.com/7sYcMXcJxbDm4H39rgdwc06';
         const STRIPE_PREMIUM  = 'https://buy.stripe.com/7sY7sD9xl5eY8Xj6f4dwc07';
         let stripeUrl = '';
         let planLabel = '';
-        if (planValue.includes('スタンダード')) {
-          stripeUrl = STRIPE_STANDARD;
-          planLabel = 'スタンダードプラン';
-        } else if (planValue.includes('プレミアム')) {
+        if (planValue.includes('プレミアム')) {
           stripeUrl = STRIPE_PREMIUM;
-          planLabel = 'プレミアムプラン（¥5,000/月・税別）';
+          planLabel = 'プレミアムプラン（月額5,000円）';
         }
         if (stripeUrl) {
           stripeArea.innerHTML = `

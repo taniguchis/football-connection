@@ -153,11 +153,13 @@
           <option value="フレンチ">フレンチ</option>
           <option value="とんかつ">とんかつ</option>
           <option value="蛤鍋・とんかつ">蛤鍋・とんかつ</option>
+          <option value="イタリアン">イタリアン</option>
           <option value="カフェ">カフェ</option>
           <option value="宿泊・オーベルジュ">宿泊・オーベルジュ</option>
           <option value="ジム・トレーニング">ジム・トレーニング</option>
           <option value="マッサージ">マッサージ</option>
-          <option value="その他サービス">その他サービス</option>
+          <option value="スナック">スナック</option>
+          <option value="その他">その他</option>
         </select>
       </div>
       <div class="filter-group">
@@ -177,7 +179,7 @@
     </div>
 
     <!-- RESULTS -->
-    <p class="result-count"><span id="count-num">5</span> 件が見つかりました</p>
+    <p class="result-count"><span id="count-num">20</span> 件が見つかりました</p>
 
     <!-- SHOP GRID -->
     <div class="shops-grid" id="shops-grid"></div>
@@ -286,7 +288,7 @@
   }
 
   function sortShops(shops) {
-    // ランクスコア: LEGEND=0, プレミアム=1, スタンダード/フリー=2, 参考=3
+    // ランクスコア: LEGEND=0, プレミアム=1, フリー=2, 参考=3
     function rankScore(s) {
       if (s.is_reference) return 3;
       if (s.plan === 'legend')   return 0;

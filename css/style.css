@@ -2139,7 +2139,7 @@ p, li, td, th,
     grid-template-columns: 1fr !important;
   }
 
-  /* ─── apply.html のアーリーバード帯 3カラムをスタック ─── */
+  /* ─── apply.html のフリー掲載訴求帯 3カラムをスタック ─── */
   .eb-prices {
     flex-direction: column;
     gap: 10px;
