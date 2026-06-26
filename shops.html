@@ -163,10 +163,25 @@
         </select>
       </div>
       <div class="filter-group">
-        <label for="plan-filter">⭐ プラン</label>
+        <label for="university-filter">学校・チーム</label>
+        <select id="university-filter">
+          <option value="">全て</option>
+          <option value="立教大学">立教大学</option>
+          <option value="法政大学">法政大学</option>
+          <option value="立命館大学">立命館大学</option>
+          <option value="関西学院大学">関西学院大学</option>
+          <option value="大阪体育大学">大阪体育大学</option>
+          <option value="日本体育大学">日本体育大学</option>
+          <option value="青山学院大学">青山学院大学</option>
+          <option value="都立三田高校">都立三田高校</option>
+          <option value="Bentley University">Bentley University</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="plan-filter">プラン</label>
         <select id="plan-filter">
           <option value="">全て</option>
-          <option value="legend">👑 LEGEND</option>
+          <option value="legend">LEGEND</option>
           <option value="premium">プレミアム</option>
           <option value="free">フリー</option>
         </select>
@@ -307,18 +322,20 @@
     const kw    = document.getElementById('search-input').value.toLowerCase().trim();
     const area  = document.getElementById('area-filter').value;
     const genre = document.getElementById('genre-filter').value;
+    const univ  = document.getElementById('university-filter').value;
     const plan  = document.getElementById('plan-filter').value;
     const filtered = SHOPS_DATA.filter(s =>
       !s.is_reference &&
-      (!kw   || [s.name,s.area,s.city,s.comment,s.football_element,s.football_career].some(v => v && v.toLowerCase().includes(kw))) &&
+      (!kw   || [s.name,s.area,s.city,s.comment,s.football_element,s.football_career,s.university,s.team].some(v => v && v.toLowerCase().includes(kw))) &&
       (!area  || s.area  === area) &&
       (!genre || s.genre === genre) &&
+      (!univ  || s.university === univ) &&
       (!plan  || s.plan  === plan)
     );
     renderShops(sortShops(filtered));
   }
 
-  ['search-input','area-filter','genre-filter','plan-filter'].forEach(id => {
+  ['search-input','area-filter','genre-filter','university-filter','plan-filter'].forEach(id => {
     document.getElementById(id).addEventListener(id === 'search-input' ? 'input' : 'change', applyFilters);
   });
 
