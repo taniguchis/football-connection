@@ -1,0 +1,573 @@
+[
+  {
+    "id": "001",
+    "name": "BAR ごえん",
+    "category": "バー",
+    "area": "銀座",
+    "prefecture": "東京都",
+    "plan": "premium",
+    "description": "ビジネスパーソン・経営者が集う大人の社交場。アメフトで培ったチームワークと情熱をビジネスの場へ。銀座で一番熱い出会いがここにある。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://bar.goencorp.jp/",
+    "instagram": "https://www.instagram.com/goen_202507/",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "谷口真一",
+        "role": "取締役として参画",
+        "school": "立教大学",
+        "team": "Rushers",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "002",
+    "name": "カラオケバー アポロ計画",
+    "category": "カラオケバー",
+    "area": "新橋",
+    "prefecture": "東京都",
+    "plan": "legend",
+    "description": "新橋の夜を盛り上げるカラオケバー。大学アメフトチームのユニフォームを店内に展示。アメフト仲間との二次会・打ち上げに最高の舞台。マスターはNYCアポロシアターアマチュアナイト優勝の実力派！",
+    "feature": "アメフト関連の展示・要素あり",
+    "url": "",
+    "instagram": "https://www.instagram.com/apollo_keikaku/",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "",
+        "role": "展示",
+        "school": "",
+        "team": "大学アメフトチーム",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報（大学アメフトチームのユニフォーム展示）"
+      }
+    ]
+  },
+  {
+    "id": "006",
+    "name": "Trattoria M's",
+    "category": "レストラン",
+    "area": "蒲田",
+    "prefecture": "東京都",
+    "plan": "free",
+    "description": "蒲田の地下に佇む本格お魚イタリアン。オーナーの三井氏は立教大学Rushers OBで、フラッグフットボールの経験も持つ。アメフト関係者が多く集まる温かいお店。ランチもディナーも絶品のイタリア料理でおもてなし。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://tabelog.com/tokyo/A1315/A131503/13017754/",
+    "instagram": "https://www.instagram.com/trattoriams?igsh=MXBxYmhidGdpbnd0YQ%3D%3D&utm_source=qr",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "三井光秀",
+        "role": "オーナー",
+        "school": "立教大学",
+        "team": "Rushers",
+        "sport": "アメフト／フラッグ",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "009",
+    "name": "むらた",
+    "category": "蛤鍋・とんかつ",
+    "area": "岩本町",
+    "prefecture": "東京都",
+    "plan": "free",
+    "description": "どでかい蛤鍋の出汁と、漆黒の黒トンカツ。この二本柱がむらたのすべて。試合後の打ち上げ・懇親会に、岩本町の頼れる一軒。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://retty.me/area/PRE13/ARE11/SUB1101/100000045979/",
+    "instagram": "",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "",
+        "role": "オーナー",
+        "school": "立教大学",
+        "team": "Rushers",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "008",
+    "name": "とんかつ大希",
+    "category": "とんかつ",
+    "area": "蒲田",
+    "prefecture": "東京都",
+    "plan": "free",
+    "description": "蒲田が誇る白トンカツの名店。サクッとした衣の中から、しっとり柔らかく肉の旨味があふれる白トンカツは一度食べたらリピート確定。試合後の打ち上げ・懇親会・チーム飲みにも最適。アメフト関係者同士で「蒲田行くならあそこ」と言い合える、仲間に自慢したい一軒。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "",
+    "instagram": "",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "三井光秀",
+        "role": "オーナー",
+        "school": "立教大学",
+        "team": "Rushers",
+        "sport": "アメフト／フラッグ",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "010",
+    "name": "COTTON FIELDS",
+    "category": "バー",
+    "area": "芦屋",
+    "prefecture": "兵庫県",
+    "plan": "free",
+    "description": "芦屋の静かな住宅街に佇む隠れ家バー。大阪体育大学SPARTANS OBの中川オーナーをはじめ、近隣在住のアメフトOBが自然と集まる空間。落ち着いた雰囲気の中で仲間との時間を楽しめる一軒。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://x.gd/T9gEZ",
+    "instagram": "https://www.instagram.com/cotton_fields_ashiya",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "中川伸一",
+        "role": "オーナー",
+        "school": "大阪体育大学",
+        "team": "SPARTANS",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "011",
+    "name": "彦根ダイニングジャンゴ",
+    "category": "レストラン",
+    "area": "彦根",
+    "prefecture": "滋賀県",
+    "plan": "free",
+    "description": "2008年ライスボウル優勝時の立命館大学PANTHERS元主将・浅尾氏が料理長を務めるダイニング。ランチもディナーも充実、地元食材を活かした料理が揃う。アメフト関係者が琵琶湖そばで集まれる一軒。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "",
+    "instagram": "https://www.instagram.com/sun_burger_and_jango",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "浅尾氏",
+        "role": "料理長",
+        "school": "立命館大学",
+        "team": "PANTHERS",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報（2008年ライスボウル優勝・元主将）"
+      }
+    ]
+  },
+  {
+    "id": "012",
+    "name": "喫茶晴龍",
+    "category": "カフェ",
+    "area": "世田谷",
+    "prefecture": "東京都",
+    "plan": "free",
+    "description": "法政二高・法政大学ORANGE OBの兼益オーナーが営む、上野毛のアットホームなカフェ。朝から夕方まで通えるゆったりした空間。犬OKで、仲間とのんびり過ごすのにぴったり。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://www.instagram.com/cafeseiryu_dogsok",
+    "instagram": "https://www.instagram.com/cafeseiryu_dogsok",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "兼益宏行",
+        "role": "オーナー",
+        "school": "法政二高・法政大学",
+        "team": "ORANGE",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "013",
+    "name": "東海亭",
+    "category": "焼肉",
+    "area": "西麻布",
+    "prefecture": "東京都",
+    "plan": "free",
+    "description": "西麻布交差点すぐ。立教大学Rushers OBの高林尚太オーナーが手がける松阪牛炭火焼肉の名店。会食・接待・OB食事会まで、格のある場として機能する西麻布を代表する一軒。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "http://www.toukaitei.jp/",
+    "instagram": "",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "高林尚太",
+        "role": "オーナー",
+        "school": "立教大学",
+        "team": "Rushers",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "014",
+    "name": "焼肉きゅうこん",
+    "category": "焼肉",
+    "area": "目黒",
+    "prefecture": "東京都",
+    "plan": "free",
+    "description": "九州の生産者とのご縁から生まれた目黒の焼肉店。仲間と囲む肉と酒の時間が、いつの間にか特別な記憶になる。OB会・会食・仲間の食事に自信を持っておすすめする一軒。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://kyukon.tokyo/",
+    "instagram": "https://www.instagram.com/kyukon294/?hl=ja",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "阿部洋介",
+        "role": "オーナー",
+        "school": "法政大学",
+        "team": "シルバースター",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "015",
+    "name": "Restaurant TOYO Tokyo",
+    "category": "フレンチ",
+    "area": "日比谷",
+    "prefecture": "東京都",
+    "plan": "free",
+    "description": "パリの食体験に感銘を受けたオーナーが日比谷に開いたフレンチレストラン。人生の節目・記念日・接待・会食に迷わず選べる格のある一軒。知っていると頼られる店。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://toyojapan.jp/",
+    "instagram": "https://www.instagram.com/restaurant.toyo.tokyo/",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "阿部洋介",
+        "role": "オーナー",
+        "school": "法政大学",
+        "team": "シルバースター",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "016",
+    "name": "Over the MOON",
+    "category": "宿泊・オーベルジュ",
+    "area": "淡路島",
+    "prefecture": "兵庫県",
+    "plan": "free",
+    "description": "淡路島・野島江崎の絶景夕陽のそばに、サウナ・100インチモニター・バリアフリー完備の全3室限定の隠れ家。OB会旅行・チーム合宿・卒業周年記念に、淡路島で一番の特別な一泊を。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://awaji-overthemoon.jp/",
+    "instagram": "https://www.instagram.com/awaji_overthemoon",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "岩佐強司",
+        "role": "オーナー",
+        "school": "清風高校・関西学院大学",
+        "team": "FIGHTERS",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報（チェスナットコーチOB）"
+      }
+    ]
+  },
+  {
+    "id": "007",
+    "name": "Eba",
+    "category": "ジム・トレーニング",
+    "area": "東京",
+    "prefecture": "東京都",
+    "plan": "free",
+    "description": "大学時代にアメフトのマネージャーとして活躍し、現在はフットボール選手の身体づくりをサポートするパーソナルトレーナー。アスリートのパフォーマンス向上から健康増進まで幅広く対応。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "",
+    "instagram": "https://www.instagram.com/_eba____/",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "",
+        "role": "マネージャー・トレーナー",
+        "school": "",
+        "team": "大学アメフト部",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報（大学アメフトマネージャー・フットボール選手トレーナー）"
+      }
+    ]
+  },
+  {
+    "id": "018",
+    "name": "酒処 富川",
+    "category": "居酒屋",
+    "area": "渋谷",
+    "prefecture": "東京都",
+    "plan": "free",
+    "description": "渋谷駅徒歩0分。短冊メニューとホッピーが並ぶ昭和の大衆居酒屋。日体大Golden Bears・シルバースターOBの河合オーナーが営む、渋谷で飲むなら知っておきたい本物の一軒。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://sakedokoro-tomikawa.com/",
+    "instagram": "",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "河合幹夫",
+        "role": "オーナー",
+        "school": "日本体育大学",
+        "team": "Golden Bears / シルバースター",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "020",
+    "name": "Trattoria Trentasei",
+    "category": "イタリアン",
+    "area": "大津",
+    "prefecture": "滋賀県",
+    "plan": "free",
+    "description": "アメフトの試合会場から生まれた大津の本格トラットリア。Tボーンステーキ＆パスタを看板に、Xリーグ・関西学生リーグ運営チームが2024年9月にオープン。フィールドと厨房、両方の熱量が宿る一軒。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://www.hotpepper.jp/strJ004402082/",
+    "instagram": "https://www.instagram.com/trattoriatrentasei",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "中野貴裕",
+        "role": "オーナー",
+        "school": "立命館大学",
+        "team": "パンサーズ",
+        "sport": "アメリカンフットボール",
+        "generation": "1994年大学日本一・4回生",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      },
+      {
+        "personName": "伴正和",
+        "role": "支配人",
+        "school": "立命館大学",
+        "team": "パンサーズ",
+        "sport": "アメリカンフットボール",
+        "generation": "1994年大学日本一・3回生",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "019",
+    "name": "割烹 美乃",
+    "category": "居酒屋",
+    "area": "浜松町・大門",
+    "prefecture": "東京都",
+    "plan": "free",
+    "description": "大門駅徒歩1分。昭和から続く本格割烹の味を二代目が守り続ける。青学LIGHTNINGのOBオーナーが切り盛りする、浜松町で飲むなら知っておきたい老舗の一軒。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://mino-tokyo.gorp.jp/",
+    "instagram": "",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "上垣雅士",
+        "role": "二代目オーナー",
+        "school": "青山学院大学",
+        "team": "LIGHTNING",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "021",
+    "name": "スナック みどり",
+    "category": "スナック",
+    "area": "世田谷・深沢",
+    "prefecture": "東京都",
+    "plan": "free",
+    "description": "深沢3丁目のビル2階に灯る、ひとみんママが迎える隠れ家スナック。都立三田高BLUE CRUSHERSのOBオーナーが手がける、仕事終わりにほっとできる一軒。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://kameizoen.com/",
+    "instagram": "https://www.instagram.com/snack_midori_2023",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "亀井 貴司",
+        "role": "オーナー",
+        "school": "都立三田高校",
+        "team": "BLUE CRUSHERS",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "022",
+    "name": "Protein Nation",
+    "category": "その他",
+    "area": "原宿",
+    "prefecture": "東京都",
+    "plan": "free",
+    "description": "米国の大学でフィールドを駆け、帰国後は品川CCブルザイズで競技を続けたオーナーが本気で作ったプロテイン&サプリメントブランド。選手目線で設計された製品が揃う。ECサイトは24時間対応。FOOTBALL CONNECTION限定5%OFFコード「CONNECTION」あり。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://theproteinnationjp.com/",
+    "instagram": "https://www.instagram.com/theproteinnation.jp/",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "外山 裕之",
+        "role": "オーナー",
+        "school": "Bentley University",
+        "team": "Bentley Universityアメフト部 / 品川CCブルザイズ",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  },
+  {
+    "id": "023",
+    "name": "Oh!huggy!!横濱元町店",
+    "category": "カフェ",
+    "area": "横浜・元町",
+    "prefecture": "神奈川県",
+    "plan": "free",
+    "description": "元町パセオ2Fに咲くフラワーおはぎの専門店。立教大学出身・観戦歴100試合以上の本物のフットボールファンが営み、店内にはTouchdownやフットボールマガジンの貴重なバックナンバーが並ぶ。顧客への手土産や仲間へのギフトにも最高の一箱。",
+    "feature": "アメフト関連の展示・要素あり",
+    "url": "",
+    "instagram": "https://www.instagram.com/oh_huggy_yokohama_motomachi",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "石塚 陽子",
+        "role": "オーナー",
+        "school": "立教大学",
+        "team": "",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "",
+        "permission": "掲載可",
+        "note": "HP公開情報（フットボール観戦歴100試合以上のファン）"
+      }
+    ]
+  },
+  {
+    "id": "017",
+    "name": "Restrant&Bar ジローズ・ジュニア",
+    "category": "レストラン",
+    "area": "梅田・北新地",
+    "prefecture": "大阪府",
+    "plan": "free",
+    "description": "関西アメフト界で知らない人はいない、北新地の伝説的なRestrant&Bar。シーズンの打ち上げ、引退後の再会、全国大会の前夜——アメフト人の節目にはいつもここがあった。",
+    "feature": "アメフト関係者が経営・参画",
+    "url": "https://www.girondsjr.com/",
+    "instagram": "https://www.instagram.com/girondsjr",
+    "x": "",
+    "ownerName": "",
+    "status": "published",
+    "connections": [
+      {
+        "personName": "徳永真介",
+        "role": "オーナー・元DBコーチ",
+        "school": "関西学院高等部・関西学院大学",
+        "team": "FIGHTERS",
+        "sport": "アメリカンフットボール",
+        "generation": "",
+        "position": "DB",
+        "permission": "掲載可",
+        "note": "HP公開情報"
+      }
+    ]
+  }
+]
