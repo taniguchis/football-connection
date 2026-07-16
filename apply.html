@@ -352,13 +352,13 @@
         </div>
         <div class="eb-price-item">
           <div class="plan-name">⭐ プレミアム</div>
-          <div class="plan-now">月額5,000円</div>
-          <div class="plan-after">上位表示・写真強化など</div>
+          <div class="plan-now">月額5,500円（税込）</div>
+          <div class="plan-after">税抜5,000円・上位表示・写真強化など</div>
         </div>
         <div class="eb-price-item" style="border-color:rgba(255,215,0,0.3);">
           <div class="plan-name" style="color:#FFD700;">👑 LEGEND</div>
-          <div class="plan-now" style="color:#FFD700;">月額10,000円</div>
-          <div class="plan-after">最上位・トップページ掲載</div>
+          <div class="plan-now" style="color:#FFD700;">月額11,000円（税込）</div>
+          <div class="plan-after">税抜10,000円・最上位・トップページ掲載</div>
         </div>
       </div>
       <p style="font-size:0.8rem;color:var(--gray);margin-top:12px;text-align:center;">無理な営業はありません。まずは無料掲載でOK。掲載後にプラン変更可能です。</p>
@@ -465,8 +465,8 @@
                 月額料金
               </td>
               <td class="free-col" style="background:rgba(74,222,128,0.1)!important;color:#4ade80;font-size:1.4rem;font-weight:700;">無料</td>
-              <td class="premium-col">月額5,000円</td>
-              <td class="legend-col">月額10,000円</td>
+              <td class="premium-col">月額5,500円（税込）<br><span style="font-size:0.75rem;color:var(--gray);">税抜5,000円</span></td>
+              <td class="legend-col">月額11,000円（税込）<br><span style="font-size:0.75rem;color:var(--gray);">税抜10,000円</span></td>
             </tr>
             <tr>
               <td>店舗情報掲載（基本情報）</td>
@@ -705,20 +705,20 @@
             </label>
             <!-- プレミアム -->
             <label class="radio-label">
-              <input type="radio" name="希望プラン" value="プレミアムプラン（月額5,000円）" id="plan-premium">
+              <input type="radio" name="希望プラン" value="プレミアムプラン：月額5,500円（税込）" id="plan-premium">
               <div>
                 <strong>⭐ プレミアムプラン</strong>
-                <span style="color:var(--gold);font-weight:700;margin-left:8px;">月額5,000円</span>
-                <p style="font-size:0.8rem;color:var(--gray);margin-top:4px;">上位表示・写真強化・SNSリンク掲載・特集枠（不定期）・運営からの推薦コメント掲載</p>
+                <span style="color:var(--gold);font-weight:700;margin-left:8px;">月額5,500円（税込）</span>
+                <p style="font-size:0.8rem;color:var(--gray);margin-top:4px;">税抜5,000円。上位表示・写真強化・SNSリンク掲載・特集枠（不定期）・運営からの推薦コメント掲載</p>
               </div>
             </label>
             <!-- LEGEND -->
             <label class="radio-label" style="border:2px solid #FFD700;background:rgba(255,215,0,0.06);">
-              <input type="radio" name="希望プラン" value="LEGENDプラン（月額10,000円）" id="plan-legend">
+              <input type="radio" name="希望プラン" value="LEGENDプラン：月額11,000円（税込）" id="plan-legend">
               <div>
                 <strong style="color:#FFD700;">👑 LEGEND プラン</strong>
-                <span style="color:#FFD700;font-weight:700;margin-left:8px;">月額10,000円</span>
-                <p style="font-size:0.8rem;color:var(--gray);margin-top:4px;">最上位表示・トップページ掲載・イベント優先権・特集記事・コミュニティ優先紹介</p>
+                <span style="color:#FFD700;font-weight:700;margin-left:8px;">月額11,000円（税込）</span>
+                <p style="font-size:0.8rem;color:var(--gray);margin-top:4px;">税抜10,000円。最上位表示・トップページ掲載・イベント優先権・特集記事・コミュニティ優先紹介</p>
               </div>
             </label>
           </div>
@@ -1021,7 +1021,7 @@
         let planLabel = '';
         if (planValue.includes('プレミアム')) {
           stripeUrl = STRIPE_PREMIUM;
-          planLabel = 'プレミアムプラン（月額5,000円）';
+          planLabel = 'プレミアムプラン：月額5,500円（税込）';
         }
         if (stripeUrl) {
           stripeArea.innerHTML = `
